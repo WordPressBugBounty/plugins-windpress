@@ -115,6 +115,8 @@
 	__('Create New File', 'windpress');
 	__('Filename may include a path. (css or js)', 'windpress');
 	__('Submit', 'windpress');
+	__('Rename File', 'windpress');
+	__('The previous filename', 'windpress');
 	__('Error', 'windpress');
 	__('File "%s" is read-only and not deletable', 'windpress');
 	__('File "%s" is required for the WindPress to work and not deletable', 'windpress');
@@ -143,7 +145,9 @@
 	__('SFS data imported. Remember to save the changes.', 'windpress');
 	__('New file creation canceled', 'windpress');
 	__('File "%s" created', 'windpress');
-	__('Entry not found', 'windpress');
+	__('File rename canceled', 'windpress');
+	__('File "%s" renamed to "%s"', 'windpress');
+	__('Entry not found: ', 'windpress');
 	__('Explorer', 'windpress');
 	__('Add new file', 'windpress');
 	__('Export SFS volume', 'windpress');
