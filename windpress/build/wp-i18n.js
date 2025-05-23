@@ -23,6 +23,8 @@
 	__('Builderius integration', 'windpress');
 	__('Elementor', 'windpress');
 	__('Elementor integration', 'windpress');
+	__('Etch', 'windpress');
+	__('Etch integration', 'windpress');
 	__('GreenShift', 'windpress');
 	__('The GreenShift integration. It requires the Gutenberg/Block Editor integration enabled.', 'windpress');
 	__('Gutenberg', 'windpress');

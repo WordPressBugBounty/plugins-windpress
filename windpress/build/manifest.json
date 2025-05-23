@@ -1,6 +1,6 @@
 {
-  "_DashboardSidebarCollapse-CDcVPKDm.min.js": {
-    "file": "chunks/DashboardSidebarCollapse-CDcVPKDm.min.js",
+  "_DashboardSidebarCollapse-juViNcQk.min.js": {
+    "file": "chunks/DashboardSidebarCollapse-juViNcQk.min.js",
     "name": "DashboardSidebarCollapse",
     "imports": [
       "assets/dashboard/main.ts",
@@ -8,27 +8,27 @@
       "_index-BhzJUfF8.min.js"
     ]
   },
-  "_FormField-CzrDObNZ.min.js": {
-    "file": "chunks/FormField-CzrDObNZ.min.js",
+  "_FormField-DUOYno_i.min.js": {
+    "file": "chunks/FormField-DUOYno_i.min.js",
     "name": "FormField",
     "imports": [
       "assets/dashboard/main.ts",
       "_runtime-core.esm-bundler-B3Nza2bI.min.js"
     ]
   },
-  "_PageCard-BEbh65tL.min.js": {
-    "file": "chunks/PageCard-BEbh65tL.min.js",
+  "_PageCard-DtXttDk4.min.js": {
+    "file": "chunks/PageCard-DtXttDk4.min.js",
     "name": "PageCard",
     "imports": [
       "assets/dashboard/main.ts",
       "_runtime-dom.esm-bundler-MZPCDE9A.min.js",
       "_runtime-core.esm-bundler-B3Nza2bI.min.js",
-      "_FormField-CzrDObNZ.min.js",
+      "_FormField-DUOYno_i.min.js",
       "_index-BhzJUfF8.min.js"
     ]
   },
-  "_Separator-C8gHDn9K.min.js": {
-    "file": "chunks/Separator-C8gHDn9K.min.js",
+  "_Separator-DcsJgf9L.min.js": {
+    "file": "chunks/Separator-DcsJgf9L.min.js",
     "name": "Separator",
     "imports": [
       "assets/dashboard/main.ts",
@@ -66,8 +66,8 @@
       "_pre-process-QQBu2FRt.js"
     ]
   },
-  "_build-CCSww3Gc.js": {
-    "file": "assets/build-CCSww3Gc.js",
+  "_build-DlKo8pDN.js": {
+    "file": "assets/build-DlKo8pDN.js",
     "name": "build",
     "imports": [
       "_preload-helper-BVFHbGtQ.min.js",
@@ -78,7 +78,7 @@
       "_resolve-config-CDvWJYyX.js"
     ],
     "dynamicImports": [
-      "_index-z_jV08eI.min.js"
+      "_index-DRR_OfWe.min.js"
     ]
   },
   "_chevron-right-IEo_-1fN.min.js": {
@@ -210,17 +210,17 @@
       "_index-CvyxREt8.min.js"
     ]
   },
-  "_index-Dfa4cJMK.min.js": {
-    "file": "chunks/index-Dfa4cJMK.min.js",
-    "name": "index"
-  },
-  "_index-z_jV08eI.min.js": {
-    "file": "chunks/index-z_jV08eI.min.js",
+  "_index-DRR_OfWe.min.js": {
+    "file": "chunks/index-DRR_OfWe.min.js",
     "name": "index",
     "isDynamicEntry": true,
     "imports": [
       "_cssesc-DkbcYlXT.js"
     ]
+  },
+  "_index-Dfa4cJMK.min.js": {
+    "file": "chunks/index-Dfa4cJMK.min.js",
+    "name": "index"
   },
   "_index.browser-BBNxE1As.min.js": {
     "file": "chunks/index.browser-BBNxE1As.min.js",
@@ -245,8 +245,12 @@
     "file": "assets/logger-DmkfWO2A.js",
     "name": "logger"
   },
-  "_monaco-editor-BV1iw9sz.min.js": {
-    "file": "chunks/monaco-editor-BV1iw9sz.min.js",
+  "_monaco-editor-DjMEC8bx.css": {
+    "file": "assets/monaco-editor-DjMEC8bx.css",
+    "src": "_monaco-editor-DjMEC8bx.css"
+  },
+  "_monaco-editor-q8s_VaCv.min.js": {
+    "file": "chunks/monaco-editor-q8s_VaCv.min.js",
     "name": "monaco-editor",
     "isDynamicEntry": true,
     "imports": [
@@ -266,10 +270,6 @@
     "assets": [
       "assets/codicon-DCmgc-ay.ttf"
     ]
-  },
-  "_monaco-editor-DjMEC8bx.css": {
-    "file": "assets/monaco-editor-DjMEC8bx.css",
-    "src": "_monaco-editor-DjMEC8bx.css"
   },
   "_pre-process-QQBu2FRt.js": {
     "file": "assets/pre-process-QQBu2FRt.js",
@@ -338,8 +338,8 @@
     "file": "chunks/windpress-DnIzWi0E.min.js",
     "name": "windpress"
   },
-  "_worker-DiHLypH0.js": {
-    "file": "assets/worker-DiHLypH0.js",
+  "_worker-Bam-hQuc.js": {
+    "file": "assets/worker-Bam-hQuc.js",
     "name": "worker",
     "imports": [
       "_cssesc-DkbcYlXT.js",
@@ -350,13 +350,13 @@
       "_build-C987KgkU.js",
       "_index-DP3Svjvz.min.js",
       "_index-D-_5JoM7.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_index-Ca_nMnsa.min.js",
       "_get-C5gQxxub.min.js"
     ]
   },
   "assets/dashboard/main.ts": {
-    "file": "assets/dashboard-BUV-duCh.js",
+    "file": "assets/dashboard-DWpnNbvC.js",
     "name": "dashboard",
     "src": "assets/dashboard/main.ts",
     "isEntry": true,
@@ -364,7 +364,7 @@
       "_preload-helper-BVFHbGtQ.min.js",
       "_index-BhcUEIkR.min.js",
       "_runtime-dom.esm-bundler-MZPCDE9A.min.js",
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "_runtime-core.esm-bundler-B3Nza2bI.min.js",
       "_index-D-_5JoM7.min.js",
       "_index-BhzJUfF8.min.js",
@@ -374,7 +374,7 @@
       "_set-CQpYICWN.min.js",
       "__toKey-C72hUfwS.min.js",
       "_isObject-8EXUDN8T.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_fuse-Gm-adH5Q.min.js",
       "_cssesc-DkbcYlXT.js",
       "_index-Dfa4cJMK.min.js",
@@ -397,22 +397,22 @@
       "assets/dashboard/pages/Settings/Performance.vue",
       "assets/dashboard/pages/Settings/Integrations.vue",
       "assets/dashboard/pages/NotFound.vue",
-      "_monaco-editor-BV1iw9sz.min.js"
+      "_monaco-editor-q8s_VaCv.min.js"
     ],
     "css": [
       "assets/dashboard-DBqLfo97.css"
     ]
   },
   "assets/dashboard/pages/File.vue": {
-    "file": "assets/File-DYwBNJR5.js",
+    "file": "assets/File-Cx2CLzXq.js",
     "name": "File",
     "src": "assets/dashboard/pages/File.vue",
     "isDynamicEntry": true,
     "imports": [
       "assets/dashboard/main.ts",
-      "_DashboardSidebarCollapse-CDcVPKDm.min.js",
+      "_DashboardSidebarCollapse-juViNcQk.min.js",
       "_index-BhzJUfF8.min.js",
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "__initCloneObject-DnPaCxTN.min.js",
       "__toKey-C72hUfwS.min.js",
       "_isObject-8EXUDN8T.min.js",
@@ -427,13 +427,13 @@
       "_dayjs.min-BMFJOwvH.min.js",
       "_preload-helper-BVFHbGtQ.min.js",
       "_index-C1eb-OTL.min.js",
-      "_FormField-CzrDObNZ.min.js",
+      "_FormField-DUOYno_i.min.js",
       "_index-BhcUEIkR.min.js",
       "_floating-ui.core-CE8FN91a.min.js",
       "_virtualRef-BJdFt_DC.js",
       "_set-CQpYICWN.min.js",
       "_get-C5gQxxub.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_index-BKnPtYW1.min.js",
       "_index-Dfa4cJMK.min.js",
       "_index-CvyxREt8.min.js",
@@ -453,16 +453,16 @@
     ]
   },
   "assets/dashboard/pages/Log.vue": {
-    "file": "assets/Log-B6HcrPFK.js",
+    "file": "assets/Log-MtQn2lFM.js",
     "name": "Log",
     "src": "assets/dashboard/pages/Log.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DashboardSidebarCollapse-CDcVPKDm.min.js",
+      "_DashboardSidebarCollapse-juViNcQk.min.js",
       "assets/dashboard/main.ts",
       "_runtime-core.esm-bundler-B3Nza2bI.min.js",
       "_index-BhzJUfF8.min.js",
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "_dayjs.min-BMFJOwvH.min.js",
       "_preload-helper-BVFHbGtQ.min.js",
       "_index-BhcUEIkR.min.js",
@@ -477,7 +477,7 @@
       "_isObject-8EXUDN8T.min.js",
       "_get-C5gQxxub.min.js",
       "__initCloneObject-DnPaCxTN.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_index-BKnPtYW1.min.js",
       "_index-CvyxREt8.min.js",
       "_resolve-config-CDvWJYyX.js",
@@ -491,7 +491,7 @@
     ]
   },
   "assets/dashboard/pages/NotFound.vue": {
-    "file": "assets/NotFound-BUFjX0su.js",
+    "file": "assets/NotFound-BvXU1k13.js",
     "name": "NotFound",
     "src": "assets/dashboard/pages/NotFound.vue",
     "isDynamicEntry": true,
@@ -501,7 +501,7 @@
       "_preload-helper-BVFHbGtQ.min.js",
       "_index-BhcUEIkR.min.js",
       "_runtime-dom.esm-bundler-MZPCDE9A.min.js",
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "_cssesc-DkbcYlXT.js",
       "_index-Dfa4cJMK.min.js",
       "_index.browser-BBNxE1As.min.js",
@@ -514,7 +514,7 @@
       "_pre-process-QQBu2FRt.js",
       "_index-DP3Svjvz.min.js",
       "_index-CvyxREt8.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_resolve-config-CDvWJYyX.js",
       "_index-Ca_nMnsa.min.js",
       "_get-C5gQxxub.min.js",
@@ -527,12 +527,12 @@
     ]
   },
   "assets/dashboard/pages/Settings.vue": {
-    "file": "assets/Settings-B_oJ9wLM.js",
+    "file": "assets/Settings-BMX1gtgS.js",
     "name": "Settings",
     "src": "assets/dashboard/pages/Settings.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DashboardSidebarCollapse-CDcVPKDm.min.js",
+      "_DashboardSidebarCollapse-juViNcQk.min.js",
       "assets/dashboard/main.ts",
       "_runtime-core.esm-bundler-B3Nza2bI.min.js",
       "_index-BhzJUfF8.min.js",
@@ -540,7 +540,7 @@
       "_preload-helper-BVFHbGtQ.min.js",
       "_index-BhcUEIkR.min.js",
       "_runtime-dom.esm-bundler-MZPCDE9A.min.js",
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "_cssesc-DkbcYlXT.js",
       "_index-Dfa4cJMK.min.js",
       "_index.browser-BBNxE1As.min.js",
@@ -551,7 +551,7 @@
       "_pre-process-QQBu2FRt.js",
       "_index-DP3Svjvz.min.js",
       "_index-CvyxREt8.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_resolve-config-CDvWJYyX.js",
       "_index-Ca_nMnsa.min.js",
       "_get-C5gQxxub.min.js",
@@ -564,20 +564,20 @@
     ]
   },
   "assets/dashboard/pages/Settings/General.vue": {
-    "file": "assets/General-CrDuW4yJ.js",
+    "file": "assets/General-CsxBaOms.js",
     "name": "General",
     "src": "assets/dashboard/pages/Settings/General.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_PageCard-BEbh65tL.min.js",
-      "_Separator-C8gHDn9K.min.js",
+      "_PageCard-DtXttDk4.min.js",
+      "_Separator-DcsJgf9L.min.js",
       "assets/dashboard/main.ts",
-      "_FormField-CzrDObNZ.min.js",
+      "_FormField-DUOYno_i.min.js",
       "_runtime-dom.esm-bundler-MZPCDE9A.min.js",
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "_get-C5gQxxub.min.js",
       "_runtime-core.esm-bundler-B3Nza2bI.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_index-BhzJUfF8.min.js",
       "_isObject-8EXUDN8T.min.js",
       "_preload-helper-BVFHbGtQ.min.js",
@@ -603,15 +603,15 @@
     ]
   },
   "assets/dashboard/pages/Settings/Integrations.vue": {
-    "file": "assets/Integrations-rHM2hTLY.js",
+    "file": "assets/Integrations-CFwGZr5A.js",
     "name": "Integrations",
     "src": "assets/dashboard/pages/Settings/Integrations.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_PageCard-BEbh65tL.min.js",
-      "_FormField-CzrDObNZ.min.js",
+      "_PageCard-DtXttDk4.min.js",
+      "_FormField-DUOYno_i.min.js",
       "assets/dashboard/main.ts",
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "_runtime-core.esm-bundler-B3Nza2bI.min.js",
       "_runtime-dom.esm-bundler-MZPCDE9A.min.js",
       "_index-BhzJUfF8.min.js",
@@ -627,7 +627,7 @@
       "__toKey-C72hUfwS.min.js",
       "_get-C5gQxxub.min.js",
       "__initCloneObject-DnPaCxTN.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_index-BKnPtYW1.min.js",
       "_index-CvyxREt8.min.js",
       "_resolve-config-CDvWJYyX.js",
@@ -641,17 +641,17 @@
     ]
   },
   "assets/dashboard/pages/Settings/Performance.vue": {
-    "file": "assets/Performance-DvVSyFdY.js",
+    "file": "assets/Performance-C7-51G9T.js",
     "name": "Performance",
     "src": "assets/dashboard/pages/Settings/Performance.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_PageCard-BEbh65tL.min.js",
+      "_PageCard-DtXttDk4.min.js",
       "assets/dashboard/main.ts",
-      "_Separator-C8gHDn9K.min.js",
-      "_FormField-CzrDObNZ.min.js",
+      "_Separator-DcsJgf9L.min.js",
+      "_FormField-DUOYno_i.min.js",
       "_dayjs.min-BMFJOwvH.min.js",
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "_runtime-core.esm-bundler-B3Nza2bI.min.js",
       "_runtime-dom.esm-bundler-MZPCDE9A.min.js",
       "_index-BhzJUfF8.min.js",
@@ -667,7 +667,7 @@
       "__toKey-C72hUfwS.min.js",
       "_get-C5gQxxub.min.js",
       "__initCloneObject-DnPaCxTN.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_index-BKnPtYW1.min.js",
       "_index-CvyxREt8.min.js",
       "_resolve-config-CDvWJYyX.js",
@@ -1174,6 +1174,28 @@
       "_pre-process-QQBu2FRt.js"
     ]
   },
+  "assets/integration/etch/main.js": {
+    "file": "assets/integration/etch-CxSSmmcT.js",
+    "name": "integration/etch",
+    "src": "assets/integration/etch/main.js",
+    "isEntry": true,
+    "imports": [
+      "_preload-helper-BVFHbGtQ.min.js",
+      "_logger-DmkfWO2A.js"
+    ],
+    "dynamicImports": [
+      "assets/integration/etch/modules/play/observer.ts"
+    ]
+  },
+  "assets/integration/etch/modules/play/observer.ts": {
+    "file": "assets/observer-BtL9khbm.js",
+    "name": "observer",
+    "src": "assets/integration/etch/modules/play/observer.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_logger-DmkfWO2A.js"
+    ]
+  },
   "assets/integration/gutenberg/block-editor.jsx": {
     "file": "assets/integration/gutenberg/block-editor-C-0XxuK1.js",
     "name": "integration/gutenberg/block-editor",
@@ -1404,12 +1426,12 @@
     ]
   },
   "assets/packages/core/tailwindcss-v3/play/observer.ts": {
-    "file": "assets/packages/core/tailwindcss-v3/play/observer-CRYJNMM1.js",
+    "file": "assets/packages/core/tailwindcss-v3/play/observer-CXCATZ2A.js",
     "name": "packages/core/tailwindcss-v3/play/observer",
     "src": "assets/packages/core/tailwindcss-v3/play/observer.ts",
     "isEntry": true,
     "imports": [
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_vfs-BhDTf5tB.js",
       "_instrumentation-DB2mxz-d.js",
       "_preload-helper-BVFHbGtQ.min.js",
@@ -1461,12 +1483,12 @@
     ]
   },
   "assets/packages/core/tailwindcss/play/worker.ts": {
-    "file": "assets/packages/core/tailwindcss/play/worker-G0H4QWO6.js",
+    "file": "assets/packages/core/tailwindcss/play/worker-C9aFPo_J.js",
     "name": "packages/core/tailwindcss/play/worker",
     "src": "assets/packages/core/tailwindcss/play/worker.ts",
     "isEntry": true,
     "imports": [
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "_cssesc-DkbcYlXT.js",
       "_preload-helper-BVFHbGtQ.min.js",
       "_index-Dfa4cJMK.min.js",
@@ -1481,7 +1503,7 @@
       "_pre-process-QQBu2FRt.js",
       "_index-DP3Svjvz.min.js",
       "_index-CvyxREt8.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_resolve-config-CDvWJYyX.js",
       "_index-Ca_nMnsa.min.js",
       "_get-C5gQxxub.min.js",
@@ -1507,19 +1529,19 @@
     "isDynamicEntry": true
   },
   "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/basic-languages/javascript/javascript.js": {
-    "file": "chunks/javascript-C4MD-XnJ.min.js",
+    "file": "chunks/javascript-DJMC5m4_.min.js",
     "name": "javascript",
     "src": "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/basic-languages/javascript/javascript.js",
     "isDynamicEntry": true,
     "imports": [
-      "_monaco-editor-BV1iw9sz.min.js",
+      "_monaco-editor-q8s_VaCv.min.js",
       "assets/dashboard/main.ts",
       "_preload-helper-BVFHbGtQ.min.js",
       "_index-BhcUEIkR.min.js",
       "_runtime-dom.esm-bundler-MZPCDE9A.min.js",
       "_runtime-core.esm-bundler-B3Nza2bI.min.js",
       "_isObject-8EXUDN8T.min.js",
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "_cssesc-DkbcYlXT.js",
       "_index-Dfa4cJMK.min.js",
       "_index.browser-BBNxE1As.min.js",
@@ -1531,7 +1553,7 @@
       "_pre-process-QQBu2FRt.js",
       "_index-DP3Svjvz.min.js",
       "_index-CvyxREt8.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_resolve-config-CDvWJYyX.js",
       "_index-Ca_nMnsa.min.js",
       "_get-C5gQxxub.min.js",
@@ -1544,19 +1566,19 @@
     ]
   },
   "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/language/css/cssMode.js": {
-    "file": "chunks/cssMode-BRrSQQrz.min.js",
+    "file": "chunks/cssMode-DyQ5agD7.min.js",
     "name": "cssMode",
     "src": "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/language/css/cssMode.js",
     "isDynamicEntry": true,
     "imports": [
-      "_monaco-editor-BV1iw9sz.min.js",
+      "_monaco-editor-q8s_VaCv.min.js",
       "assets/dashboard/main.ts",
       "_preload-helper-BVFHbGtQ.min.js",
       "_index-BhcUEIkR.min.js",
       "_runtime-dom.esm-bundler-MZPCDE9A.min.js",
       "_runtime-core.esm-bundler-B3Nza2bI.min.js",
       "_isObject-8EXUDN8T.min.js",
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "_cssesc-DkbcYlXT.js",
       "_index-Dfa4cJMK.min.js",
       "_index.browser-BBNxE1As.min.js",
@@ -1568,7 +1590,7 @@
       "_pre-process-QQBu2FRt.js",
       "_index-DP3Svjvz.min.js",
       "_index-CvyxREt8.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_resolve-config-CDvWJYyX.js",
       "_index-Ca_nMnsa.min.js",
       "_get-C5gQxxub.min.js",
@@ -1581,19 +1603,19 @@
     ]
   },
   "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/language/typescript/tsMode.js": {
-    "file": "chunks/tsMode-CMlQq34N.min.js",
+    "file": "chunks/tsMode-6heNXIFa.min.js",
     "name": "tsMode",
     "src": "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/language/typescript/tsMode.js",
     "isDynamicEntry": true,
     "imports": [
-      "_monaco-editor-BV1iw9sz.min.js",
+      "_monaco-editor-q8s_VaCv.min.js",
       "assets/dashboard/main.ts",
       "_preload-helper-BVFHbGtQ.min.js",
       "_index-BhcUEIkR.min.js",
       "_runtime-dom.esm-bundler-MZPCDE9A.min.js",
       "_runtime-core.esm-bundler-B3Nza2bI.min.js",
       "_isObject-8EXUDN8T.min.js",
-      "_worker-DiHLypH0.js",
+      "_worker-Bam-hQuc.js",
       "_cssesc-DkbcYlXT.js",
       "_index-Dfa4cJMK.min.js",
       "_index.browser-BBNxE1As.min.js",
@@ -1605,7 +1627,7 @@
       "_pre-process-QQBu2FRt.js",
       "_index-DP3Svjvz.min.js",
       "_index-CvyxREt8.min.js",
-      "_build-CCSww3Gc.js",
+      "_build-DlKo8pDN.js",
       "_resolve-config-CDvWJYyX.js",
       "_index-Ca_nMnsa.min.js",
       "_get-C5gQxxub.min.js",

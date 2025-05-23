@@ -34,6 +34,12 @@ class Compile
             if (\trim($post->post_content) === '' || \trim($post->post_content) === '0') {
                 continue;
             }
+            /**
+             * @TODO: More robust and reliable API for external usage.
+             */
+            if (\apply_filters('f!windpress/integration/gutenberg/compile:get_contents.skip', \false, $post)) {
+                continue;
+            }
             $post_content = $post->post_content;
             if (\apply_filters('f!windpress/integration/gutenberg/compile:get_contents.render', \true, $post)) {
                 $fn_renders = \apply_filters('f!windpress/integration/gutenberg/compile:get_contents.render_fn', ['do_blocks', 'wptexturize', 'convert_smilies', 'shortcode_unautop', 'wp_filter_content_tags', 'do_shortcode'], $post);
