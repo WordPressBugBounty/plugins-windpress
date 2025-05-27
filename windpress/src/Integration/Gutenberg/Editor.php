@@ -44,6 +44,11 @@ class Editor
         $handle = WIND_PRESS::WP_OPTION . ':integration-gutenberg-block-editor';
         AssetVite::get_instance()->enqueue_asset('assets/integration/gutenberg/block-editor.jsx', ['handle' => $handle, 'in-footer' => \true, 'dependencies' => ['wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-hooks', 'wp-i18n', 'react', 'react-dom']]);
         \wp_add_inline_script($handle, <<<JS
+    // add __windpress__disable_playObserver to window if not exists
+    if (typeof window.__windpress__disable_playObserver === 'undefined') {
+        window.__windpress__disable_playObserver = true;
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         wp.hooks.addFilter('windpressgutenberg-autocomplete-items-query', 'windpressgutenberg', async (autocompleteItems, text) => {
             const windpress_suggestions = await window.windpress.module.autocomplete.query(text);

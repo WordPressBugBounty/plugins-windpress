@@ -11,7 +11,6 @@
 declare (strict_types=1);
 namespace WindPress\WindPress\Utils;
 
-use WP_Scripts;
 /**
  * Cache utility functions for the plugin.
  *
@@ -88,9 +87,7 @@ class Cache
              */
             global $wp_scripts;
             $handles = [];
-            /**
-             * @var \WP_Scripts $scripts
-             */
+            /** @var \WP_Scripts $scripts */
             $scripts = \wp_clone($wp_scripts);
             $scripts->all_deps($scripts->queue);
             foreach ($scripts->to_do as $handle) {
@@ -99,15 +96,9 @@ class Cache
                     $handles[] = $handle;
                 }
             }
-            \add_filter('sgo_js_minify_exclude', function ($exclude_list) use($handles) {
-                return \array_merge($exclude_list, $handles);
-            });
-            \add_filter('sgo_javascript_combine_exclude', function ($exclude_list) use($handles) {
-                return \array_merge($exclude_list, $handles);
-            });
-            \add_filter('sgo_js_async_exclude', function ($exclude_list) use($handles) {
-                return \array_merge($exclude_list, $handles);
-            });
+            \add_filter('sgo_js_minify_exclude', fn($exclude_list) => \array_merge($exclude_list, $handles));
+            \add_filter('sgo_javascript_combine_exclude', fn($exclude_list) => \array_merge($exclude_list, $handles));
+            \add_filter('sgo_js_async_exclude', fn($exclude_list) => \array_merge($exclude_list, $handles));
         }, 19);
     }
 }
