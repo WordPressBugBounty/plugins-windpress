@@ -4,7 +4,7 @@
 
 $loader = (static function () {
     // Backup the autoloaded Composer files
-    $existingComposerAutoloadFiles = $GLOBALS['__composer_autoload_files'] ?? [];
+    $existingComposerAutoloadFiles = isset($GLOBALS['__composer_autoload_files']) ? $GLOBALS['__composer_autoload_files'] : [];
 
     $loader = require_once __DIR__.'/autoload.php';
     // Ensure InstalledVersions is available
@@ -79,11 +79,15 @@ if (!function_exists('mb_http_input')) { function mb_http_input() { return \Wind
 if (!function_exists('mb_http_output')) { function mb_http_output() { return \WindPressDeps\mb_http_output(...func_get_args()); } }
 if (!function_exists('mb_internal_encoding')) { function mb_internal_encoding() { return \WindPressDeps\mb_internal_encoding(...func_get_args()); } }
 if (!function_exists('mb_language')) { function mb_language() { return \WindPressDeps\mb_language(...func_get_args()); } }
+if (!function_exists('mb_lcfirst')) { function mb_lcfirst() { return \WindPressDeps\mb_lcfirst(...func_get_args()); } }
 if (!function_exists('mb_list_encodings')) { function mb_list_encodings() { return \WindPressDeps\mb_list_encodings(...func_get_args()); } }
+if (!function_exists('mb_ltrim')) { function mb_ltrim() { return \WindPressDeps\mb_ltrim(...func_get_args()); } }
 if (!function_exists('mb_ord')) { function mb_ord() { return \WindPressDeps\mb_ord(...func_get_args()); } }
 if (!function_exists('mb_output_handler')) { function mb_output_handler() { return \WindPressDeps\mb_output_handler(...func_get_args()); } }
 if (!function_exists('mb_parse_str')) { function mb_parse_str() { return \WindPressDeps\mb_parse_str(...func_get_args()); } }
+if (!function_exists('mb_rtrim')) { function mb_rtrim() { return \WindPressDeps\mb_rtrim(...func_get_args()); } }
 if (!function_exists('mb_scrub')) { function mb_scrub() { return \WindPressDeps\mb_scrub(...func_get_args()); } }
+if (!function_exists('mb_str_pad')) { function mb_str_pad() { return \WindPressDeps\mb_str_pad(...func_get_args()); } }
 if (!function_exists('mb_str_split')) { function mb_str_split() { return \WindPressDeps\mb_str_split(...func_get_args()); } }
 if (!function_exists('mb_stripos')) { function mb_stripos() { return \WindPressDeps\mb_stripos(...func_get_args()); } }
 if (!function_exists('mb_stristr')) { function mb_stristr() { return \WindPressDeps\mb_stristr(...func_get_args()); } }
@@ -100,6 +104,8 @@ if (!function_exists('mb_strwidth')) { function mb_strwidth() { return \WindPres
 if (!function_exists('mb_substitute_character')) { function mb_substitute_character() { return \WindPressDeps\mb_substitute_character(...func_get_args()); } }
 if (!function_exists('mb_substr')) { function mb_substr() { return \WindPressDeps\mb_substr(...func_get_args()); } }
 if (!function_exists('mb_substr_count')) { function mb_substr_count() { return \WindPressDeps\mb_substr_count(...func_get_args()); } }
+if (!function_exists('mb_trim')) { function mb_trim() { return \WindPressDeps\mb_trim(...func_get_args()); } }
+if (!function_exists('mb_ucfirst')) { function mb_ucfirst() { return \WindPressDeps\mb_ucfirst(...func_get_args()); } }
 if (!function_exists('normalizer_is_normalized')) { function normalizer_is_normalized() { return \WindPressDeps\normalizer_is_normalized(...func_get_args()); } }
 if (!function_exists('normalizer_normalize')) { function normalizer_normalize() { return \WindPressDeps\normalizer_normalize(...func_get_args()); } }
 if (!function_exists('preg_last_error_msg')) { function preg_last_error_msg() { return \WindPressDeps\preg_last_error_msg(...func_get_args()); } }

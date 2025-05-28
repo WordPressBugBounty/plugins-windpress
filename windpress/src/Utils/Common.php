@@ -26,25 +26,25 @@ class Common
      *
      * @param string $type The type of the request. Available values: `admin`, `ajax`, `frontend`, `rest`, `cron`.
      */
-    public static function is_request(string $type) : bool
+    public static function is_request(string $type): bool
     {
         switch ($type) {
             case 'admin':
-                return \is_admin();
+                return is_admin();
             case 'ajax':
-                return \wp_doing_ajax();
+                return wp_doing_ajax();
             case 'rest':
-                return \defined('REST_REQUEST') && \REST_REQUEST;
+                return defined('REST_REQUEST') && \REST_REQUEST;
             case 'cron':
-                return \wp_doing_cron();
+                return wp_doing_cron();
             case 'json':
-                return \wp_is_json_request();
+                return wp_is_json_request();
             case 'xmlrpc':
-                return \defined('XMLRPC_REQUEST') && \XMLRPC_REQUEST;
+                return defined('XMLRPC_REQUEST') && \XMLRPC_REQUEST;
             case 'xml':
-                return \wp_is_xml_request();
+                return wp_is_xml_request();
             case 'frontend':
-                return (!\is_admin() || \wp_doing_ajax()) && !\wp_doing_cron();
+                return (!is_admin() || wp_doing_ajax()) && !wp_doing_cron();
             default:
                 return \false;
         }
@@ -57,21 +57,21 @@ class Common
      */
     public static function plugin_data(?string $key = null)
     {
-        if (!\function_exists('get_plugin_data')) {
+        if (!function_exists('get_plugin_data')) {
             require_once \ABSPATH . 'wp-admin/includes/plugin.php';
         }
-        $plugin_data = \wp_cache_get('plugin_data', WIND_PRESS::WP_OPTION);
+        $plugin_data = wp_cache_get('plugin_data', WIND_PRESS::WP_OPTION);
         if (!$plugin_data) {
-            $plugin_data = \get_plugin_data(WIND_PRESS::FILE);
-            \wp_cache_set('plugin_data', $plugin_data, WIND_PRESS::WP_OPTION);
+            $plugin_data = get_plugin_data(WIND_PRESS::FILE);
+            wp_cache_set('plugin_data', $plugin_data, WIND_PRESS::WP_OPTION);
         }
         return $key ? $plugin_data[$key] : $plugin_data;
     }
-    public static function is_updater_library_available() : bool
+    public static function is_updater_library_available(): bool
     {
-        return \class_exists(PluginUpdater::class);
+        return class_exists(PluginUpdater::class);
     }
-    public static function random_slug(int $length = 21) : string
+    public static function random_slug(int $length = 21): string
     {
         return (new \WindPressDeps\Hidehalo\Nanoid\Client())->generateId($length, \WindPressDeps\Hidehalo\Nanoid\Client::MODE_DYNAMIC);
     }
@@ -83,14 +83,14 @@ class Common
      */
     public static function redirect(string $location, bool $safe = \false, int $status = 302, string $x_redirect_by = 'WordPress')
     {
-        if (!\headers_sent()) {
+        if (!headers_sent()) {
             if ($safe) {
-                \wp_safe_redirect($location, $status, $x_redirect_by);
+                wp_safe_redirect($location, $status, $x_redirect_by);
             } else {
-                \wp_redirect($location, $status, $x_redirect_by);
+                wp_redirect($location, $status, $x_redirect_by);
             }
         } else {
-            echo '<meta http-equiv="refresh" content="0;url=' . \esc_url($location) . '">';
+            echo '<meta http-equiv="refresh" content="0;url=' . esc_url($location) . '">';
         }
         exit;
     }
@@ -102,18 +102,18 @@ class Common
      * @param int $flags The flags to pass to the file_put_contents() function.
      * @throws Exception
      */
-    public static function save_file($content, string $file_path, int $flags = 0) : void
+    public static function save_file($content, string $file_path, int $flags = 0): void
     {
         /**
          * @var \WP_Filesystem_Base $wp_filesystem
          */
         global $wp_filesystem;
-        if (!\file_exists($file_path)) {
-            \wp_mkdir_p(\dirname($file_path));
+        if (!file_exists($file_path)) {
+            wp_mkdir_p(dirname($file_path));
         }
         if (!$wp_filesystem) {
             require_once \ABSPATH . 'wp-admin/includes/file.php';
-            \WP_Filesystem();
+            WP_Filesystem();
         }
         $result = $wp_filesystem->put_contents($file_path, $content, $flags);
         if ($result === \false) {
@@ -136,7 +136,7 @@ class Common
      * @param string|false $type      Type of resource. 'f' for file, 'd' for directory.
      *                                Default false.
      */
-    public static function delete_file($file_path, $recursive = \false, $type = \false) : void
+    public static function delete_file($file_path, $recursive = \false, $type = \false): void
     {
         /**
          * @var \WP_Filesystem_Base $wp_filesystem
@@ -144,7 +144,7 @@ class Common
         global $wp_filesystem;
         if (!$wp_filesystem) {
             require_once \ABSPATH . 'wp-admin/includes/file.php';
-            \WP_Filesystem();
+            WP_Filesystem();
         }
         $result = $wp_filesystem->delete($file_path, $recursive, $type);
         if ($result === \false) {

@@ -21,13 +21,13 @@ class Editor
 {
     public function __construct()
     {
-        \add_action('lc_editor_before_body_closing', fn() => $this->register_livecanvas_autocomplete(), 1000001);
+        add_action('lc_editor_before_body_closing', fn() => $this->register_livecanvas_autocomplete(), 1000001);
     }
     public function register_livecanvas_autocomplete()
     {
         $handle = WIND_PRESS::WP_OPTION . ':integration-livecanvas-editor';
         AssetVite::get_instance()->enqueue_asset('assets/integration/livecanvas/main.js', ['handle' => $handle, 'in_footer' => \true]);
-        \wp_localize_script($handle, 'windpresslivecanvas', ['_version' => WIND_PRESS::VERSION, 'assets' => ['url' => AssetVite::asset_base_url()], 'site_meta' => ['name' => \get_bloginfo('name'), 'site_url' => \get_site_url(), 'admin_url' => AdminPage::get_page_url()]]);
+        wp_localize_script($handle, 'windpresslivecanvas', ['_version' => WIND_PRESS::VERSION, 'assets' => ['url' => AssetVite::asset_base_url()], 'site_meta' => ['name' => get_bloginfo('name'), 'site_url' => get_site_url(), 'admin_url' => AdminPage::get_page_url()]]);
         echo <<<HTML
     <script>
         document.addEventListener('DOMContentLoaded', async function () {

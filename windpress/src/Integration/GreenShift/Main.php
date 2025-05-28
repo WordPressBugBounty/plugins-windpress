@@ -21,19 +21,19 @@ class Main implements IntegrationInterface
 {
     public function __construct()
     {
-        \add_filter('f!windpress/core/cache:compile.providers', fn(array $providers): array => $this->register_provider($providers));
+        add_filter('f!windpress/core/cache:compile.providers', fn(array $providers): array => $this->register_provider($providers));
     }
-    public function get_name() : string
+    public function get_name(): string
     {
         return 'greenshift';
     }
-    public function is_enabled() : bool
+    public function is_enabled(): bool
     {
-        return (bool) \apply_filters('f!windpress/integration/greenshift:enabled', Config::get(\sprintf('integration.%s.enabled', $this->get_name()), \true));
+        return (bool) apply_filters('f!windpress/integration/greenshift:enabled', Config::get(sprintf('integration.%s.enabled', $this->get_name()), \true));
     }
-    public function register_provider(array $providers) : array
+    public function register_provider(array $providers): array
     {
-        $providers[] = ['id' => $this->get_name(), 'name' => \__('GreenShift', 'windpress'), 'description' => \__('The GreenShift integration. It requires the Gutenberg/Block Editor integration enabled.', 'windpress'), 'callback' => \WindPress\WindPress\Integration\GreenShift\Compile::class, 'enabled' => $this->is_enabled(), 'meta' => ['experimental' => \true]];
+        $providers[] = ['id' => $this->get_name(), 'name' => __('GreenShift', 'windpress'), 'description' => __('The GreenShift integration. It requires the Gutenberg/Block Editor integration enabled.', 'windpress'), 'callback' => \WindPress\WindPress\Integration\GreenShift\Compile::class, 'enabled' => $this->is_enabled(), 'meta' => ['experimental' => \true]];
         return $providers;
     }
 }

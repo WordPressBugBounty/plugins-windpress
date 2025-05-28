@@ -56,7 +56,7 @@ class AssetVite
      * into the static property. On subsequent runs, it returns the client existing
      * object stored in the static property.
      */
-    public static function get_instance() : self
+    public static function get_instance(): self
     {
         if (!isset(self::$instance)) {
             self::$instance = new self();
@@ -77,9 +77,9 @@ class AssetVite
      *                      - 'css-media'         (string) The media attribute value for the stylesheet tag.
      *                      - 'css-only'          (bool)   Whether this asset is only CSS.
      */
-    public function enqueue_asset(string $entry, array $options) : bool
+    public function enqueue_asset(string $entry, array $options): bool
     {
-        return $this->_enqueue_asset(\dirname(WIND_PRESS::FILE) . '/build', $entry, $options);
+        return $this->_enqueue_asset(dirname(WIND_PRESS::FILE) . '/build', $entry, $options);
     }
     /**
      * Register asset
@@ -95,18 +95,18 @@ class AssetVite
      *                      - 'css-media'         (string) The media attribute value for the stylesheet tag.
      *                      - 'css-only'          (bool)   Whether this asset is only CSS.
      */
-    public function register_asset(string $entry, array $options) : ?array
+    public function register_asset(string $entry, array $options): ?array
     {
-        return $this->_register_asset(\dirname(WIND_PRESS::FILE) . '/build', $entry, $options);
+        return $this->_register_asset(dirname(WIND_PRESS::FILE) . '/build', $entry, $options);
     }
     /**
      * Get the asset base absolute path.
      *
      * @return string The asset base absolute path.
      */
-    public static function asset_base_url() : string
+    public static function asset_base_url(): string
     {
-        return \plugins_url('build/', WIND_PRESS::FILE);
+        return plugins_url('build/', WIND_PRESS::FILE);
     }
     /**
      * Get manifest data
@@ -120,7 +120,7 @@ class AssetVite
      *
      * @return object Object containing manifest type and data.
      */
-    public function get_manifest(string $manifest_dir) : object
+    public function get_manifest(string $manifest_dir): object
     {
         $dev_manifest = 'vite-dev-server';
         // Avoid repeatedly opening & decoding the same file.
@@ -128,21 +128,21 @@ class AssetVite
         $file_names = [$dev_manifest, 'manifest'];
         foreach ($file_names as $file_name) {
             $is_dev = $file_name === $dev_manifest;
-            $manifest_path = \sprintf('%s/%s.json', $manifest_dir, $file_name);
+            $manifest_path = sprintf('%s/%s.json', $manifest_dir, $file_name);
             if (isset($manifests[$manifest_path])) {
                 return $manifests[$manifest_path];
             }
-            if (\is_file($manifest_path) && \is_readable($manifest_path)) {
+            if (is_file($manifest_path) && is_readable($manifest_path)) {
                 break;
             }
             unset($manifest_path);
         }
         if (!isset($manifest_path)) {
-            throw new Exception(\esc_html(\sprintf('[Vite] No manifest found in %s.', $manifest_dir)));
+            throw new Exception(esc_html(sprintf('[Vite] No manifest found in %s.', $manifest_dir)));
         }
-        $manifest = \wp_json_file_decode($manifest_path);
+        $manifest = wp_json_file_decode($manifest_path);
         if (!$manifest) {
-            throw new Exception(\esc_html(\sprintf('[Vite] Failed to read manifest file %s.', $manifest_path)));
+            throw new Exception(esc_html(sprintf('[Vite] Failed to read manifest file %s.', $manifest_path)));
         }
         /**
          * Filter manifest data
@@ -152,7 +152,7 @@ class AssetVite
          * @param string $manifest_path Manifest file path.
          * @param bool   $is_dev        Whether this is a manifest for development assets.
          */
-        $manifest = \apply_filters('f!windpress/utils/asset_vite/vite_for_wp__manifest_data', $manifest, $manifest_dir, $manifest_path);
+        $manifest = apply_filters('f!windpress/utils/asset_vite/vite_for_wp__manifest_data', $manifest, $manifest_dir, $manifest_path);
         $manifests[$manifest_path] = (object) ['data' => $manifest, 'dir' => $manifest_dir, 'is_dev' => $is_dev];
         return $manifests[$manifest_path];
     }
@@ -166,9 +166,9 @@ class AssetVite
      *
      * @param string $handle Script handle.
      */
-    public function filter_script_tag(string $handle) : void
+    public function filter_script_tag(string $handle): void
     {
-        \add_filter('script_loader_tag', fn(...$args) => $this->set_script_type_attribute($handle, ...$args), 10, 3);
+        add_filter('script_loader_tag', fn(...$args) => $this->set_script_type_attribute($handle, ...$args), 10, 3);
     }
     /**
      * Add `type="module"` to a script tag
@@ -183,7 +183,7 @@ class AssetVite
      *
      * @return string Script tag with attribute `type="module"` added.
      */
-    public function set_script_type_attribute(string $target_handle, string $tag, string $handle, string $src) : string
+    public function set_script_type_attribute(string $target_handle, string $tag, string $handle, string $src): string
     {
         if ($target_handle !== $handle) {
             return $tag;
@@ -206,9 +206,9 @@ class AssetVite
      * @param object $manifest Asset manifest.
      * @param string $entry    Asset entry name.
      */
-    public function generate_development_asset_src(object $manifest, string $entry) : string
+    public function generate_development_asset_src(object $manifest, string $entry): string
     {
-        return \sprintf('%s/%s', \untrailingslashit($manifest->data->origin), \trim(\preg_replace('/[\\/]{2,}/', '/', \sprintf('%s/%s', $manifest->data->base, $entry)), '/'));
+        return sprintf('%s/%s', untrailingslashit($manifest->data->origin), trim(preg_replace('/[\/]{2,}/', '/', sprintf('%s/%s', $manifest->data->base, $entry)), '/'));
     }
     /**
      * Register vite client script
@@ -217,14 +217,14 @@ class AssetVite
      *
      * @param object $manifest Asset manifest.
      */
-    public function register_vite_client_script(object $manifest) : void
+    public function register_vite_client_script(object $manifest): void
     {
-        if (\wp_script_is(self::VITE_CLIENT_SCRIPT_HANDLE)) {
+        if (wp_script_is(self::VITE_CLIENT_SCRIPT_HANDLE)) {
             return;
         }
         $src = $this->generate_development_asset_src($manifest, '@vite/client');
         // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-        \wp_register_script(self::VITE_CLIENT_SCRIPT_HANDLE, $src, [], null, \false);
+        wp_register_script(self::VITE_CLIENT_SCRIPT_HANDLE, $src, [], null, \false);
         $this->filter_script_tag(self::VITE_CLIENT_SCRIPT_HANDLE);
     }
     /**
@@ -234,21 +234,21 @@ class AssetVite
      *
      * @param object $manifest Asset manifest.
      */
-    public function inject_react_refresh_preamble_script(object $manifest) : void
+    public function inject_react_refresh_preamble_script(object $manifest): void
     {
         static $is_react_refresh_preamble_printed = \false;
         if ($is_react_refresh_preamble_printed) {
             return;
         }
-        if (!\in_array('vite:react-refresh', $manifest->data->plugins, \true)) {
+        if (!in_array('vite:react-refresh', $manifest->data->plugins, \true)) {
             return;
         }
         $react_refresh_script_src = $this->generate_development_asset_src($manifest, '@react-refresh');
         $script_position = 'after';
         $script = "\n            import RefreshRuntime from \"{$react_refresh_script_src}\";\n            RefreshRuntime.injectIntoGlobalHook(window);\n            window.\$RefreshReg\$ = () => {};\n            window.\$RefreshSig\$ = () => (type) => type;\n            window.__vite_plugin_react_preamble_installed__ = true;\n        ";
         // escape the script to prevent it from being executed by the browser
-        \wp_add_inline_script(self::VITE_CLIENT_SCRIPT_HANDLE, $script, $script_position);
-        \add_filter('wp_inline_script_attributes', function (array $attributes) use($script_position) : array {
+        wp_add_inline_script(self::VITE_CLIENT_SCRIPT_HANDLE, $script, $script_position);
+        add_filter('wp_inline_script_attributes', function (array $attributes) use ($script_position): array {
             if (isset($attributes['id']) && $attributes['id'] === self::VITE_CLIENT_SCRIPT_HANDLE . ('-js-' . $script_position)) {
                 $attributes['type'] = 'module';
             }
@@ -267,16 +267,16 @@ class AssetVite
      *
      * @return array|null Array containing registered scripts or NULL if the none was registered.
      */
-    public function load_development_asset(object $manifest, string $entry, array $options) : ?array
+    public function load_development_asset(object $manifest, string $entry, array $options): ?array
     {
         $this->register_vite_client_script($manifest);
         $this->inject_react_refresh_preamble_script($manifest);
-        $dependencies = \array_merge([self::VITE_CLIENT_SCRIPT_HANDLE], $options['dependencies']);
+        $dependencies = array_merge([self::VITE_CLIENT_SCRIPT_HANDLE], $options['dependencies']);
         $src = $this->generate_development_asset_src($manifest, $entry);
         $this->filter_script_tag($options['handle']);
         // This is a development script, browsers shouldn't cache it.
         // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-        if (!\wp_register_script($options['handle'], $src, $dependencies, null, $options['in-footer'])) {
+        if (!wp_register_script($options['handle'], $src, $dependencies, null, $options['in-footer'])) {
             return null;
         }
         $assets = ['scripts' => [$options['handle']], 'styles' => $options['css-dependencies']];
@@ -288,7 +288,7 @@ class AssetVite
          * @param string $entry    Entrypoint file.
          * @param array  $options  Enqueue options.
          */
-        $assets = \apply_filters('f!windpress/utils/asset_vite/vite_for_wp__development_assets', $assets, $manifest, $entry, $options);
+        $assets = apply_filters('f!windpress/utils/asset_vite/vite_for_wp__development_assets', $assets, $manifest, $entry, $options);
         return $assets;
     }
     /**
@@ -302,32 +302,32 @@ class AssetVite
      *
      * @return array|null Array containing registered scripts & styles or NULL if there was an error.
      */
-    public function load_production_asset(object $manifest, string $entry, array $options) : ?array
+    public function load_production_asset(object $manifest, string $entry, array $options): ?array
     {
         $url = $this->prepare_asset_url($manifest->dir);
         if (!isset($manifest->data->{$entry})) {
-            if (\defined('WP_DEBUG') && \WP_DEBUG) {
-                \wp_die(\esc_html(\sprintf('[Vite] Entry %s not found.', $entry)));
+            if (defined('WP_DEBUG') && \WP_DEBUG) {
+                wp_die(esc_html(sprintf('[Vite] Entry %s not found.', $entry)));
             }
             return null;
         }
         $assets = ['scripts' => [], 'styles' => []];
         $item = $manifest->data->{$entry};
-        $src = \sprintf('%s/%s', $url, $item->file);
+        $src = sprintf('%s/%s', $url, $item->file);
         if (!$options['css-only']) {
             $this->filter_script_tag($options['handle']);
             // Don't worry about browser caching as the version is embedded in the file name.
             // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-            if (\wp_register_script($options['handle'], $src, $options['dependencies'], null, $options['in-footer'])) {
+            if (wp_register_script($options['handle'], $src, $options['dependencies'], null, $options['in-footer'])) {
                 $assets['scripts'][] = $options['handle'];
             }
         }
         if (!empty($item->css)) {
             foreach ($item->css as $index => $css_file_path) {
-                $style_handle = \sprintf('%s-%s', $options['handle'], $index);
+                $style_handle = sprintf('%s-%s', $options['handle'], $index);
                 // Don't worry about browser caching as the version is embedded in the file name.
                 // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-                if (\wp_register_style($style_handle, \sprintf('%s/%s', $url, $css_file_path), $options['css-dependencies'], null, $options['css-media'])) {
+                if (wp_register_style($style_handle, sprintf('%s/%s', $url, $css_file_path), $options['css-dependencies'], null, $options['css-media'])) {
                     $assets['styles'][] = $style_handle;
                 }
             }
@@ -340,7 +340,7 @@ class AssetVite
          * @param string $entry    Entrypoint file.
          * @param array  $options  Enqueue options.
          */
-        $assets = \apply_filters('f!windpress/utils/asset_vite/vite_for_wp__production_assets', $assets, $manifest, $entry, $options);
+        $assets = apply_filters('f!windpress/utils/asset_vite/vite_for_wp__production_assets', $assets, $manifest, $entry, $options);
         return $assets;
     }
     /**
@@ -352,10 +352,10 @@ class AssetVite
      *
      * @return array Array of options merged with defaults.
      */
-    public function parse_options(array $options) : array
+    public function parse_options(array $options): array
     {
         $defaults = ['css-dependencies' => [], 'css-media' => 'all', 'css-only' => \false, 'dependencies' => [], 'handle' => '', 'in-footer' => \false];
-        return \wp_parse_args($options, $defaults);
+        return wp_parse_args($options, $defaults);
     }
     /**
      * Prepare asset url
@@ -370,15 +370,15 @@ class AssetVite
      */
     public function prepare_asset_url(string $dir)
     {
-        $content_dir = \wp_normalize_path(\WP_CONTENT_DIR);
-        $manifest_dir = \wp_normalize_path($dir);
-        $url = \content_url(\str_replace($content_dir, '', $manifest_dir));
-        $url_matches_pattern = \preg_match('/(?<address>http(?:s?):\\/\\/.*\\/)(?<fullPath>wp-content(?<removablePath>\\/.*)\\/(?:plugins|themes)\\/.*)/', $url, $url_parts);
+        $content_dir = wp_normalize_path(\WP_CONTENT_DIR);
+        $manifest_dir = wp_normalize_path($dir);
+        $url = content_url(str_replace($content_dir, '', $manifest_dir));
+        $url_matches_pattern = preg_match('/(?<address>http(?:s?):\/\/.*\/)(?<fullPath>wp-content(?<removablePath>\/.*)\/(?:plugins|themes)\/.*)/', $url, $url_parts);
         if ($url_matches_pattern === 0) {
             return $url;
         }
         ['address' => $address, 'fullPath' => $full_path, 'removablePath' => $removable_path] = $url_parts;
-        return \sprintf('%s%s', $address, \str_replace($removable_path, '', $full_path));
+        return sprintf('%s%s', $address, str_replace($removable_path, '', $full_path));
     }
     /**
      * Register asset
@@ -392,13 +392,13 @@ class AssetVite
      * @param string $entry        Entrypoint to enqueue.
      * @param array  $options      Enqueue options.
      */
-    public function _register_asset(string $manifest_dir, string $entry, array $options) : ?array
+    public function _register_asset(string $manifest_dir, string $entry, array $options): ?array
     {
         try {
             $manifest = $this->get_manifest($manifest_dir);
         } catch (Exception $exception) {
-            if (\defined('WP_DEBUG') && \WP_DEBUG) {
-                \wp_die(\esc_html($exception->getMessage()));
+            if (defined('WP_DEBUG') && \WP_DEBUG) {
+                wp_die(esc_html($exception->getMessage()));
             }
             return null;
         }
@@ -417,7 +417,7 @@ class AssetVite
      * @param string $entry        Entrypoint to enqueue.
      * @param array  $options      Enqueue options.
      */
-    public function _enqueue_asset(string $manifest_dir, string $entry, array $options) : bool
+    public function _enqueue_asset(string $manifest_dir, string $entry, array $options): bool
     {
         $assets = $this->_register_asset($manifest_dir, $entry, $options);
         if ($assets === null) {

@@ -98,6 +98,7 @@
 	__('Save', 'windpress');
 	__('Close', 'windpress');
 	__('read-only', 'windpress');
+	__('Path on disk', 'windpress');
 	__('Delete', 'windpress');
 	__('Reset to default', 'windpress');
 	__('Are you sure you want to %s the "%s" file?', 'windpress');

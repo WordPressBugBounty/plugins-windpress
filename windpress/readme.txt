@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 3.2.35
+Stable tag: 3.2.36
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ WindPress is a platform agnostic [Tailwind CSS](https://tailwindcss.com/) integr
 
 **Tailwind CSS version**:
 - 3.4.17
-- 4.1.7
+- 4.1.8
 
 ### Features
 
@@ -122,6 +122,11 @@ Note: The Pro version has a version number with one higher minor version than th
 For instance:
 Free version 1.**0**.4
 Pro version 1.**1**.4
+
+= 3.2.36 =
+* **New**: Upgraded to Tailwind CSS v4 (4.1.8 latest)
+* **Improve**: [TW4] The Play Observer / Compiler performance & stability
+* **Improve**: [TW4] Robust `@import` handling
 
 = 3.2.35 =
 * **Improve**: [Gutenberg] The Play Observer / Compiler stability

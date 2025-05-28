@@ -102,8 +102,8 @@ class Client
     {
         $id = '';
         while (1 <= $size--) {
-            $rand = \mt_rand() / (\mt_getrandmax() + 1);
-            $id .= $this->alphabet[\intval($rand * 64)];
+            $rand = mt_rand() / (mt_getrandmax() + 1);
+            $id .= $this->alphabet[intval($rand * 64)];
         }
         return $id;
     }

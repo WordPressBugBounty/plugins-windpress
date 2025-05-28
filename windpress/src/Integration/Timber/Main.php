@@ -20,19 +20,19 @@ class Main implements IntegrationInterface
 {
     public function __construct()
     {
-        \add_filter('f!windpress/core/cache:compile.providers', fn(array $providers): array => $this->register_provider($providers));
+        add_filter('f!windpress/core/cache:compile.providers', fn(array $providers): array => $this->register_provider($providers));
     }
-    public function get_name() : string
+    public function get_name(): string
     {
         return 'timber';
     }
-    public function is_enabled() : bool
+    public function is_enabled(): bool
     {
-        return (bool) \apply_filters('f!windpress/integration/timber:enabled', Config::get(\sprintf('integration.%s.enabled', $this->get_name()), \true));
+        return (bool) apply_filters('f!windpress/integration/timber:enabled', Config::get(sprintf('integration.%s.enabled', $this->get_name()), \true));
     }
-    public function register_provider(array $providers) : array
+    public function register_provider(array $providers): array
     {
-        $providers[] = ['id' => $this->get_name(), 'name' => \__('Timber', 'windpress'), 'description' => \__('Timber integration', 'windpress'), 'callback' => \WindPress\WindPress\Integration\Timber\Compile::class, 'enabled' => $this->is_enabled()];
+        $providers[] = ['id' => $this->get_name(), 'name' => __('Timber', 'windpress'), 'description' => __('Timber integration', 'windpress'), 'callback' => \WindPress\WindPress\Integration\Timber\Compile::class, 'enabled' => $this->is_enabled()];
         return $providers;
     }
 }

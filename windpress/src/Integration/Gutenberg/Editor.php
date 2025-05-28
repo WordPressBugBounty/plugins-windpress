@@ -21,20 +21,20 @@ class Editor
 {
     public function __construct()
     {
-        \add_action('enqueue_block_editor_assets', fn() => $this->enqueue_block_editor_assets());
+        add_action('enqueue_block_editor_assets', fn() => $this->enqueue_block_editor_assets());
     }
     public function enqueue_block_editor_assets()
     {
-        $screen = \get_current_screen();
-        if (\is_admin() && $screen->is_block_editor()) {
-            \add_action('admin_head', fn() => $this->admin_head(), 1000001);
+        $screen = get_current_screen();
+        if (is_admin() && $screen->is_block_editor()) {
+            add_action('admin_head', fn() => $this->admin_head(), 1000001);
         }
     }
     public function admin_head()
     {
         Runtime::get_instance()->print_windpress_metadata();
         Runtime::get_instance()->enqueue_play_cdn();
-        if (\strpos($_SERVER['REQUEST_URI'], 'site-editor.php') !== \false) {
+        if (strpos($_SERVER['REQUEST_URI'], 'site-editor.php') !== \false) {
             // handle the canvas
             AssetVite::get_instance()->enqueue_asset('assets/integration/gutenberg/site-editor.js', ['handle' => WIND_PRESS::WP_OPTION . ':integration-gutenberg-site-editor', 'in-footer' => \true]);
         } else {
@@ -43,7 +43,7 @@ class Editor
         }
         $handle = WIND_PRESS::WP_OPTION . ':integration-gutenberg-block-editor';
         AssetVite::get_instance()->enqueue_asset('assets/integration/gutenberg/block-editor.jsx', ['handle' => $handle, 'in-footer' => \true, 'dependencies' => ['wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-hooks', 'wp-i18n', 'react', 'react-dom']]);
-        \wp_add_inline_script($handle, <<<JS
+        wp_add_inline_script($handle, <<<JS
     // add __windpress__disable_playObserver to window if not exists
     if (typeof window.__windpress__disable_playObserver === 'undefined') {
         window.__windpress__disable_playObserver = true;

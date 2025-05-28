@@ -8,7 +8,7 @@ class ComposerAutoloaderInit46c3eb80e773f5698709313eb56fa257
     private static $loader;
     public static function loadClassLoader($class)
     {
-        if ('WindPressDeps\\Composer\\Autoload\\ClassLoader' === $class) {
+        if ('Composer\Autoload\ClassLoader' === $class) {
             require __DIR__ . '/ClassLoader.php';
         }
     }
@@ -21,7 +21,7 @@ class ComposerAutoloaderInit46c3eb80e773f5698709313eb56fa257
             return self::$loader;
         }
         require __DIR__ . '/platform_check.php';
-        \spl_autoload_register(array('WindPressDeps\\ComposerAutoloaderInit46c3eb80e773f5698709313eb56fa257', 'loadClassLoader'), \true, \true);
+        \spl_autoload_register(array('WindPressDeps\ComposerAutoloaderInit46c3eb80e773f5698709313eb56fa257', 'loadClassLoader'), \true, \true);
         self::$loader = $loader = new \WindPressDeps\Composer\Autoload\ClassLoader(\dirname(__DIR__));
         \spl_autoload_unregister(array('WindPressDeps\\ComposerAutoloaderInit46c3eb80e773f5698709313eb56fa257', 'loadClassLoader'));
         require __DIR__ . '/autoload_static.php';

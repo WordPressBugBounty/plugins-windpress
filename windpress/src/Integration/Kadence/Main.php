@@ -21,19 +21,19 @@ class Main implements IntegrationInterface
 {
     public function __construct()
     {
-        \add_filter('f!windpress/core/cache:compile.providers', fn(array $providers): array => $this->register_provider($providers));
+        add_filter('f!windpress/core/cache:compile.providers', fn(array $providers): array => $this->register_provider($providers));
     }
-    public function get_name() : string
+    public function get_name(): string
     {
         return 'kadence';
     }
-    public function is_enabled() : bool
+    public function is_enabled(): bool
     {
-        return (bool) \apply_filters('f!windpress/integration/kadence:enabled', Config::get(\sprintf('integration.%s.enabled', $this->get_name()), \true));
+        return (bool) apply_filters('f!windpress/integration/kadence:enabled', Config::get(sprintf('integration.%s.enabled', $this->get_name()), \true));
     }
-    public function register_provider(array $providers) : array
+    public function register_provider(array $providers): array
     {
-        $providers[] = ['id' => $this->get_name(), 'name' => \__('Kadence WP', 'windpress'), 'description' => \__('The Kadence WP integration. It requires the Gutenberg/Block Editor integration enabled.', 'windpress'), 'enabled' => $this->is_enabled(), 'callback' => \WindPress\WindPress\Integration\Kadence\Compile::class, 'meta' => ['experimental' => \true]];
+        $providers[] = ['id' => $this->get_name(), 'name' => __('Kadence WP', 'windpress'), 'description' => __('The Kadence WP integration. It requires the Gutenberg/Block Editor integration enabled.', 'windpress'), 'enabled' => $this->is_enabled(), 'callback' => \WindPress\WindPress\Integration\Kadence\Compile::class, 'meta' => ['experimental' => \true]];
         return $providers;
     }
 }

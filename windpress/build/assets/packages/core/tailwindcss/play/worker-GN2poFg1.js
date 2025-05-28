@@ -1,0 +1,13 @@
+import { s as setupWorker } from "../../../../worker-BNiBfqYd.js";
+import "../../../../../chunks/preload-helper-BVFHbGtQ.min.js";
+import "../../../../../chunks/index-BmWe5YW7.min.js";
+import "../../../../../chunks/index-0ko3lTyl.min.js";
+import "../../../../../chunks/runtime-core.esm-bundler-hRyeZ98I.min.js";
+import "../../../../../chunks/isObject-DL0QMHX-.min.js";
+import "../../../../../chunks/index.browser-BBNxE1As.min.js";
+import "../../../../../chunks/index-SE8wVPz0.min.js";
+import "../../../../../chunks/redaxios.module-Dyf46lvQ.min.js";
+import "../../../../../chunks/index-EVinwGpQ.min.js";
+import "../../../../../chunks/get-DXxw6yUY.min.js";
+import "../../../../../chunks/_toKey-BRkTT7LT.min.js";
+setupWorker();
