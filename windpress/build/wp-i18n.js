@@ -55,12 +55,6 @@
 	__('Light', 'windpress');
 	__('Dark', 'windpress');
 	__('System', 'windpress');
-	__('Generating cache...', 'windpress');
-	__('Please wait while we generate the CSS cache.', 'windpress');
-	__('Cache generated', 'windpress');
-	__('Cache generated in %s.', 'windpress');
-	__('Generate Cache Error', 'windpress');
-	__('An error occurred while generating the CSS cache. Check the Browser\'s Console for more information', 'windpress');
 	__('Files', 'windpress');
 	__('Wizard', 'windpress');
 	__('Logs', 'windpress');
@@ -200,4 +194,10 @@
 	__('Generating...', 'windpress');
 	__('Generate', 'windpress');
 	__('Last Generated', 'windpress');
+	__('Generating cache...', 'windpress');
+	__('Please wait while we generate the CSS cache.', 'windpress');
+	__('Cache generated', 'windpress');
+	__('Cache generated in %s.', 'windpress');
+	__('Generate Cache Error', 'windpress');
+	__('An error occurred while generating the CSS cache. Check the Browser\'s Console for more information', 'windpress');
 });

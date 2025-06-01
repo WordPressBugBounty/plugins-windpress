@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 3.2.39
+Stable tag: 3.2.40
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -122,6 +122,10 @@ Note: The Pro version has a version number with one higher minor version than th
 For instance:
 Free version 1.**0**.4
 Pro version 1.**1**.4
+
+= 3.2.40 =
+* **Improve**: [Bricks] The Plain Classes and Variables feature compat for version 2.0-beta
+* **Improve**: Optimize the bundle (Zip) size of the plugin
 
 = 3.2.39 =
 * **New**: Upgraded to Tailwind CSS v4 (4.1.8 latest)
