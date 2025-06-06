@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 3.2.41
+Stable tag: 3.2.42
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -89,13 +89,15 @@ Affiliate Disclosure: This readme.txt may contain affiliate links. If you decide
 
 == Screenshots ==
 
-1. The WindPress settings page to choose the Tailwind CSS version or generate the cached CSS file.
+1. The WindPress settings page to choose the Tailwind CSS version.
 2. The `tailwind.config.js` file editor, which let adding the Tailwind CSS plugins.
 3. The `main.css` file editor, which let adding the custom CSS.
 4. The Tailwind CSS class name suggestions feature on the Gutenberg editor.
 5. Sort the Tailwind CSS classes on the input field.
 6. Hover over the Tailwind CSS class name to see the complete outputted CSS and the preview of the design canvas.
 7. The front-end page with the Tailwind CSS classes applied, as was added from the Gutenberg editor.
+8. The WindPress settings page to generate the cached CSS file.
+9. The WindPress log page to see the compiler logs.
 
 == Frequently Asked Questions ==
 
@@ -122,6 +124,9 @@ Note: The Pro version has a version number with one higher minor version than th
 For instance:
 Free version 1.**0**.4
 Pro version 1.**1**.4
+
+= 3.2.42 =
+* **Improve**: [Gutenberg] Run the Play Observer / Compiler even if the visual editor is not iframed
 
 = 3.2.41 =
 * **Fix**: [Bricks] Variables contain `--` in the value being registered to the Bricks Global Variables system

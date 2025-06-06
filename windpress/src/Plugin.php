@@ -102,24 +102,6 @@ final class Plugin
         do_action('a!windpress/plugin:boot.end');
     }
     /**
-     * Initialize the plugin updater.
-     * Pro version only.
-     *
-     * @return PluginUpdater
-     */
-    public function maybe_update_plugin()
-    {
-        if (!class_exists(PluginUpdater::class)) {
-            return null;
-        }
-        if ($this->plugin_updater instanceof \WindPressDeps\EDD_SL\PluginUpdater) {
-            return $this->plugin_updater;
-        }
-        $license = get_option(WIND_PRESS::WP_OPTION . '_license', ['key' => '', 'opt_in_pre_release' => \false]);
-        $this->plugin_updater = new PluginUpdater(WIND_PRESS::WP_OPTION, ['version' => WIND_PRESS::VERSION, 'license' => $license['key'] ? trim($license['key']) : \false, 'beta' => $license['opt_in_pre_release'], 'plugin_file' => WIND_PRESS::FILE, 'item_id' => WIND_PRESS::EDD_STORE['item_id'], 'store_url' => WIND_PRESS::EDD_STORE['store_url'], 'author' => WIND_PRESS::EDD_STORE['author']]);
-        return $this->plugin_updater;
-    }
-    /**
      * Handle the plugin's activation by (maybe) running database migrations
      * and initializing the plugin configuration.
      */
@@ -127,6 +109,7 @@ final class Plugin
     {
         do_action('a!windpress/plugin:activate_plugin.start');
         update_option(WIND_PRESS::WP_OPTION . '_version', WIND_PRESS::VERSION);
+        $this->maybe_new_plugin_version();
         $this->maybe_embedded_license();
         do_action('a!windpress/plugin:activate_plugin.end');
     }
@@ -192,6 +175,35 @@ final class Plugin
             array_unshift($links, sprintf('<a href="%s" style="color:#067b34;font-weight:600;" target="_blank">%s</a>', esc_url(Common::plugin_data('PluginURI') . '?utm_source=WordPress&utm_campaign=liteplugin&utm_medium=plugin-action-links&utm_content=Upgrade#pricing'), esc_html__('Upgrade to Pro', 'windpress')));
         }
         return $links;
+    }
+    /**
+     * Initialize the plugin updater.
+     * Pro version only.
+     *
+     * @return PluginUpdater
+     */
+    private function maybe_update_plugin()
+    {
+        if (!class_exists(PluginUpdater::class)) {
+            return null;
+        }
+        if ($this->plugin_updater instanceof \WindPressDeps\EDD_SL\PluginUpdater) {
+            return $this->plugin_updater;
+        }
+        $license = get_option(WIND_PRESS::WP_OPTION . '_license', ['key' => '', 'opt_in_pre_release' => \false]);
+        $this->plugin_updater = new PluginUpdater(WIND_PRESS::WP_OPTION, ['version' => WIND_PRESS::VERSION, 'license' => $license['key'] ? trim($license['key']) : \false, 'beta' => $license['opt_in_pre_release'], 'plugin_file' => WIND_PRESS::FILE, 'item_id' => WIND_PRESS::EDD_STORE['item_id'], 'store_url' => WIND_PRESS::EDD_STORE['store_url'], 'author' => WIND_PRESS::EDD_STORE['author']]);
+        return $this->plugin_updater;
+    }
+    /**
+     * Check if the plugin has a new version by clearing the cache.
+     * Pro version only.
+     */
+    private function maybe_new_plugin_version(): void
+    {
+        if (!class_exists(PluginUpdater::class)) {
+            return;
+        }
+        $this->maybe_update_plugin()->clear_cache();
     }
     /**
      * Check if the plugin distributed with an embedded license and activate the license.
