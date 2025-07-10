@@ -270,6 +270,7 @@ class ComposerStaticInit46c3eb80e773f5698709313eb56fa257
         'WindPress\\WindPress\\Integration\\Timber\\Compile' => __DIR__ . '/../..' . '/src/Integration/Timber/Compile.php',
         'WindPress\\WindPress\\Integration\\Timber\\Main' => __DIR__ . '/../..' . '/src/Integration/Timber/Main.php',
         'WindPress\\WindPress\\Plugin' => __DIR__ . '/../..' . '/src/Plugin.php',
+        'WindPress\\WindPress\\Upgrade\\UpgradeManager' => __DIR__ . '/../..' . '/src/Upgrade/UpgradeManager.php',
         'WindPress\\WindPress\\Utils\\AssetVite' => __DIR__ . '/../..' . '/src/Utils/AssetVite.php',
         'WindPress\\WindPress\\Utils\\Cache' => __DIR__ . '/../..' . '/src/Utils/Cache.php',
         'WindPress\\WindPress\\Utils\\Common' => __DIR__ . '/../..' . '/src/Utils/Common.php',

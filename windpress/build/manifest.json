@@ -1,6 +1,6 @@
 {
-  "_DashboardNavbar-hepBKI-W.min.js": {
-    "file": "assets/DashboardNavbar-hepBKI-W.min.js",
+  "_DashboardNavbar-ClJdr6IN.min.js": {
+    "file": "assets/DashboardNavbar-ClJdr6IN.min.js",
     "name": "DashboardNavbar",
     "imports": [
       "assets/dashboard/main.ts",
@@ -8,8 +8,8 @@
       "_index-l5GBeiGs.min.js"
     ]
   },
-  "_DashboardSidebarCollapse-B_Grw6Su.min.js": {
-    "file": "assets/DashboardSidebarCollapse-B_Grw6Su.min.js",
+  "_DashboardSidebarCollapse-DQh5VU3m.min.js": {
+    "file": "assets/DashboardSidebarCollapse-DQh5VU3m.min.js",
     "name": "DashboardSidebarCollapse",
     "imports": [
       "assets/dashboard/main.ts",
@@ -17,15 +17,15 @@
       "_runtime-core.esm-bundler-HqF9pg4M.min.js"
     ]
   },
-  "_FluidCalculatorSlideover-C2SFKFte.js": {
-    "file": "assets/FluidCalculatorSlideover-C2SFKFte.js",
+  "_FluidCalculatorSlideover-CxlQrxAk.js": {
+    "file": "assets/FluidCalculatorSlideover-CxlQrxAk.js",
     "name": "FluidCalculatorSlideover",
     "imports": [
       "assets/dashboard/main.ts",
       "_runtime-dom.esm-bundler-CZCO9KQc.min.js",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
       "_index-l5GBeiGs.min.js",
-      "_Separator-B1oW9hyi.min.js",
+      "_Separator-ozYRGkOb.min.js",
       "__plugin-vue_export-helper-DlAUqK2U.min.js"
     ],
     "css": [
@@ -36,16 +36,16 @@
     "file": "assets/FluidCalculatorSlideover-dZznKMod.css",
     "src": "_FluidCalculatorSlideover-dZznKMod.css"
   },
-  "_FormField-DH1tC5m9.min.js": {
-    "file": "assets/FormField-DH1tC5m9.min.js",
+  "_FormField-DCT8zL7L.min.js": {
+    "file": "assets/FormField-DCT8zL7L.min.js",
     "name": "FormField",
     "imports": [
       "assets/dashboard/main.ts",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js"
     ]
   },
-  "_PageCard-B3_KcIar.min.js": {
-    "file": "assets/PageCard-B3_KcIar.min.js",
+  "_PageCard-BFpt6-Gk.min.js": {
+    "file": "assets/PageCard-BFpt6-Gk.min.js",
     "name": "PageCard",
     "imports": [
       "_runtime-dom.esm-bundler-CZCO9KQc.min.js",
@@ -54,8 +54,8 @@
       "_runtime-core.esm-bundler-HqF9pg4M.min.js"
     ]
   },
-  "_Separator-B1oW9hyi.min.js": {
-    "file": "assets/Separator-B1oW9hyi.min.js",
+  "_Separator-ozYRGkOb.min.js": {
+    "file": "assets/Separator-ozYRGkOb.min.js",
     "name": "Separator",
     "imports": [
       "assets/dashboard/main.ts",
@@ -63,19 +63,19 @@
       "_index-l5GBeiGs.min.js"
     ]
   },
-  "_Switch-BY7SAQ3S.min.js": {
-    "file": "assets/Switch-BY7SAQ3S.min.js",
+  "_Switch-D5koBcFQ.min.js": {
+    "file": "assets/Switch-D5koBcFQ.min.js",
     "name": "Switch",
     "imports": [
       "assets/dashboard/main.ts",
       "_runtime-dom.esm-bundler-CZCO9KQc.min.js",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
-      "_FormField-DH1tC5m9.min.js",
+      "_FormField-DCT8zL7L.min.js",
       "_index-l5GBeiGs.min.js"
     ]
   },
-  "_Tree-BI6v595u.min.js": {
-    "file": "assets/Tree-BI6v595u.min.js",
+  "_Tree-DmHsMESP.min.js": {
+    "file": "assets/Tree-DmHsMESP.min.js",
     "name": "Tree",
     "imports": [
       "_index-l5GBeiGs.min.js",
@@ -84,8 +84,8 @@
       "_runtime-core.esm-bundler-HqF9pg4M.min.js"
     ]
   },
-  "_WizardTreeItem.vue_vue_type_script_setup_true_lang-_4OyL8Y1.js": {
-    "file": "assets/WizardTreeItem.vue_vue_type_script_setup_true_lang-_4OyL8Y1.js",
+  "_WizardTreeItem.vue_vue_type_script_setup_true_lang-DXurlFxc.js": {
+    "file": "assets/WizardTreeItem.vue_vue_type_script_setup_true_lang-DXurlFxc.js",
     "name": "WizardTreeItem.vue_vue_type_script_setup_true_lang",
     "imports": [
       "_index.browser-B0na17u1.min.js",
@@ -314,8 +314,8 @@
     "file": "assets/monaco-editor-CzVNAGE6.css",
     "src": "_monaco-editor-CzVNAGE6.css"
   },
-  "_monaco-editor-bqPCFYkp.min.js": {
-    "file": "assets/monaco-editor-bqPCFYkp.min.js",
+  "_monaco-editor-DMTJ40WU.min.js": {
+    "file": "assets/monaco-editor-DMTJ40WU.min.js",
     "name": "monaco-editor",
     "isDynamicEntry": true,
     "imports": [
@@ -422,12 +422,13 @@
       "_runtime-core.esm-bundler-HqF9pg4M.min.js"
     ]
   },
-  "_volume-B3Q_BUMG.js": {
-    "file": "assets/volume-B3Q_BUMG.js",
+  "_volume-B56Y7hHe.js": {
+    "file": "assets/volume-B56Y7hHe.js",
     "name": "volume",
     "imports": [
       "_worker-2mJa2xxM.js",
       "assets/dashboard/main.ts",
+      "_index-l5GBeiGs.min.js",
       "__initCloneObject-DlLbeobz.min.js",
       "__toKey-BxB36GnB.min.js",
       "_isObject-K1YoVIH1.min.js",
@@ -457,7 +458,7 @@
     ]
   },
   "assets/dashboard/main.ts": {
-    "file": "assets/dashboard-hef6uuRo.js",
+    "file": "assets/dashboard-DzHlilbd.js",
     "name": "dashboard",
     "src": "assets/dashboard/main.ts",
     "isEntry": true,
@@ -499,24 +500,24 @@
       "assets/dashboard/pages/Settings/Performance.vue",
       "assets/dashboard/pages/Settings/Integrations.vue",
       "assets/dashboard/pages/NotFound.vue",
-      "_monaco-editor-bqPCFYkp.min.js"
+      "_monaco-editor-DMTJ40WU.min.js"
     ],
     "css": [
       "assets/dashboard-CIYp3BTH.css"
     ]
   },
   "assets/dashboard/pages/File.vue": {
-    "file": "assets/File-BwMhvSJ9.js",
+    "file": "assets/File-CjTG4GT3.js",
     "name": "File",
     "src": "assets/dashboard/pages/File.vue",
     "isDynamicEntry": true,
     "imports": [
       "assets/dashboard/main.ts",
-      "_DashboardNavbar-hepBKI-W.min.js",
-      "_DashboardSidebarCollapse-B_Grw6Su.min.js",
+      "_DashboardNavbar-ClJdr6IN.min.js",
+      "_DashboardSidebarCollapse-DQh5VU3m.min.js",
       "_index-l5GBeiGs.min.js",
-      "_volume-B3Q_BUMG.js",
-      "_Tree-BI6v595u.min.js",
+      "_volume-B56Y7hHe.js",
+      "_Tree-DmHsMESP.min.js",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
       "_cssesc-oI9k1TGw.js",
       "_index-C5HG4pYD.min.js",
@@ -531,7 +532,7 @@
       "_dayjs.min-DWUdwifa.min.js",
       "_preload-helper-CsYsLKPR.min.js",
       "_index-lmgDaERr.min.js",
-      "_FormField-DH1tC5m9.min.js",
+      "_FormField-DCT8zL7L.min.js",
       "_index-Dfl2EUB3.min.js",
       "_source-map-generator-DjbDy59a.min.js",
       "_runtime-dom.esm-bundler-CZCO9KQc.min.js",
@@ -560,14 +561,14 @@
     ]
   },
   "assets/dashboard/pages/Log.vue": {
-    "file": "assets/Log-CQ7wO6dd.js",
+    "file": "assets/Log-pt3A1WH7.js",
     "name": "Log",
     "src": "assets/dashboard/pages/Log.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DashboardNavbar-hepBKI-W.min.js",
+      "_DashboardNavbar-ClJdr6IN.min.js",
       "assets/dashboard/main.ts",
-      "_DashboardSidebarCollapse-B_Grw6Su.min.js",
+      "_DashboardSidebarCollapse-DQh5VU3m.min.js",
       "_worker-2mJa2xxM.js",
       "_dayjs.min-DWUdwifa.min.js",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
@@ -594,7 +595,7 @@
     ]
   },
   "assets/dashboard/pages/NotFound.vue": {
-    "file": "assets/NotFound-rtg2u5MN.js",
+    "file": "assets/NotFound-SarJOpP_.js",
     "name": "NotFound",
     "src": "assets/dashboard/pages/NotFound.vue",
     "isDynamicEntry": true,
@@ -625,15 +626,15 @@
     ]
   },
   "assets/dashboard/pages/Settings.vue": {
-    "file": "assets/Settings-CGEcHLVD.js",
+    "file": "assets/Settings-B7u7kEok.js",
     "name": "Settings",
     "src": "assets/dashboard/pages/Settings.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DashboardNavbar-hepBKI-W.min.js",
+      "_DashboardNavbar-ClJdr6IN.min.js",
       "assets/dashboard/main.ts",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
-      "_DashboardSidebarCollapse-B_Grw6Su.min.js",
+      "_DashboardSidebarCollapse-DQh5VU3m.min.js",
       "_index-l5GBeiGs.min.js",
       "_isObject-K1YoVIH1.min.js",
       "_preload-helper-CsYsLKPR.min.js",
@@ -658,16 +659,16 @@
     ]
   },
   "assets/dashboard/pages/Settings/General.vue": {
-    "file": "assets/General-Cfpheeo_.js",
+    "file": "assets/General-0xXTxQLP.js",
     "name": "General",
     "src": "assets/dashboard/pages/Settings/General.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Switch-BY7SAQ3S.min.js",
-      "_Separator-B1oW9hyi.min.js",
+      "_Switch-D5koBcFQ.min.js",
+      "_Separator-ozYRGkOb.min.js",
       "assets/dashboard/main.ts",
-      "_PageCard-B3_KcIar.min.js",
-      "_FormField-DH1tC5m9.min.js",
+      "_PageCard-BFpt6-Gk.min.js",
+      "_FormField-DCT8zL7L.min.js",
       "_runtime-dom.esm-bundler-CZCO9KQc.min.js",
       "_worker-2mJa2xxM.js",
       "_get-DBhW7rda.min.js",
@@ -693,14 +694,14 @@
     ]
   },
   "assets/dashboard/pages/Settings/Integrations.vue": {
-    "file": "assets/Integrations-BUd7t2dw.js",
+    "file": "assets/Integrations-86KFu25C.js",
     "name": "Integrations",
     "src": "assets/dashboard/pages/Settings/Integrations.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_PageCard-B3_KcIar.min.js",
-      "_FormField-DH1tC5m9.min.js",
-      "_Switch-BY7SAQ3S.min.js",
+      "_PageCard-BFpt6-Gk.min.js",
+      "_FormField-DCT8zL7L.min.js",
+      "_Switch-D5koBcFQ.min.js",
       "assets/dashboard/main.ts",
       "_worker-2mJa2xxM.js",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
@@ -727,16 +728,16 @@
     ]
   },
   "assets/dashboard/pages/Settings/Performance.vue": {
-    "file": "assets/Performance-CrhqNL75.js",
+    "file": "assets/Performance-CPtIeoek.js",
     "name": "Performance",
     "src": "assets/dashboard/pages/Settings/Performance.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_PageCard-B3_KcIar.min.js",
+      "_PageCard-BFpt6-Gk.min.js",
       "assets/dashboard/main.ts",
-      "_Separator-B1oW9hyi.min.js",
-      "_FormField-DH1tC5m9.min.js",
-      "_Switch-BY7SAQ3S.min.js",
+      "_Separator-ozYRGkOb.min.js",
+      "_FormField-DCT8zL7L.min.js",
+      "_Switch-D5koBcFQ.min.js",
       "_dayjs.min-DWUdwifa.min.js",
       "_worker-2mJa2xxM.js",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
@@ -763,15 +764,15 @@
     ]
   },
   "assets/dashboard/pages/Wizard.vue": {
-    "file": "assets/Wizard-l-sy7BVh.js",
+    "file": "assets/Wizard-BK1xJcBc.js",
     "name": "Wizard",
     "src": "assets/dashboard/pages/Wizard.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DashboardNavbar-hepBKI-W.min.js",
+      "_DashboardNavbar-ClJdr6IN.min.js",
       "assets/dashboard/main.ts",
-      "_DashboardSidebarCollapse-B_Grw6Su.min.js",
-      "_volume-B3Q_BUMG.js",
+      "_DashboardSidebarCollapse-DQh5VU3m.min.js",
+      "_volume-B56Y7hHe.js",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
       "_index-l5GBeiGs.min.js",
       "_isObject-K1YoVIH1.min.js",
@@ -797,18 +798,18 @@
     ]
   },
   "assets/dashboard/pages/Wizard/Colors.vue": {
-    "file": "assets/Colors-F8-mp_Fc.js",
+    "file": "assets/Colors-C7lauuz7.js",
     "name": "Colors",
     "src": "assets/dashboard/pages/Wizard/Colors.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DashboardNavbar-hepBKI-W.min.js",
-      "_Tree-BI6v595u.min.js",
+      "_DashboardNavbar-ClJdr6IN.min.js",
+      "_Tree-DmHsMESP.min.js",
       "assets/dashboard/main.ts",
       "_runtime-dom.esm-bundler-CZCO9KQc.min.js",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
       "_index.browser-B0na17u1.min.js",
-      "_WizardTreeItem.vue_vue_type_script_setup_true_lang-_4OyL8Y1.js",
+      "_WizardTreeItem.vue_vue_type_script_setup_true_lang-DXurlFxc.js",
       "_index-l5GBeiGs.min.js",
       "_isObject-K1YoVIH1.min.js",
       "_preload-helper-CsYsLKPR.min.js",
@@ -834,15 +835,15 @@
     ]
   },
   "assets/dashboard/pages/Wizard/Screens.vue": {
-    "file": "assets/Screens-C2FDEmVi.js",
+    "file": "assets/Screens-5hhN-Lbn.js",
     "name": "Screens",
     "src": "assets/dashboard/pages/Wizard/Screens.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DashboardNavbar-hepBKI-W.min.js",
-      "_Tree-BI6v595u.min.js",
+      "_DashboardNavbar-ClJdr6IN.min.js",
+      "_Tree-DmHsMESP.min.js",
       "assets/dashboard/main.ts",
-      "_WizardTreeItem.vue_vue_type_script_setup_true_lang-_4OyL8Y1.js",
+      "_WizardTreeItem.vue_vue_type_script_setup_true_lang-DXurlFxc.js",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
       "_index-l5GBeiGs.min.js",
       "_isObject-K1YoVIH1.min.js",
@@ -868,17 +869,17 @@
     ]
   },
   "assets/dashboard/pages/Wizard/Spacing.vue": {
-    "file": "assets/Spacing-D1C90pvt.js",
+    "file": "assets/Spacing-BsZYJ49w.js",
     "name": "Spacing",
     "src": "assets/dashboard/pages/Wizard/Spacing.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DashboardNavbar-hepBKI-W.min.js",
-      "_Tree-BI6v595u.min.js",
+      "_DashboardNavbar-ClJdr6IN.min.js",
+      "_Tree-DmHsMESP.min.js",
       "assets/dashboard/main.ts",
       "_index.browser-B0na17u1.min.js",
-      "_WizardTreeItem.vue_vue_type_script_setup_true_lang-_4OyL8Y1.js",
-      "_FluidCalculatorSlideover-C2SFKFte.js",
+      "_WizardTreeItem.vue_vue_type_script_setup_true_lang-DXurlFxc.js",
+      "_FluidCalculatorSlideover-CxlQrxAk.js",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
       "_index-l5GBeiGs.min.js",
       "_isObject-K1YoVIH1.min.js",
@@ -900,21 +901,21 @@
       "__initCloneObject-DlLbeobz.min.js",
       "_package-BtTmAzXr.min.js",
       "_fuse-Ch1WBRTM.min.js",
-      "_Separator-B1oW9hyi.min.js",
+      "_Separator-ozYRGkOb.min.js",
       "__plugin-vue_export-helper-DlAUqK2U.min.js"
     ]
   },
   "assets/dashboard/pages/Wizard/Theme.vue": {
-    "file": "assets/Theme-BQCyTMEA.js",
+    "file": "assets/Theme-SDVFZfLZ.js",
     "name": "Theme",
     "src": "assets/dashboard/pages/Wizard/Theme.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DashboardNavbar-hepBKI-W.min.js",
-      "_FormField-DH1tC5m9.min.js",
+      "_DashboardNavbar-ClJdr6IN.min.js",
+      "_FormField-DCT8zL7L.min.js",
       "assets/dashboard/main.ts",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
-      "_Switch-BY7SAQ3S.min.js",
+      "_Switch-D5koBcFQ.min.js",
       "_index-l5GBeiGs.min.js",
       "_isObject-K1YoVIH1.min.js",
       "_preload-helper-CsYsLKPR.min.js",
@@ -939,19 +940,19 @@
     ]
   },
   "assets/dashboard/pages/Wizard/Typography.vue": {
-    "file": "assets/Typography-C_A_sMlc.js",
+    "file": "assets/Typography-Cj83ivlG.js",
     "name": "Typography",
     "src": "assets/dashboard/pages/Wizard/Typography.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DashboardNavbar-hepBKI-W.min.js",
-      "_Tree-BI6v595u.min.js",
+      "_DashboardNavbar-ClJdr6IN.min.js",
+      "_Tree-DmHsMESP.min.js",
       "assets/dashboard/main.ts",
       "_runtime-core.esm-bundler-HqF9pg4M.min.js",
       "_runtime-dom.esm-bundler-CZCO9KQc.min.js",
       "_index-l5GBeiGs.min.js",
-      "_WizardTreeItem.vue_vue_type_script_setup_true_lang-_4OyL8Y1.js",
-      "_FluidCalculatorSlideover-C2SFKFte.js",
+      "_WizardTreeItem.vue_vue_type_script_setup_true_lang-DXurlFxc.js",
+      "_FluidCalculatorSlideover-CxlQrxAk.js",
       "_index.browser-B0na17u1.min.js",
       "_preload-helper-CsYsLKPR.min.js",
       "_index-Dfl2EUB3.min.js",
@@ -971,7 +972,7 @@
       "__initCloneObject-DlLbeobz.min.js",
       "_package-BtTmAzXr.min.js",
       "_fuse-Ch1WBRTM.min.js",
-      "_Separator-B1oW9hyi.min.js",
+      "_Separator-ozYRGkOb.min.js",
       "__plugin-vue_export-helper-DlAUqK2U.min.js"
     ]
   },
@@ -1978,12 +1979,12 @@
     "isDynamicEntry": true
   },
   "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/basic-languages/javascript/javascript.js": {
-    "file": "assets/javascript-DdDcElkq.min.js",
+    "file": "assets/javascript-CgWQByyM.min.js",
     "name": "javascript",
     "src": "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/basic-languages/javascript/javascript.js",
     "isDynamicEntry": true,
     "imports": [
-      "_monaco-editor-bqPCFYkp.min.js",
+      "_monaco-editor-DMTJ40WU.min.js",
       "assets/dashboard/main.ts",
       "_preload-helper-CsYsLKPR.min.js",
       "_index-Dfl2EUB3.min.js",
@@ -2011,12 +2012,12 @@
     ]
   },
   "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/language/css/cssMode.js": {
-    "file": "assets/cssMode-BiASRbGs.min.js",
+    "file": "assets/cssMode-DsuAkXNx.min.js",
     "name": "cssMode",
     "src": "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/language/css/cssMode.js",
     "isDynamicEntry": true,
     "imports": [
-      "_monaco-editor-bqPCFYkp.min.js",
+      "_monaco-editor-DMTJ40WU.min.js",
       "assets/dashboard/main.ts",
       "_preload-helper-CsYsLKPR.min.js",
       "_index-Dfl2EUB3.min.js",
@@ -2044,12 +2045,12 @@
     ]
   },
   "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/language/typescript/tsMode.js": {
-    "file": "assets/tsMode-Ct6EsfZ0.min.js",
+    "file": "assets/tsMode-CygqmwEs.min.js",
     "name": "tsMode",
     "src": "node_modules/.pnpm/monaco-editor@0.52.2/node_modules/monaco-editor/esm/vs/language/typescript/tsMode.js",
     "isDynamicEntry": true,
     "imports": [
-      "_monaco-editor-bqPCFYkp.min.js",
+      "_monaco-editor-DMTJ40WU.min.js",
       "assets/dashboard/main.ts",
       "_preload-helper-CsYsLKPR.min.js",
       "_index-Dfl2EUB3.min.js",

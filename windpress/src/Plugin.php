@@ -18,6 +18,7 @@ use WindPress\WindPress\Admin\AdminPage;
 use WindPress\WindPress\Api\Router as ApiRouter;
 use WindPress\WindPress\Core\Runtime;
 use WindPress\WindPress\Integration\Loader as IntegrationLoader;
+use WindPress\WindPress\Upgrade\UpgradeManager;
 use WindPress\WindPress\Utils\Cache as UtilsCache;
 use WindPress\WindPress\Utils\Common;
 use WindPress\WindPress\Utils\Notice;
@@ -127,6 +128,7 @@ final class Plugin
     private function upgrade_plugin(): void
     {
         do_action('a!windpress/plugin:upgrade_plugin.start');
+        UpgradeManager::get_instance()->run();
         do_action('a!windpress/plugin:upgrade_plugin.end');
     }
     /**

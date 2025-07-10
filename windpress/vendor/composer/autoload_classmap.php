@@ -171,6 +171,7 @@ return array(
     'WindPress\\WindPress\\Integration\\Timber\\Compile' => $baseDir . '/src/Integration/Timber/Compile.php',
     'WindPress\\WindPress\\Integration\\Timber\\Main' => $baseDir . '/src/Integration/Timber/Main.php',
     'WindPress\\WindPress\\Plugin' => $baseDir . '/src/Plugin.php',
+    'WindPress\\WindPress\\Upgrade\\UpgradeManager' => $baseDir . '/src/Upgrade/UpgradeManager.php',
     'WindPress\\WindPress\\Utils\\AssetVite' => $baseDir . '/src/Utils/AssetVite.php',
     'WindPress\\WindPress\\Utils\\Cache' => $baseDir . '/src/Utils/Cache.php',
     'WindPress\\WindPress\\Utils\\Common' => $baseDir . '/src/Utils/Common.php',

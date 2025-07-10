@@ -12,6 +12,7 @@ declare (strict_types=1);
 namespace WindPress\WindPress\Integration\Kadence;
 
 use WindPress\WindPress\Integration\IntegrationInterface;
+use WindPress\WindPress\Utils\Common;
 use WindPress\WindPress\Utils\Config;
 /**
  * Tested with Kadence theme version 1.2.9 and Kadence Blocks version 3.2.52
@@ -33,7 +34,12 @@ class Main implements IntegrationInterface
     }
     public function register_provider(array $providers): array
     {
-        $providers[] = ['id' => $this->get_name(), 'name' => __('Kadence WP', 'windpress'), 'description' => __('The Kadence WP integration. It requires the Gutenberg/Block Editor integration enabled.', 'windpress'), 'enabled' => $this->is_enabled(), 'callback' => \WindPress\WindPress\Integration\Kadence\Compile::class, 'meta' => ['experimental' => \true]];
+        $providers[] = ['id' => $this->get_name(), 'name' => __('Kadence WP', 'windpress'), 'description' => __('The Kadence WP integration. It requires the Gutenberg/Block Editor integration enabled.', 'windpress'), 'enabled' => $this->is_enabled(), 'callback' => \WindPress\WindPress\Integration\Kadence\Compile::class, 'type' => 'theme', 'homepage' => 'https://kadencewp.com/?ref=windpress', 'is_installed_active' => static function () {
+            $is = -1;
+            $is += Common::is_theme_installed('Kadence') ? 1 : 0;
+            $is += Common::is_theme_active_by_name('Kadence') ? 1 : 0;
+            return $is;
+        }, 'meta' => ['experimental' => \true]];
         return $providers;
     }
 }

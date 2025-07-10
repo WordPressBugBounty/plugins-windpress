@@ -225,6 +225,10 @@
 	__('Ubiquitous panel', 'windpress');
 	__('Access the WindPress dashboard panel right from the front page and made adjustment as it is on the wp-admin page.', 'windpress');
 	__('Enable or disable integrations with other services.', 'windpress');
+	__('Activated', 'windpress');
+	__('Installed', 'windpress');
+	__('Not Installed', 'windpress');
+	__('Visit homepage', 'windpress');
 	__('Clear logs', 'windpress');
 	__('Page not found', 'windpress');
 	__('Sorry, we couldn’t find the page you’re looking for.', 'windpress');

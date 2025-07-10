@@ -12,6 +12,7 @@ declare (strict_types=1);
 namespace WindPress\WindPress\Integration\Timber;
 
 use WindPress\WindPress\Integration\IntegrationInterface;
+use WindPress\WindPress\Utils\Common;
 use WindPress\WindPress\Utils\Config;
 /**
  * @author Joshua Gugun Siagian <suabahasa@gmail.com>
@@ -32,7 +33,12 @@ class Main implements IntegrationInterface
     }
     public function register_provider(array $providers): array
     {
-        $providers[] = ['id' => $this->get_name(), 'name' => __('Timber', 'windpress'), 'description' => __('Timber integration', 'windpress'), 'callback' => \WindPress\WindPress\Integration\Timber\Compile::class, 'enabled' => $this->is_enabled()];
+        $providers[] = ['id' => $this->get_name(), 'name' => __('Timber', 'windpress'), 'description' => __('Timber integration', 'windpress'), 'callback' => \WindPress\WindPress\Integration\Timber\Compile::class, 'enabled' => $this->is_enabled(), 'type' => 'plugin', 'homepage' => 'https://upstatement.com/timber/?ref=windpress', 'is_installed_active' => static function () {
+            $is = -1;
+            $is += Common::is_plugin_installed('Timber') ? 1 : 0;
+            $is += Common::is_plugin_active_by_name('Timber') ? 1 : 0;
+            return $is;
+        }];
         return $providers;
     }
 }

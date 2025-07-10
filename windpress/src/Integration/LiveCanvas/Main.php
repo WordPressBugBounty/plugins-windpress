@@ -12,6 +12,7 @@ declare (strict_types=1);
 namespace WindPress\WindPress\Integration\LiveCanvas;
 
 use WindPress\WindPress\Integration\IntegrationInterface;
+use WindPress\WindPress\Utils\Common;
 use WindPress\WindPress\Utils\Config;
 /**
  * @author Joshua Gugun Siagian <suabahasa@gmail.com>
@@ -37,7 +38,12 @@ class Main implements IntegrationInterface
     }
     public function register_provider(array $providers): array
     {
-        $providers[] = ['id' => $this->get_name(), 'name' => __('LiveCanvas', 'windpress'), 'description' => __('LiveCanvas integration', 'windpress'), 'callback' => \WindPress\WindPress\Integration\LiveCanvas\Compile::class, 'enabled' => $this->is_enabled(), 'meta' => ['experimental' => \true]];
+        $providers[] = ['id' => $this->get_name(), 'name' => __('LiveCanvas', 'windpress'), 'description' => __('LiveCanvas integration', 'windpress'), 'callback' => \WindPress\WindPress\Integration\LiveCanvas\Compile::class, 'enabled' => $this->is_enabled(), 'type' => 'plugin', 'homepage' => 'https://livecanvas.com/?ref=4008', 'is_installed_active' => static function () {
+            $is = -1;
+            $is += Common::is_plugin_installed('LiveCanvas') ? 1 : 0;
+            $is += Common::is_plugin_active_by_name('LiveCanvas') ? 1 : 0;
+            return $is;
+        }, 'meta' => ['experimental' => \true]];
         return $providers;
     }
     public function is_prevent_load(bool $is_prevent_load): bool
