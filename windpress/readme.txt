@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 3.2.52
+Stable tag: 3.2.53
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -125,7 +125,7 @@ For instance:
 Free version 1.**0**.4
 Pro version 1.**1**.4
 
-= 3.2.52 - 2025-07-16 =
+= 3.2.53 - 2025-07-16 =
 * **New**: [Bricks] Added compatibility with Bricks 2.0
 * **Fix**: [Bricks] Plain Classes feature now works correctly with the Components feature
 
