@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 3.2.51
+Stable tag: 3.2.52
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -125,6 +125,10 @@ For instance:
 Free version 1.**0**.4
 Pro version 1.**1**.4
 
+= 3.2.52 - 2025-07-16 =
+* **New**: [Bricks] Added compatibility with Bricks 2.0
+* **Fix**: [Bricks] Plain Classes feature now works correctly with the Components feature
+
 = 3.2.51 - 2025-07-10 =
 * **Fix**: The `wizard.css` file is not updated correctly on the syncing process
 
@@ -143,7 +147,7 @@ Pro version 1.**1**.4
 * **Fix**: Plugin's bundle (Zip) file are not generated correctly
 
 = 3.2.40 - 2025-06-01 =
-* **Improve**: [Bricks] The Plain Classes and Variables feature compat for version 2.0-beta
+* **Improve**: [Bricks] The Plain Classes and Variables feature compatibility for version 2.0-beta
 * **Improve**: Optimize the bundle (Zip) size of the plugin
 
 = 3.2.39 - 2025-05-29 =
@@ -172,7 +176,7 @@ Pro version 1.**1**.4
 
 = 3.2.30 - 2025-04-29 =
 * **Improve**: [Gutenberg] Load the The Play Observer / Compiler to the Pattern preview [#40](https://github.com/wind-press/windpress/issues/40)
-* **Improve**: [Bricks] The Plain Classes feature compat for version 2.0-alpha [#42](https://github.com/wind-press/windpress/issues/42)
+* **Improve**: [Bricks] The Plain Classes feature compatibility for version 2.0-alpha [#42](https://github.com/wind-press/windpress/issues/42)
 * **Fix**: [Bricks] The Plain Classes field is not synchronized with the history (undo/redo) actions [#44](https://github.com/wind-press/windpress/issues/44)
 
 = 3.2.29 - 2025-04-15 =
