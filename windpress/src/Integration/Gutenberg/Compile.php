@@ -11,6 +11,7 @@
 declare (strict_types=1);
 namespace WindPress\WindPress\Integration\Gutenberg;
 
+use WindPressDeps\Symfony\Component\Yaml\Yaml;
 use WP_Query;
 /**
  * @author Joshua Gugun Siagian <suabahasa@gmail.com>
@@ -54,6 +55,9 @@ class Compile
                 }
             }
             $post_content = apply_filters('f!windpress/integration/gutenberg/compile:get_contents.post_content', $post_content, $post);
+            if (apply_filters('f!windpress/integration/gutenberg/compile:get_contents.dump_parsed_block', \true, $post)) {
+                $post_content .= \PHP_EOL . Yaml::dump(parse_blocks($post->post_content));
+            }
             $contents[] = ['id' => $post->ID, 'title' => sprintf('#%s: %s', $post->ID, $post->post_title), 'content' => $post_content];
         }
         return ['metadata' => ['next_batch' => $wpQuery->max_num_pages > $next_batch ? $next_batch + 1 : \false, 'total_batches' => $wpQuery->max_num_pages], 'contents' => $contents];

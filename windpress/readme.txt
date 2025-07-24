@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 3.2.53
+Stable tag: 3.2.54
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -125,9 +125,15 @@ For instance:
 Free version 1.**0**.4
 Pro version 1.**1**.4
 
+= 3.2.54 - 2025-07-24 =
+* **Improve**: [Gutenberg] Compiler: The raw block data is now appended on the scanner data to improve the class name detection [#53](https://github.com/wind-press/windpress/issues/53)
+* **Improve**: [Wizard] The Wizard's data is now can saved directly without the need to switch the Files tab first.
+* **Fix**: [Bricks] Plain Classes feature doesn't work correctly with Bricks' templates
+* **Fix**: [Bricks] Variables value not registered correctly to the Bricks Global Variables system
+
 = 3.2.53 - 2025-07-16 =
 * **New**: [Bricks] Added compatibility with Bricks 2.0
-* **Fix**: [Bricks] Plain Classes feature now works correctly with the Components feature
+* **Fix**: [Bricks] Plain Classes feature not works correctly with the Components feature
 
 = 3.2.51 - 2025-07-10 =
 * **Fix**: The `wizard.css` file is not updated correctly on the syncing process

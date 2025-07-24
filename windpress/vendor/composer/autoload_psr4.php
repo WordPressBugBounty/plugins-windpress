@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'WindPress\\WindPress\\' => array($baseDir . '/src'),
     'WindPressDeps\\Symfony\\Contracts\\Service\\' => array($vendorDir . '/symfony/service-contracts'),
+    'WindPressDeps\\Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'WindPressDeps\\Symfony\\Component\\String\\' => array($vendorDir . '/symfony/string'),
     'WindPressDeps\\Symfony\\Component\\Stopwatch\\' => array($vendorDir . '/symfony/stopwatch'),
     'WindPressDeps\\Symfony\\Component\\PropertyInfo\\' => array($vendorDir . '/symfony/property-info'),

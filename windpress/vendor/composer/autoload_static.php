@@ -4,11 +4,11 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit46c3eb80e773f5698709313eb56fa257
+class ComposerStaticInit1def3dde66265cb95fde211f809622aa
 {
     public static $files = array (
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
@@ -22,6 +22,7 @@ class ComposerStaticInit46c3eb80e773f5698709313eb56fa257
         array (
             'WindPress\\WindPress\\' => 20,
             'WindPressDeps\\Symfony\\Contracts\\Service\\' => 40,
+            'WindPressDeps\\Symfony\\Component\\Yaml\\' => 37,
             'WindPressDeps\\Symfony\\Component\\String\\' => 39,
             'WindPressDeps\\Symfony\\Component\\Stopwatch\\' => 42,
             'WindPressDeps\\Symfony\\Component\\PropertyInfo\\' => 45,
@@ -49,6 +50,10 @@ class ComposerStaticInit46c3eb80e773f5698709313eb56fa257
         'WindPressDeps\\Symfony\\Contracts\\Service\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
+        'WindPressDeps\\Symfony\\Component\\Yaml\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
         'WindPressDeps\\Symfony\\Component\\String\\' => 
         array (
@@ -231,6 +236,18 @@ class ComposerStaticInit46c3eb80e773f5698709313eb56fa257
         'WindPressDeps\\Symfony\\Component\\String\\Slugger\\AsciiSlugger' => __DIR__ . '/..' . '/symfony/string/Slugger/AsciiSlugger.php',
         'WindPressDeps\\Symfony\\Component\\String\\Slugger\\SluggerInterface' => __DIR__ . '/..' . '/symfony/string/Slugger/SluggerInterface.php',
         'WindPressDeps\\Symfony\\Component\\String\\UnicodeString' => __DIR__ . '/..' . '/symfony/string/UnicodeString.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Command\\LintCommand' => __DIR__ . '/..' . '/symfony/yaml/Command/LintCommand.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Dumper' => __DIR__ . '/..' . '/symfony/yaml/Dumper.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Escaper' => __DIR__ . '/..' . '/symfony/yaml/Escaper.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Exception\\DumpException' => __DIR__ . '/..' . '/symfony/yaml/Exception/DumpException.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/yaml/Exception/ExceptionInterface.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Exception\\ParseException' => __DIR__ . '/..' . '/symfony/yaml/Exception/ParseException.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Exception\\RuntimeException' => __DIR__ . '/..' . '/symfony/yaml/Exception/RuntimeException.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Inline' => __DIR__ . '/..' . '/symfony/yaml/Inline.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Parser' => __DIR__ . '/..' . '/symfony/yaml/Parser.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Tag\\TaggedValue' => __DIR__ . '/..' . '/symfony/yaml/Tag/TaggedValue.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Unescaper' => __DIR__ . '/..' . '/symfony/yaml/Unescaper.php',
+        'WindPressDeps\\Symfony\\Component\\Yaml\\Yaml' => __DIR__ . '/..' . '/symfony/yaml/Yaml.php',
         'WindPressDeps\\Symfony\\Contracts\\Service\\Attribute\\Required' => __DIR__ . '/..' . '/symfony/service-contracts/Attribute/Required.php',
         'WindPressDeps\\Symfony\\Contracts\\Service\\Attribute\\SubscribedService' => __DIR__ . '/..' . '/symfony/service-contracts/Attribute/SubscribedService.php',
         'WindPressDeps\\Symfony\\Contracts\\Service\\ResetInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ResetInterface.php',
@@ -283,9 +300,9 @@ class ComposerStaticInit46c3eb80e773f5698709313eb56fa257
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit46c3eb80e773f5698709313eb56fa257::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit46c3eb80e773f5698709313eb56fa257::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit46c3eb80e773f5698709313eb56fa257::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit1def3dde66265cb95fde211f809622aa::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit1def3dde66265cb95fde211f809622aa::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit1def3dde66265cb95fde211f809622aa::$classMap;
 
         }, null, ClassLoader::class);
     }
