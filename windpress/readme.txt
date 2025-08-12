@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 3.2.54
+Stable tag: 3.2.55
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -125,9 +125,15 @@ For instance:
 Free version 1.**0**.4
 Pro version 1.**1**.4
 
+= 3.2.55 - 2025-08-13 =
+* **New**: [TW4] Intellisense on the Files tab for the CSS file
+* **New**: WP-Rocket exclusion for the WindPress CSS and JavaScript files [#54](https://github.com/wind-press/windpress/issues/54)
+* **Improve**: [TW4] Autocompletion feature searches now is faster
+* **Fix**: [Bricks] Plain Classes: Sort Classes glitch on the style
+
 = 3.2.54 - 2025-07-24 =
 * **Improve**: [Gutenberg] Compiler: The raw block data is now appended on the scanner data to improve the class name detection [#53](https://github.com/wind-press/windpress/issues/53)
-* **Improve**: [Wizard] The Wizard's data is now can saved directly without the need to switch the Files tab first.
+* **Improve**: [Wizard] The Wizard's data is now can saved directly without the need to switch the Files tab first
 * **Fix**: [Bricks] Plain Classes feature doesn't work correctly with Bricks' templates
 * **Fix**: [Bricks] Variables value not registered correctly to the Bricks Global Variables system
 
@@ -197,7 +203,7 @@ Pro version 1.**1**.4
 
 = 3.2.26 - 2025-04-06 =
 * **New**: Upgraded to Tailwind CSS v4 (4.1.3 latest)
-* **Improve**: [TW4] Autocompletion feature now supports user-defined classes from the Simple File System data.
+* **Improve**: [TW4] Autocompletion feature now supports user-defined classes from the Simple File System data
 * **Improve**: Exclude the WindPress files from being processed by the SiteGround Speed Optimizer plugin
 * **Fix**: [Gutenberg] Misconfigured integration on the block editor
 
@@ -421,3 +427,78 @@ Pro version 1.**1**.4
 
 = 1.0.0 - 2024-12-19 =
 * **New**: 🐣 Initial release.
+* [unreleased]: https://github.com/wind-press/windpress/compare/v3.2.55...HEAD
+* [3.2.55]: https://github.com/wind-press/windpress/compare/v3.2.54...v3.2.55
+* [3.2.54]: https://github.com/wind-press/windpress/compare/v3.2.53...v3.2.54
+* [3.2.53]: https://github.com/wind-press/windpress/compare/v3.2.51...v3.2.53
+* [3.2.51]: https://github.com/wind-press/windpress/compare/3.3.44...v3.2.51
+* [3.2.44]: https://github.com/wind-press/windpress/compare/3.3.43...3.3.44
+* [3.2.43]: https://github.com/wind-press/windpress/compare/3.3.42...3.3.43
+* [3.2.42]: https://github.com/wind-press/windpress/compare/3.3.41...3.3.42
+* [3.2.41]: https://github.com/wind-press/windpress/compare/3.3.40...3.3.41
+* [3.2.40]: https://github.com/wind-press/windpress/compare/3.3.39...3.3.40
+* [3.2.39]: https://github.com/wind-press/windpress/compare/3.3.35...3.3.39
+* [3.2.35]: https://github.com/wind-press/windpress/compare/3.3.34...3.3.35
+* [3.2.34]: https://github.com/wind-press/windpress/compare/3.3.33...3.3.34
+* [3.2.33]: https://github.com/wind-press/windpress/compare/3.3.32...3.3.33
+* [3.2.32]: https://github.com/wind-press/windpress/compare/3.3.31...3.3.32
+* [3.2.31]: https://github.com/wind-press/windpress/compare/3.3.30...3.3.31
+* [3.2.30]: https://github.com/wind-press/windpress/compare/3.3.29...3.3.30
+* [3.2.29]: https://github.com/wind-press/windpress/compare/3.3.28...3.3.29
+* [3.2.28]: https://github.com/wind-press/windpress/compare/3.3.27...3.3.28
+* [3.2.27]: https://github.com/wind-press/windpress/compare/3.3.26...3.3.27
+* [3.2.26]: https://github.com/wind-press/windpress/compare/3.3.24...3.3.26
+* [3.2.24]: https://github.com/wind-press/windpress/compare/3.3.23...3.3.24
+* [3.2.23]: https://github.com/wind-press/windpress/compare/3.3.22...3.3.23
+* [3.2.22]: https://github.com/wind-press/windpress/compare/3.3.21...3.3.22
+* [3.2.21]: https://github.com/wind-press/windpress/compare/3.3.12...3.3.21
+* [3.2.12]: https://github.com/wind-press/windpress/compare/3.3.11...3.3.12
+* [3.2.11]: https://github.com/wind-press/windpress/compare/3.3.7...3.3.11
+* [3.2.7]: https://github.com/wind-press/windpress/compare/3.3.5...3.3.7
+* [3.2.5]: https://github.com/wind-press/windpress/compare/3.3.4...3.3.5
+* [3.2.4]: https://github.com/wind-press/windpress/compare/3.3.3...3.3.4
+* [3.2.3]: https://github.com/wind-press/windpress/compare/3.3.2...3.3.3
+* [3.2.2]: https://github.com/wind-press/windpress/compare/3.2.35...3.3.2
+* [3.1.35]: https://github.com/wind-press/windpress/compare/3.2.34...3.2.35
+* [3.1.34]: https://github.com/wind-press/windpress/compare/3.2.33...3.2.34
+* [3.1.33]: https://github.com/wind-press/windpress/compare/3.2.32...3.2.33
+* [3.1.32]: https://github.com/wind-press/windpress/compare/3.2.31...3.2.32
+* [3.1.31]: https://github.com/wind-press/windpress/compare/3.2.30...3.2.31
+* [3.1.30]: https://github.com/wind-press/windpress/compare/3.2.29...3.2.30
+* [3.1.29]: https://github.com/wind-press/windpress/compare/3.2.28...3.2.29
+* [3.1.28]: https://github.com/wind-press/windpress/compare/3.2.27...3.2.28
+* [3.1.27]: https://github.com/wind-press/windpress/compare/3.2.26...3.2.27
+* [3.1.26]: https://github.com/wind-press/windpress/compare/3.2.25...3.2.26
+* [3.1.25]: https://github.com/wind-press/windpress/compare/3.2.24...3.2.25
+* [3.1.24]: https://github.com/wind-press/windpress/compare/3.2.23...3.2.24
+* [3.1.23]: https://github.com/wind-press/windpress/compare/3.2.22...3.2.23
+* [3.1.22]: https://github.com/wind-press/windpress/compare/3.2.21...3.2.22
+* [3.1.21]: https://github.com/wind-press/windpress/compare/3.2.20...3.2.21
+* [3.1.20]: https://github.com/wind-press/windpress/compare/3.2.19...3.2.20
+* [3.1.19]: https://github.com/wind-press/windpress/compare/3.2.18...3.2.19
+* [3.1.18]: https://github.com/wind-press/windpress/compare/3.2.17...3.2.18
+* [3.1.17]: https://github.com/wind-press/windpress/compare/3.2.16...3.2.17
+* [3.1.16]: https://github.com/wind-press/windpress/compare/3.2.15...3.2.16
+* [3.1.15]: https://github.com/wind-press/windpress/compare/3.2.13...3.2.15
+* [3.1.13]: https://github.com/wind-press/windpress/compare/3.2.12...3.2.13
+* [3.1.12]: https://github.com/wind-press/windpress/compare/3.2.10...3.2.12
+* [3.1.10]: https://github.com/wind-press/windpress/compare/3.2.9...3.2.10
+* [3.1.9]: https://github.com/wind-press/windpress/compare/3.2.8...3.2.9
+* [3.1.8]: https://github.com/wind-press/windpress/compare/3.2.7...3.2.8
+* [3.1.7]: https://github.com/wind-press/windpress/compare/3.2.6...3.2.7
+* [3.1.6]: https://github.com/wind-press/windpress/compare/3.2.5...3.2.6
+* [3.1.5]: https://github.com/wind-press/windpress/compare/3.2.4...3.2.5
+* [3.1.4]: https://github.com/wind-press/windpress/compare/3.2.3...3.2.4
+* [3.1.3]: https://github.com/wind-press/windpress/compare/3.2.1...3.2.3
+* [3.1.1]: https://github.com/wind-press/windpress/compare/3.2.0...3.2.1
+* [3.1.0]: https://github.com/wind-press/windpress/compare/3.1.17...3.2.0
+* [3.0.17]: https://github.com/wind-press/windpress/compare/3.1.15...3.1.17
+* [3.0.15]: https://github.com/wind-press/windpress/compare/3.1.14...3.1.15
+* [3.0.14]: https://github.com/wind-press/windpress/compare/3.1.11...3.1.14
+* [3.0.11]: https://github.com/wind-press/windpress/compare/3.1.10...3.1.11
+* [3.0.10]: https://github.com/wind-press/windpress/compare/3.1.9...3.1.10
+* [3.0.9]: https://github.com/wind-press/windpress/compare/3.1.8...3.1.9
+* [3.0.8]: https://github.com/wind-press/windpress/compare/3.1.6...3.1.8
+* [3.0.6]: https://github.com/wind-press/windpress/compare/3.1.0...3.1.6
+* [3.0.0]: https://github.com/wind-press/windpress/compare/1.1.0...3.1.0
+* [1.0.0]: https://github.com/wind-press/windpress/releases/tag/v1.0.0
