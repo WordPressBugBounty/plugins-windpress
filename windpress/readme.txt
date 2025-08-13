@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 3.2.55
+Stable tag: 3.2.56
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -124,6 +124,9 @@ Note: The Pro version has a version number with one higher minor version than th
 For instance:
 Free version 1.**0**.4
 Pro version 1.**1**.4
+
+= 3.2.56 - 2025-08-13 =
+* **Fix**: [TW4] Intellisense performance issue on the Files tab for the CSS file
 
 = 3.2.55 - 2025-08-13 =
 * **New**: [TW4] Intellisense on the Files tab for the CSS file
@@ -427,7 +430,8 @@ Pro version 1.**1**.4
 
 = 1.0.0 - 2024-12-19 =
 * **New**: 🐣 Initial release.
-* [unreleased]: https://github.com/wind-press/windpress/compare/v3.2.55...HEAD
+* [unreleased]: https://github.com/wind-press/windpress/compare/v3.2.56...HEAD
+* [3.2.56]: https://github.com/wind-press/windpress/compare/v3.2.55...v3.2.56
 * [3.2.55]: https://github.com/wind-press/windpress/compare/v3.2.54...v3.2.55
 * [3.2.54]: https://github.com/wind-press/windpress/compare/v3.2.53...v3.2.54
 * [3.2.53]: https://github.com/wind-press/windpress/compare/v3.2.51...v3.2.53

@@ -120,6 +120,9 @@
 	__('Path on disk', 'windpress');
 	__('Delete', 'windpress');
 	__('Reset to default', 'windpress');
+	__('CSS Validation Error', 'windpress');
+	__('Line', 'windpress');
+	__('Column', 'windpress');
 	__('Entry not found: ', 'windpress');
 	__('Explorer', 'windpress');
 	__('Add new file', 'windpress');
