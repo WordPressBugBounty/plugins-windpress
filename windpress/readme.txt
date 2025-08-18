@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 3.2.56
+Stable tag: 3.2.58
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ WindPress is a platform agnostic [Tailwind CSS](https://tailwindcss.com/) integr
 
 **Tailwind CSS version**:
 - 3.4.17
-- 4.1.11
+- 4.1.12
 
 ### Features
 
@@ -125,11 +125,16 @@ For instance:
 Free version 1.**0**.4
 Pro version 1.**1**.4
 
+= 3.2.58 - 2025-08-19 =
+* **New**: Upgraded to Tailwind CSS v4 (4.1.12 latest)
+* **Improve**: Restricted the IntelliSense on the Files tab feature to work exclusively with Tailwind CSS v4
+* **Fix**: [TW3] Tailwind hover tooltips no longer show px equivalents [#58](https://github.com/wind-press/windpress/issues/58)
+
 = 3.2.56 - 2025-08-13 =
-* **Fix**: [TW4] Intellisense performance issue on the Files tab for the CSS file
+* **Fix**: [TW4] IntelliSense performance issue on the Files tab for the CSS file
 
 = 3.2.55 - 2025-08-13 =
-* **New**: [TW4] Intellisense on the Files tab for the CSS file
+* **New**: [TW4] IntelliSense on the Files tab for the CSS file
 * **New**: WP-Rocket exclusion for the WindPress CSS and JavaScript files [#54](https://github.com/wind-press/windpress/issues/54)
 * **Improve**: [TW4] Autocompletion feature searches now is faster
 * **Fix**: [Bricks] Plain Classes: Sort Classes glitch on the style
@@ -430,7 +435,9 @@ Pro version 1.**1**.4
 
 = 1.0.0 - 2024-12-19 =
 * **New**: 🐣 Initial release.
-* [unreleased]: https://github.com/wind-press/windpress/compare/v3.2.56...HEAD
+* [unreleased]: https://github.com/wind-press/windpress/compare/v3.2.58...HEAD
+* [3.2.58]: https://github.com/wind-press/windpress/compare/v3.2.57...v3.2.58
+* [3.2.57]: https://github.com/wind-press/windpress/compare/v3.2.56...v3.2.57
 * [3.2.56]: https://github.com/wind-press/windpress/compare/v3.2.55...v3.2.56
 * [3.2.55]: https://github.com/wind-press/windpress/compare/v3.2.54...v3.2.55
 * [3.2.54]: https://github.com/wind-press/windpress/compare/v3.2.53...v3.2.54
