@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 3.2.58
+Stable tag: 3.2.59
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -124,6 +124,9 @@ Note: The Pro version has a version number with one higher minor version than th
 For instance:
 Free version 1.**0**.4
 Pro version 1.**1**.4
+
+= 3.2.59 - 2025-09-01 =
+* **Fix**: [TW3] Missing `/css/preflight.css` file where the Preflight styles are enabled
 
 = 3.2.58 - 2025-08-19 =
 * **New**: Upgraded to Tailwind CSS v4 (4.1.12 latest)
@@ -435,7 +438,8 @@ Pro version 1.**1**.4
 
 = 1.0.0 - 2024-12-19 =
 * **New**: 🐣 Initial release.
-* [unreleased]: https://github.com/wind-press/windpress/compare/v3.2.58...HEAD
+* [unreleased]: https://github.com/wind-press/windpress/compare/v3.2.59...HEAD
+* [3.2.59]: https://github.com/wind-press/windpress/compare/v3.2.58...v3.2.59
 * [3.2.58]: https://github.com/wind-press/windpress/compare/v3.2.57...v3.2.58
 * [3.2.57]: https://github.com/wind-press/windpress/compare/v3.2.56...v3.2.57
 * [3.2.56]: https://github.com/wind-press/windpress/compare/v3.2.55...v3.2.56
