@@ -1802,7 +1802,7 @@
     ]
   },
   "assets/integration/bricks/main.js": {
-    "file": "assets/integration/bricks-5VJOhe2q.js",
+    "file": "assets/integration/bricks-BOF38mUy.js",
     "name": "integration/bricks",
     "src": "assets/integration/bricks/main.js",
     "isEntry": true,
@@ -1927,7 +1927,7 @@
     ]
   },
   "assets/integration/bricks/modules/plain-classes/main.js": {
-    "file": "assets/main-CNXNzPC7.js",
+    "file": "assets/main-D9wy4vxM.js",
     "name": "main",
     "src": "assets/integration/bricks/modules/plain-classes/main.js",
     "isDynamicEntry": true,
@@ -2313,7 +2313,7 @@
     ]
   },
   "assets/integration/livecanvas/main.js": {
-    "file": "assets/integration/livecanvas-5EMGwLZc.js",
+    "file": "assets/integration/livecanvas-bmGm39hc.js",
     "name": "integration/livecanvas",
     "src": "assets/integration/livecanvas/main.js",
     "isEntry": true,
@@ -2374,7 +2374,7 @@
     ]
   },
   "assets/integration/livecanvas/modules/plain-classes/main.js": {
-    "file": "assets/main-BheiEjmZ.js",
+    "file": "assets/main-SnEp-f3X.js",
     "name": "main",
     "src": "assets/integration/livecanvas/modules/plain-classes/main.js",
     "isDynamicEntry": true,
@@ -2399,7 +2399,7 @@
       "node_modules/.pnpm/shiki@3.12.2/node_modules/shiki/dist/wasm.mjs"
     ],
     "css": [
-      "assets/main-CrlcTQeO.css"
+      "assets/main-_hOTS7_U.css"
     ]
   },
   "assets/integration/livecanvas/modules/variables/main.ts": {
