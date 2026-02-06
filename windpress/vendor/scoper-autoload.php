@@ -14,7 +14,7 @@ $loader = (static function () {
     // Restore the backup and ensure the excluded files are properly marked as loaded
     $GLOBALS['__composer_autoload_files'] = \array_merge(
         $existingComposerAutoloadFiles,
-        \array_fill_keys(['320cde22f66dd4f5d3fd621d3e88b98f', '9eaa6b0f3f04e58e17ae5ecb754ea313', '8825ede83f2f289127722d4e842cf7e8', 'acbe0d033c55cd0a032b415e08d14f4c', 'e69f7f6ee287b969198c3c9d6777bd38', '36dfd6ed9dd74e8062aa61f09caf8554', '0e6d7bf4a5811bfa5cf40c5ccd6fae6a', '5928a00fa978807cf85d90ec3f4b0147', 'a4a119a56e50fbb293281d9a48007e0e', '54b9ab13bc86d8251a04a939888e357e', '18e965175c6bcd96deba6bc791a44373', '7edcabe1b67fbb38f4972a722bbbb429', '51421aa3e5e8003b70a289762d146a2a', '7bdb062931f6e7102434c3ad28423eb6', 'f49032536fdd06afd9df7191c3f21453'], true)
+        \array_fill_keys(['320cde22f66dd4f5d3fd621d3e88b98f', '9eaa6b0f3f04e58e17ae5ecb754ea313', '8825ede83f2f289127722d4e842cf7e8', 'acbe0d033c55cd0a032b415e08d14f4c', 'e69f7f6ee287b969198c3c9d6777bd38', '36dfd6ed9dd74e8062aa61f09caf8554', '0e6d7bf4a5811bfa5cf40c5ccd6fae6a', '5928a00fa978807cf85d90ec3f4b0147', 'a4a119a56e50fbb293281d9a48007e0e', '54b9ab13bc86d8251a04a939888e357e', '18e965175c6bcd96deba6bc791a44373', '7edcabe1b67fbb38f4972a722bbbb429', '51421aa3e5e8003b70a289762d146a2a', '7bdb062931f6e7102434c3ad28423eb6', 'f49032536fdd06afd9df7191c3f21453', 'ac36427f0a3d6d978fd7d5779ceac594', '2d223b650b5c56928c1affa16ee5cfe2', '08959129a5682ab79a4f5f65bddb9566', '620bccfea918a59f88a707c890434313', '2acf50802a54a9a126e656b486aeab54', '36b60e4543e3a2fa5ff85be4f4b96cf6', '8e794e4061c17331d204e4e8ae4f90c7', '63fa8de9655d8331bf07592719bbba1c', 'f62335a8f6f7f7f4414fa96074bda702', 'cf0bcfe0f5602da2103bbe327f19225c', '86aa1691af0be2057ff4b6c453db6c6c', '7acea9128a4ae5dba9006cde886d4577', '6a099327d1f9694737526ccd00bfd944', 'a1780cd2edf30a1f045434cd1550cff0'], true)
     );
 
     return $loader;
@@ -36,6 +36,13 @@ humbug_phpscoper_expose_class('PhpToken', 'WindPressDeps\PhpToken');
 humbug_phpscoper_expose_class('Stringable', 'WindPressDeps\Stringable');
 humbug_phpscoper_expose_class('UnhandledMatchError', 'WindPressDeps\UnhandledMatchError');
 humbug_phpscoper_expose_class('ValueError', 'WindPressDeps\ValueError');
+humbug_phpscoper_expose_class('WP_Abilities_Registry', 'WindPressDeps\WP_Abilities_Registry');
+humbug_phpscoper_expose_class('WP_Ability_Categories_Registry', 'WindPressDeps\WP_Ability_Categories_Registry');
+humbug_phpscoper_expose_class('WP_Ability_Category', 'WindPressDeps\WP_Ability_Category');
+humbug_phpscoper_expose_class('WP_Ability', 'WindPressDeps\WP_Ability');
+humbug_phpscoper_expose_class('WP_REST_Abilities_V1_Categories_Controller', 'WindPressDeps\WP_REST_Abilities_V1_Categories_Controller');
+humbug_phpscoper_expose_class('WP_REST_Abilities_V1_List_Controller', 'WindPressDeps\WP_REST_Abilities_V1_List_Controller');
+humbug_phpscoper_expose_class('WP_REST_Abilities_V1_Run_Controller', 'WindPressDeps\WP_REST_Abilities_V1_Run_Controller');
 
 // Function aliases. For more information see:
 // https://github.com/humbug/php-scoper/blob/master/docs/further-reading.md#function-aliases
@@ -54,6 +61,7 @@ if (!function_exists('fdiv')) { function fdiv() { return \WindPressDeps\fdiv(...
 if (!function_exists('get_debug_type')) { function get_debug_type() { return \WindPressDeps\get_debug_type(...func_get_args()); } }
 if (!function_exists('get_resource_id')) { function get_resource_id() { return \WindPressDeps\get_resource_id(...func_get_args()); } }
 if (!function_exists('grapheme_extract')) { function grapheme_extract() { return \WindPressDeps\grapheme_extract(...func_get_args()); } }
+if (!function_exists('grapheme_str_split')) { function grapheme_str_split() { return \WindPressDeps\grapheme_str_split(...func_get_args()); } }
 if (!function_exists('grapheme_stripos')) { function grapheme_stripos() { return \WindPressDeps\grapheme_stripos(...func_get_args()); } }
 if (!function_exists('grapheme_stristr')) { function grapheme_stristr() { return \WindPressDeps\grapheme_stristr(...func_get_args()); } }
 if (!function_exists('grapheme_strlen')) { function grapheme_strlen() { return \WindPressDeps\grapheme_strlen(...func_get_args()); } }
@@ -112,5 +120,17 @@ if (!function_exists('preg_last_error_msg')) { function preg_last_error_msg() { 
 if (!function_exists('str_contains')) { function str_contains() { return \WindPressDeps\str_contains(...func_get_args()); } }
 if (!function_exists('str_ends_with')) { function str_ends_with() { return \WindPressDeps\str_ends_with(...func_get_args()); } }
 if (!function_exists('str_starts_with')) { function str_starts_with() { return \WindPressDeps\str_starts_with(...func_get_args()); } }
+if (!function_exists('wp_get_abilities')) { function wp_get_abilities() { return \WindPressDeps\wp_get_abilities(...func_get_args()); } }
+if (!function_exists('wp_get_ability')) { function wp_get_ability() { return \WindPressDeps\wp_get_ability(...func_get_args()); } }
+if (!function_exists('wp_get_ability_categories')) { function wp_get_ability_categories() { return \WindPressDeps\wp_get_ability_categories(...func_get_args()); } }
+if (!function_exists('wp_get_ability_category')) { function wp_get_ability_category() { return \WindPressDeps\wp_get_ability_category(...func_get_args()); } }
+if (!function_exists('wp_has_ability')) { function wp_has_ability() { return \WindPressDeps\wp_has_ability(...func_get_args()); } }
+if (!function_exists('wp_has_ability_category')) { function wp_has_ability_category() { return \WindPressDeps\wp_has_ability_category(...func_get_args()); } }
+if (!function_exists('wp_register_ability')) { function wp_register_ability() { return \WindPressDeps\wp_register_ability(...func_get_args()); } }
+if (!function_exists('wp_register_ability_category')) { function wp_register_ability_category() { return \WindPressDeps\wp_register_ability_category(...func_get_args()); } }
+if (!function_exists('wp_register_core_abilities')) { function wp_register_core_abilities() { return \WindPressDeps\wp_register_core_abilities(...func_get_args()); } }
+if (!function_exists('wp_register_core_ability_categories')) { function wp_register_core_ability_categories() { return \WindPressDeps\wp_register_core_ability_categories(...func_get_args()); } }
+if (!function_exists('wp_unregister_ability')) { function wp_unregister_ability() { return \WindPressDeps\wp_unregister_ability(...func_get_args()); } }
+if (!function_exists('wp_unregister_ability_category')) { function wp_unregister_ability_category() { return \WindPressDeps\wp_unregister_ability_category(...func_get_args()); } }
 
 return $loader;

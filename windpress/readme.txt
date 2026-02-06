@@ -1,10 +1,10 @@
 === WindPress - Tailwind CSS integration for WordPress ===
 Contributors: suabahasa, rosua
 Donate link: https://ko-fi.com/Q5Q75XSF7
-Tags: tailwind, tailwindcss, tailwind css
+Tags: tailwind, tailwindcss, tailwind css, block
 Requires at least: 6.0
-Tested up to: 6.8
-Stable tag: 3.2.63
+Tested up to: 6.9
+Stable tag: 3.2.73
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ WindPress is a platform agnostic [Tailwind CSS](https://tailwindcss.com/) integr
 
 **Tailwind CSS version**:
 - 3.4.17
-- 4.1.13
+- 4.1.18
 
 ### Features
 
@@ -124,6 +124,49 @@ Note: The Pro version has a version number with one higher minor version than th
 For instance:
 Free version 1.**0**.4
 Pro version 1.**1**.4
+
+= 3.2.73 - 2025-12-22 =
+* **New**: Upgraded to Tailwind CSS v4 (4.1.18 latest)
+* **Fix**: [Elementor, Bricks, Oxygen, OxygenClassic, Breakdance, Builderius, Timber, Blockstudio] Scanner now properly supports batch system to handle large datasets
+* **Fix**: [Internal] JSON string detection in cache fetch_contents method to properly set content type
+
+= 3.2.72 - 2025-12-08 =
+* **Improve**: Test compatibility with WordPress 6.9
+
+= 3.2.71 - 2025-12-08 =
+* **Fix**: [Internal] Plugin's bundle (Zip) file are not generated correctly
+
+= 3.2.70 - 2025-12-08 =
+* **Fix**: [Internal] Plugin's bundle (Zip) file are not generated correctly
+
+= 3.2.69 - 2025-12-08 =
+* **New**: Initial WordPress Abilities API support (experimental)
+* **Fix**: [Gutenberg] Generate Cache on Save feature's assets are not loaded correctly
+* **Fix**: [Internal] path handling issue on the Windows OS
+* **Improve**: [Internal] Replace the old scanner's dependency with `@windpress/oxide-parser` package
+
+= 3.2.68 - 2025-11-20 =
+* **New**: [Gutenberg] Added Dark Mode toggle to switch between Light, Dark, and System themes
+* **New**: [Gutenberg] Generate Cache on Save feature
+* **Improve**: Fix color picker on the Wizard page when the initial color is empty
+* **Improve**: Redefined how styles are loaded on the front page based on the selected Performance Mode: Hybrid, Cached, or Compiler.
+* **Remove**: Reverted file version history feature introduced in v3.2.65 due to complexity and performance concerns
+
+= 3.2.67 - 2025-11-04 =
+* **Improve**: [Gutenberg] Improved the Common Block's HTML to Blocks conversion process for better handling of complex HTML structures (experimental)
+
+= 3.2.66 - 2025-11-04 =
+* **New**: [Gutenberg] Introduced "Common Block" — a generic and flexible block that lets you build any HTML element, with import/export support (experimental)
+
+= 3.2.65 - 2025-10-24 =
+* **New**: Upgraded to Tailwind CSS v4 (4.1.16 latest)
+* **New**: Added file version history feature to the Simple File System (experimental)
+
+= 3.2.64 - 2025-10-18 =
+* **New**: Upgraded to Tailwind CSS v4 (4.1.14 latest)
+* **New**: [TW4] Source Map support for easier debugging in the browser DevTools (experimental)
+* **Fix**: Wizard tree doesn't show the children nodes correctly [#66](https://github.com/wind-press/windpress/issues/66)
+* **Fix**: [Bricks] Paste HTML feature keyboard shortcut not working correctly [#64](https://github.com/wind-press/windpress/issues/64) [#67](https://github.com/wind-press/windpress/issues/67) [#68](https://github.com/wind-press/windpress/issues/68)
 
 = 3.2.63 - 2025-09-27 =
 * **Fix**: [Breakdance] Integration doesn't load on the recent version of Breakdance (v2.4.1)
@@ -453,7 +496,17 @@ Pro version 1.**1**.4
 
 = 1.0.0 - 2024-12-19 =
 * **New**: 🐣 Initial release.
-* [unreleased]: https://github.com/wind-press/windpress/compare/v3.2.63...HEAD
+* [unreleased]: https://github.com/wind-press/windpress/compare/v3.2.73...HEAD
+* [3.2.73]: https://github.com/wind-press/windpress/compare/v3.2.72...v3.2.73
+* [3.2.72]: https://github.com/wind-press/windpress/compare/v3.2.71...v3.2.72
+* [3.2.71]: https://github.com/wind-press/windpress/compare/v3.2.70...v3.2.71
+* [3.2.70]: https://github.com/wind-press/windpress/compare/v3.2.69...v3.2.70
+* [3.2.69]: https://github.com/wind-press/windpress/compare/v3.2.68...v3.2.69
+* [3.2.68]: https://github.com/wind-press/windpress/compare/v3.2.67...v3.2.68
+* [3.2.67]: https://github.com/wind-press/windpress/compare/v3.2.66...v3.2.67
+* [3.2.66]: https://github.com/wind-press/windpress/compare/v3.2.65...v3.2.66
+* [3.2.65]: https://github.com/wind-press/windpress/compare/v3.2.64...v3.2.65
+* [3.2.64]: https://github.com/wind-press/windpress/compare/v3.2.63...v3.2.64
 * [3.2.63]: https://github.com/wind-press/windpress/compare/v3.2.62...v3.2.63
 * [3.2.62]: https://github.com/wind-press/windpress/compare/v3.2.61...v3.2.62
 * [3.2.61]: https://github.com/wind-press/windpress/compare/v3.2.60...v3.2.61

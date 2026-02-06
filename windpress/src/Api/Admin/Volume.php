@@ -30,6 +30,7 @@ class Volume extends AbstractApi implements ApiInterface
     {
         register_rest_route(self::API_NAMESPACE, $this->get_prefix() . '/index', ['methods' => WP_REST_Server::READABLE, 'callback' => fn(WP_REST_Request $wprestRequest): WP_REST_Response => $this->index($wprestRequest), 'permission_callback' => fn(WP_REST_Request $wprestRequest): bool => $this->permission_callback($wprestRequest)]);
         register_rest_route(self::API_NAMESPACE, $this->get_prefix() . '/store', ['methods' => WP_REST_Server::CREATABLE, 'callback' => fn(WP_REST_Request $wprestRequest): WP_REST_Response => $this->store($wprestRequest), 'permission_callback' => fn(WP_REST_Request $wprestRequest): bool => $this->permission_callback($wprestRequest)]);
+        register_rest_route(self::API_NAMESPACE, $this->get_prefix() . '/handlers', ['methods' => WP_REST_Server::READABLE, 'callback' => fn(WP_REST_Request $wprestRequest): WP_REST_Response => $this->handlers($wprestRequest), 'permission_callback' => fn(WP_REST_Request $wprestRequest): bool => $this->permission_callback($wprestRequest)]);
     }
     public function index(WP_REST_Request $wprestRequest): WP_REST_Response
     {
@@ -41,5 +42,9 @@ class Volume extends AbstractApi implements ApiInterface
         $entries = $payload['volume']['entries'];
         CoreVolume::save_entries($entries);
         return new WP_REST_Response(['message' => __('data stored successfully', 'windpress')]);
+    }
+    public function handlers(WP_REST_Request $wprestRequest): WP_REST_Response
+    {
+        return new WP_REST_Response(['handlers' => CoreVolume::get_available_handlers()]);
     }
 }

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'WindPress\\WindPress\\' => array($baseDir . '/src'),
+    'WindPressDeps\\enshrined\\svgSanitize\\' => array($vendorDir . '/enshrined/svg-sanitize/src'),
     'WindPressDeps\\Symfony\\Contracts\\Service\\' => array($vendorDir . '/symfony/service-contracts'),
     'WindPressDeps\\Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'WindPressDeps\\Symfony\\Component\\String\\' => array($vendorDir . '/symfony/string'),
@@ -14,6 +15,7 @@ return array(
     'WindPressDeps\\Symfony\\Component\\PropertyInfo\\' => array($vendorDir . '/symfony/property-info'),
     'WindPressDeps\\Symfony\\Component\\PropertyAccess\\' => array($vendorDir . '/symfony/property-access'),
     'WindPressDeps\\Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
+    'WindPressDeps\\Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),
     'WindPressDeps\\Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'WindPressDeps\\Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
     'WindPressDeps\\Hidehalo\\Nanoid\\' => array($vendorDir . '/hidehalo/nanoid-php/src'),

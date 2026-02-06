@@ -22,8 +22,11 @@ class Main implements IntegrationInterface
     public function __construct()
     {
         add_filter('f!windpress/core/cache:compile.providers', fn(array $providers): array => $this->register_provider($providers));
-        if ($this->is_enabled() && Config::get(sprintf('integration.%s.editor.enabled', $this->get_name()), \true)) {
-            new \WindPress\WindPress\Integration\Gutenberg\Editor();
+        if ($this->is_enabled()) {
+            if (Config::get(sprintf('integration.%s.editor.enabled', $this->get_name()), \true)) {
+                new \WindPress\WindPress\Integration\Gutenberg\Editor();
+            }
+            \WindPress\WindPress\Integration\Gutenberg\CommonBlock::get_instance();
         }
     }
     public function get_name(): string

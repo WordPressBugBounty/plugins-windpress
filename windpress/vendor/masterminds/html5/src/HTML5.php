@@ -133,7 +133,6 @@ class HTML5
      * Parse an input string.
      *
      * @param string $input
-     * @param array  $options
      *
      * @return \DOMDocument
      */

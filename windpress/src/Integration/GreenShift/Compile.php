@@ -32,7 +32,7 @@ class Compile
         $contents = [];
         $post_types = apply_filters('f!windpress/integration/greenshift/compile:get_contents.post_types', ['wp_block']);
         $next_batch = $metadata['next_batch'] !== \false ? $metadata['next_batch'] : 1;
-        $wpQuery = new WP_Query(['posts_per_page' => apply_filters('f!windpress/integration/greenshift/compile:get_contents.post_per_page', (int) get_option('posts_per_page', 10)), 'post_type' => $post_types, 'paged' => $next_batch]);
+        $wpQuery = new WP_Query(['posts_per_page' => apply_filters('f!windpress/integration/greenshift/compile:get_contents.post_per_page', (int) get_option('posts_per_page', 20)), 'post_type' => $post_types, 'paged' => $next_batch]);
         foreach ($wpQuery->posts as $post) {
             if (trim($post->post_content) === '' || trim($post->post_content) === '0') {
                 continue;

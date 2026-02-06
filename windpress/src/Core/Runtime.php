@@ -82,13 +82,22 @@ class Runtime
     }
     public function append_header()
     {
-        $is_cache_enabled = Config::get('performance.cache.enabled', \false);
-        $is_cache_enabled = apply_filters('f!windpress/core/runtime:append_header.cache_enabled', $is_cache_enabled);
-        $is_exclude_admin = Config::get('performance.cache.exclude_admin', \false) && current_user_can('manage_options');
-        $is_exclude_admin = apply_filters('f!windpress/core/runtime:append_header.exclude_admin', $is_exclude_admin);
+        $mode = $this->performance_mode();
+        // Keep the filter name for integrations that need to bypass cached CSS (e.g., builder previews).
+        $should_skip_cache = apply_filters('f!windpress/core/runtime:append_header.exclude_admin', \false);
         add_action('wp_head', fn() => $this->print_windpress_metadata(), 1000001);
-        if ($is_cache_enabled && $this->is_cache_exists() && !$is_exclude_admin) {
-            add_action('wp_head', fn() => $this->enqueue_css_cache(), 1000001);
+        $has_cache = $this->is_cache_exists();
+        if ($mode === 'hybrid') {
+            if ($has_cache && !$should_skip_cache) {
+                add_action('wp_head', fn() => $this->enqueue_css_cache(\true), 1000001);
+            }
+            add_action('wp_head', fn() => $this->enqueue_play_cdn(), 1000001);
+        } elseif ($mode === 'cached') {
+            if ($has_cache && !$should_skip_cache) {
+                add_action('wp_head', fn() => $this->enqueue_css_cache(), 1000001);
+            } else {
+                add_action('wp_head', fn() => $this->enqueue_play_cdn(), 1000001);
+            }
         } else {
             add_action('wp_head', fn() => $this->enqueue_play_cdn(), 1000001);
         }
@@ -96,18 +105,28 @@ class Runtime
         //     add_action('wp_head', fn() => $this->enqueue_front_panel(), 1_000_001);
         // }
     }
+    private function performance_mode(): string
+    {
+        $mode = Config::get('performance.mode', 'hybrid');
+        $mode = apply_filters('f!windpress/core/runtime:append_header.mode', $mode);
+        $allowed = ['cached', 'hybrid', 'compiler'];
+        if (!in_array($mode, $allowed, \true)) {
+            return 'hybrid';
+        }
+        return $mode;
+    }
     public function is_cache_exists()
     {
         return file_exists(\WindPress\WindPress\Core\Cache::get_cache_path(\WindPress\WindPress\Core\Cache::CSS_CACHE_FILE)) && is_readable(\WindPress\WindPress\Core\Cache::get_cache_path(\WindPress\WindPress\Core\Cache::CSS_CACHE_FILE));
     }
-    public function enqueue_css_cache()
+    public function enqueue_css_cache(bool $force_inline = \false)
     {
         if (!$this->is_cache_exists()) {
             return;
         }
         do_action('a!windpress/core/runtime:enqueue_css_cache.before');
         $handle = WIND_PRESS::WP_OPTION . '-cached';
-        if (Config::get('performance.cache.inline_load', \false)) {
+        if ($force_inline || Config::get('performance.cache.inline_load', \false)) {
             // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local file
             $css_clean = file_get_contents(\WindPress\WindPress\Core\Cache::get_cache_path(\WindPress\WindPress\Core\Cache::CSS_CACHE_FILE));
             if ($css_clean === \false) {
@@ -155,6 +174,8 @@ class Runtime
             $loaded_modules[] = WIND_PRESS::WP_OPTION . ':intellisense';
             AssetVite::get_instance()->register_asset('assets/packages/core/tailwindcss/play/worker.ts', ['handle' => WIND_PRESS::WP_OPTION . ':worker', 'in-footer' => \true]);
             $loaded_modules[] = WIND_PRESS::WP_OPTION . ':worker';
+            do_action('a!windpress/core/runtime:enqueue_play_modules.loaded_modules');
+            $loaded_modules = apply_filters('f!windpress/core/runtime:enqueue_play_modules.loaded_modules', $loaded_modules);
         }
         AssetVite::get_instance()->register_asset('assets/packages/core/tailwindcss/play/observer.ts', ['handle' => WIND_PRESS::WP_OPTION . ':observer', 'in-footer' => \true, 'dependencies' => array_merge(['wp-i18n', 'wp-hooks'], is_array($loaded_modules) ? $loaded_modules : iterator_to_array($loaded_modules))]);
     }

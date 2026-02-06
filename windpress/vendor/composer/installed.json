@@ -1,6 +1,54 @@
 {
     "packages": [
         {
+            "name": "enshrined\/svg-sanitize",
+            "version": "0.22.0",
+            "version_normalized": "0.22.0.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/darylldoyle\/svg-sanitizer.git",
+                "reference": "0afa95ea74be155a7bcd6c6fb60c276c39984500"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/darylldoyle\/svg-sanitizer\/zipball\/0afa95ea74be155a7bcd6c6fb60c276c39984500",
+                "reference": "0afa95ea74be155a7bcd6c6fb60c276c39984500",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit\/phpunit": "^6.5 || ^8.5"
+            },
+            "time": "2025-08-12T10:13:48+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "WindPressDeps\\enshrined\\svgSanitize\\": "src"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Daryll Doyle",
+                    "email": "daryll@enshrined.co.uk"
+                }
+            ],
+            "description": "An SVG sanitizer for PHP",
+            "support": {
+                "issues": "https:\/\/github.com\/darylldoyle\/svg-sanitizer\/issues",
+                "source": "https:\/\/github.com\/darylldoyle\/svg-sanitizer\/tree\/0.22.0"
+            },
+            "install-path": "..\/enshrined\/svg-sanitize"
+        },
+        {
             "name": "hidehalo\/nanoid-php",
             "version": "2.0",
             "version_normalized": "2.0.0.0",
@@ -62,17 +110,17 @@
         },
         {
             "name": "masterminds\/html5",
-            "version": "2.9.0",
-            "version_normalized": "2.9.0.0",
+            "version": "2.10.0",
+            "version_normalized": "2.10.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/Masterminds\/html5-php.git",
-                "reference": "f5ac2c0b0a2eefca70b2ce32a5809992227e75a6"
+                "reference": "fcf91eb64359852f00d921887b219479b4f21251"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/Masterminds\/html5-php\/zipball\/f5ac2c0b0a2eefca70b2ce32a5809992227e75a6",
-                "reference": "f5ac2c0b0a2eefca70b2ce32a5809992227e75a6",
+                "url": "https:\/\/api.github.com\/repos\/Masterminds\/html5-php\/zipball\/fcf91eb64359852f00d921887b219479b4f21251",
+                "reference": "fcf91eb64359852f00d921887b219479b4f21251",
                 "shasum": ""
             },
             "require": {
@@ -82,7 +130,7 @@
             "require-dev": {
                 "phpunit\/phpunit": "^4.8.35 || ^5.7.21 || ^6 || ^7 || ^8 || ^9"
             },
-            "time": "2024-03-31T07:05:07+00:00",
+            "time": "2025-07-25T09:04:22+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -126,7 +174,7 @@
             ],
             "support": {
                 "issues": "https:\/\/github.com\/Masterminds\/html5-php\/issues",
-                "source": "https:\/\/github.com\/Masterminds\/html5-php\/tree\/2.9.0"
+                "source": "https:\/\/github.com\/Masterminds\/html5-php\/tree\/2.10.0"
             },
             "install-path": "..\/masterminds\/html5"
         },
@@ -305,6 +353,76 @@
             "install-path": "..\/symfony\/deprecation-contracts"
         },
         {
+            "name": "symfony\/filesystem",
+            "version": "v5.4.45",
+            "version_normalized": "5.4.45.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/symfony\/filesystem.git",
+                "reference": "57c8294ed37d4a055b77057827c67f9558c95c54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/filesystem\/zipball\/57c8294ed37d4a055b77057827c67f9558c95c54",
+                "reference": "57c8294ed37d4a055b77057827c67f9558c95c54",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony\/polyfill-ctype": "~1.8",
+                "symfony\/polyfill-mbstring": "~1.8",
+                "symfony\/polyfill-php80": "^1.16"
+            },
+            "require-dev": {
+                "symfony\/process": "^5.4|^6.4"
+            },
+            "time": "2024-10-22T13:05:35+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "WindPressDeps\\Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "\/Tests\/"
+                ]
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https:\/\/symfony.com\/contributors"
+                }
+            ],
+            "description": "Provides basic utilities for the filesystem",
+            "homepage": "https:\/\/symfony.com",
+            "support": {
+                "source": "https:\/\/github.com\/symfony\/filesystem\/tree\/v5.4.45"
+            },
+            "funding": [
+                {
+                    "url": "https:\/\/symfony.com\/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https:\/\/github.com\/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https:\/\/tidelift.com\/funding\/github\/packagist\/symfony\/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "..\/symfony\/filesystem"
+        },
+        {
             "name": "symfony\/finder",
             "version": "v5.4.45",
             "version_normalized": "5.4.45.0",
@@ -372,8 +490,8 @@
         },
         {
             "name": "symfony\/polyfill-ctype",
-            "version": "v1.32.0",
-            "version_normalized": "1.32.0.0",
+            "version": "v1.33.0",
+            "version_normalized": "1.33.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-ctype.git",
@@ -434,7 +552,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-ctype\/tree\/v1.32.0"
+                "source": "https:\/\/github.com\/symfony\/polyfill-ctype\/tree\/v1.33.0"
             },
             "funding": [
                 {
@@ -446,6 +564,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https:\/\/github.com\/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https:\/\/tidelift.com\/funding\/github\/packagist\/symfony\/symfony",
                     "type": "tidelift"
                 }
@@ -454,17 +576,17 @@
         },
         {
             "name": "symfony\/polyfill-intl-grapheme",
-            "version": "v1.32.0",
-            "version_normalized": "1.32.0.0",
+            "version": "v1.33.0",
+            "version_normalized": "1.33.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-intl-grapheme.git",
-                "reference": "b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe"
+                "reference": "380872130d3a5dd3ace2f4010d95125fde5d5c70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-intl-grapheme\/zipball\/b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe",
-                "reference": "b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-intl-grapheme\/zipball\/380872130d3a5dd3ace2f4010d95125fde5d5c70",
+                "reference": "380872130d3a5dd3ace2f4010d95125fde5d5c70",
                 "shasum": ""
             },
             "require": {
@@ -473,7 +595,7 @@
             "suggest": {
                 "ext-intl": "For best performance"
             },
-            "time": "2024-09-09T11:45:10+00:00",
+            "time": "2025-06-27T09:58:17+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -515,7 +637,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-intl-grapheme\/tree\/v1.32.0"
+                "source": "https:\/\/github.com\/symfony\/polyfill-intl-grapheme\/tree\/v1.33.0"
             },
             "funding": [
                 {
@@ -527,6 +649,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https:\/\/github.com\/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https:\/\/tidelift.com\/funding\/github\/packagist\/symfony\/symfony",
                     "type": "tidelift"
                 }
@@ -535,8 +661,8 @@
         },
         {
             "name": "symfony\/polyfill-intl-normalizer",
-            "version": "v1.32.0",
-            "version_normalized": "1.32.0.0",
+            "version": "v1.33.0",
+            "version_normalized": "1.33.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-intl-normalizer.git",
@@ -599,7 +725,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-intl-normalizer\/tree\/v1.32.0"
+                "source": "https:\/\/github.com\/symfony\/polyfill-intl-normalizer\/tree\/v1.33.0"
             },
             "funding": [
                 {
@@ -611,6 +737,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https:\/\/github.com\/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https:\/\/tidelift.com\/funding\/github\/packagist\/symfony\/symfony",
                     "type": "tidelift"
                 }
@@ -619,8 +749,8 @@
         },
         {
             "name": "symfony\/polyfill-mbstring",
-            "version": "v1.32.0",
-            "version_normalized": "1.32.0.0",
+            "version": "v1.33.0",
+            "version_normalized": "1.33.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-mbstring.git",
@@ -683,7 +813,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-mbstring\/tree\/v1.32.0"
+                "source": "https:\/\/github.com\/symfony\/polyfill-mbstring\/tree\/v1.33.0"
             },
             "funding": [
                 {
@@ -695,6 +825,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https:\/\/github.com\/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https:\/\/tidelift.com\/funding\/github\/packagist\/symfony\/symfony",
                     "type": "tidelift"
                 }
@@ -703,8 +837,8 @@
         },
         {
             "name": "symfony\/polyfill-php80",
-            "version": "v1.32.0",
-            "version_normalized": "1.32.0.0",
+            "version": "v1.33.0",
+            "version_normalized": "1.33.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-php80.git",
@@ -766,7 +900,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-php80\/tree\/v1.32.0"
+                "source": "https:\/\/github.com\/symfony\/polyfill-php80\/tree\/v1.33.0"
             },
             "funding": [
                 {
@@ -775,6 +909,10 @@
                 },
                 {
                     "url": "https:\/\/github.com\/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https:\/\/github.com\/nicolas-grekas",
                     "type": "github"
                 },
                 {
@@ -1279,6 +1417,82 @@
                 }
             ],
             "install-path": "..\/symfony\/yaml"
+        },
+        {
+            "name": "wordpress\/abilities-api",
+            "version": "v0.4.0",
+            "version_normalized": "0.4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/WordPress\/abilities-api.git",
+                "reference": "0759075aed37c4247adbf273bdebec096d52e825"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/WordPress\/abilities-api\/zipball\/0759075aed37c4247adbf273bdebec096d52e825",
+                "reference": "0759075aed37c4247adbf273bdebec096d52e825",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 | ^8"
+            },
+            "require-dev": {
+                "automattic\/vipwpcs": "^3.0",
+                "dealerdirect\/phpcodesniffer-composer-installer": "^1.0",
+                "phpcompatibility\/php-compatibility": "10.x-dev as 9.99.99",
+                "phpcompatibility\/phpcompatibility-wp": "^2.1",
+                "phpstan\/extension-installer": "^1.3",
+                "phpstan\/phpstan": "^2.1.22",
+                "phpstan\/phpstan-deprecation-rules": "^2.0.3",
+                "phpstan\/phpstan-phpunit": "^2.0.3",
+                "phpunit\/phpunit": "^8.5|^9.6",
+                "slevomat\/coding-standard": "^8.0",
+                "squizlabs\/php_codesniffer": "^3.9",
+                "szepeviktor\/phpstan-wordpress": "^2.0.2",
+                "wp-coding-standards\/wpcs": "^3.1",
+                "wp-phpunit\/wp-phpunit": "^6.5",
+                "wpackagist-plugin\/plugin-check": "^1.6",
+                "yoast\/phpunit-polyfills": "^4.0"
+            },
+            "time": "2025-10-29T05:35:31+00:00",
+            "type": "library",
+            "extra": {
+                "installer-paths": {
+                    "vendor\/{$vendor}\/{$name}\/": [
+                        "wpackagist-plugin\/plugin-check"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "includes\/bootstrap.php"
+                ]
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress AI Team",
+                    "homepage": "https:\/\/make.wordpress.org\/ai\/"
+                }
+            ],
+            "description": "AI Abilities for WordPress.",
+            "homepage": "https:\/\/github.com\/WordPress\/abilities-api",
+            "keywords": [
+                "abilities",
+                "ai",
+                "api",
+                "llm",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https:\/\/github.com\/WordPress\/abilities-api\/issues",
+                "source": "https:\/\/github.com\/WordPress\/abilities-api"
+            },
+            "install-path": "..\/wordpress\/abilities-api"
         }
     ],
     "dev": false,
