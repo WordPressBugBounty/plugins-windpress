@@ -242,6 +242,7 @@
 	__('Etch Settings', 'windpress');
 	__('Enable CSS compilation for Etch elements and templates. This processes Tailwind classes found in Etch content and generates the necessary CSS.', 'windpress');
 	__('Enable enhanced Etch editor features including real-time Tailwind CSS preview, autocomplete, and editor enhancements.', 'windpress');
+	__('Always emit imported theme values into the CSS file instead of only when used.', 'windpress');
 	__('Theme variables are special CSS variables defined using the `@theme` directive that influence which utility classes exist in your project.', 'windpress');
 	__('Docs: Theme variables', 'windpress');
 	__('Use the `@plugin` directive to load a legacy JavaScript-based plugin.', 'windpress');

@@ -32,12 +32,14 @@ class Compile
         $contents = [];
         $post_types = apply_filters('f!windpress/integration/greenshift/compile:get_contents.post_types', ['wp_block']);
         $next_batch = $metadata['next_batch'] !== \false ? $metadata['next_batch'] : 1;
-        $wpQuery = new WP_Query(['posts_per_page' => apply_filters('f!windpress/integration/greenshift/compile:get_contents.post_per_page', (int) get_option('posts_per_page', 20)), 'post_type' => $post_types, 'paged' => $next_batch]);
+        $per_page = apply_filters('f!windpress/integration/greenshift/compile:get_contents.post_per_page', (int) get_option('posts_per_page', 20));
+        $wpQuery = new WP_Query(['posts_per_page' => $per_page, 'post_type' => $post_types, 'paged' => $next_batch, 'no_found_rows' => \true, 'update_post_meta_cache' => \false, 'update_post_term_cache' => \false, 'ignore_sticky_posts' => \true]);
         foreach ($wpQuery->posts as $post) {
-            if (trim($post->post_content) === '' || trim($post->post_content) === '0') {
+            $post_content = $post->post_content;
+            $post_content_trimmed = trim($post_content);
+            if ($post_content_trimmed === '' || $post_content_trimmed === '0') {
                 continue;
             }
-            $post_content = $post->post_content;
             if (apply_filters('f!windpress/integration/greenshift/compile:get_contents.render', \true, $post)) {
                 $fn_renders = apply_filters('f!windpress/integration/greenshift/compile:get_contents.render_fn', ['do_blocks', 'wptexturize', 'convert_smilies', 'shortcode_unautop', 'wp_filter_content_tags', 'do_shortcode'], $post);
                 foreach ($fn_renders as $fn_render) {
@@ -53,6 +55,8 @@ class Compile
             $post_content = apply_filters('f!windpress/integration/greenshift/compile:get_contents.post_content', $post_content, $post);
             $contents[] = ['id' => $post->ID, 'title' => sprintf('#%s: %s', $post->ID, $post->post_title), 'content' => $post_content];
         }
-        return ['metadata' => ['next_batch' => $wpQuery->max_num_pages > $next_batch ? $next_batch + 1 : \false, 'total_batches' => $wpQuery->max_num_pages], 'contents' => $contents];
+        $post_count = count($wpQuery->posts);
+        $has_more = $per_page > 0 && $post_count === $per_page;
+        return ['metadata' => ['next_batch' => $has_more ? $next_batch + 1 : \false, 'total_batches' => \false], 'contents' => $contents];
     }
 }

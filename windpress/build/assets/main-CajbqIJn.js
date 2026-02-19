@@ -1,0 +1,1 @@
+import{t as a}from"./logger-C0ovfSUp.js";import{t as r}from"./constant-D9sHn2Eh.js";wp.hooks.addFilter("windpresslivecanvas-autocomplete-items-query","windpresslivecanvas",async(t,e)=>{let o=await r.contentWindow.windpress.module.autocomplete.query(t);return e===void 0?o:[...o,...e]}),a("Module loaded!",{module:"autocomplete"});
