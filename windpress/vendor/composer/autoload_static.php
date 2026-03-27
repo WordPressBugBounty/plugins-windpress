@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitfa3c607c49170834b0f96950e2d050d7
+class ComposerStaticInit25f6f0801f3d14eab8599349ada6fb65
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -14,6 +14,7 @@ class ComposerStaticInitfa3c607c49170834b0f96950e2d050d7
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        '3c9ebf3d7a29b377eb2a8001857b1f68' => __DIR__ . '/..' . '/nabasa/vp-wp/vp-wp.php',
         '2d223b650b5c56928c1affa16ee5cfe2' => __DIR__ . '/..' . '/wordpress/abilities-api/includes/bootstrap.php',
         '9f9420178997db359cb93e6bc5893298' => __DIR__ . '/../..' . '/constant.php',
     );
@@ -329,21 +330,21 @@ class ComposerStaticInitfa3c607c49170834b0f96950e2d050d7
         'WindPress\\WindPress\\Integration\\Timber\\Main' => __DIR__ . '/../..' . '/src/Integration/Timber/Main.php',
         'WindPress\\WindPress\\Plugin' => __DIR__ . '/../..' . '/src/Plugin.php',
         'WindPress\\WindPress\\Upgrade\\UpgradeManager' => __DIR__ . '/../..' . '/src/Upgrade/UpgradeManager.php',
-        'WindPress\\WindPress\\Utils\\AssetVite' => __DIR__ . '/../..' . '/src/Utils/AssetVite.php',
         'WindPress\\WindPress\\Utils\\Cache' => __DIR__ . '/../..' . '/src/Utils/Cache.php',
         'WindPress\\WindPress\\Utils\\Common' => __DIR__ . '/../..' . '/src/Utils/Common.php',
         'WindPress\\WindPress\\Utils\\Config' => __DIR__ . '/../..' . '/src/Utils/Config.php',
         'WindPress\\WindPress\\Utils\\Debug' => __DIR__ . '/../..' . '/src/Utils/Debug.php',
         'WindPress\\WindPress\\Utils\\Notice' => __DIR__ . '/../..' . '/src/Utils/Notice.php',
         'WindPress\\WindPress\\Utils\\Requirement' => __DIR__ . '/../..' . '/src/Utils/Requirement.php',
+        'WindPress\\WindPress\\Utils\\Vite' => __DIR__ . '/../..' . '/src/Utils/Vite.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitfa3c607c49170834b0f96950e2d050d7::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitfa3c607c49170834b0f96950e2d050d7::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitfa3c607c49170834b0f96950e2d050d7::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit25f6f0801f3d14eab8599349ada6fb65::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit25f6f0801f3d14eab8599349ada6fb65::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit25f6f0801f3d14eab8599349ada6fb65::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -214,11 +214,11 @@ return array(
     'WindPress\\WindPress\\Integration\\Timber\\Main' => $baseDir . '/src/Integration/Timber/Main.php',
     'WindPress\\WindPress\\Plugin' => $baseDir . '/src/Plugin.php',
     'WindPress\\WindPress\\Upgrade\\UpgradeManager' => $baseDir . '/src/Upgrade/UpgradeManager.php',
-    'WindPress\\WindPress\\Utils\\AssetVite' => $baseDir . '/src/Utils/AssetVite.php',
     'WindPress\\WindPress\\Utils\\Cache' => $baseDir . '/src/Utils/Cache.php',
     'WindPress\\WindPress\\Utils\\Common' => $baseDir . '/src/Utils/Common.php',
     'WindPress\\WindPress\\Utils\\Config' => $baseDir . '/src/Utils/Config.php',
     'WindPress\\WindPress\\Utils\\Debug' => $baseDir . '/src/Utils/Debug.php',
     'WindPress\\WindPress\\Utils\\Notice' => $baseDir . '/src/Utils/Notice.php',
     'WindPress\\WindPress\\Utils\\Requirement' => $baseDir . '/src/Utils/Requirement.php',
+    'WindPress\\WindPress\\Utils\\Vite' => $baseDir . '/src/Utils/Vite.php',
 );

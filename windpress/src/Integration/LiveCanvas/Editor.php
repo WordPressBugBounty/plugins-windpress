@@ -13,7 +13,7 @@ namespace WindPress\WindPress\Integration\LiveCanvas;
 
 use WIND_PRESS;
 use WindPress\WindPress\Admin\AdminPage;
-use WindPress\WindPress\Utils\AssetVite;
+use WindPress\WindPress\Utils\Vite;
 /**
  * @author Joshua Gugun Siagian <suabahasa@gmail.com>
  */
@@ -26,8 +26,8 @@ class Editor
     public function register_livecanvas_autocomplete()
     {
         $handle = WIND_PRESS::WP_OPTION . ':integration-livecanvas-editor';
-        AssetVite::get_instance()->enqueue_asset('assets/integration/livecanvas/main.js', ['handle' => $handle, 'in_footer' => \true, 'dependencies' => ['wp-hooks']]);
-        wp_localize_script($handle, 'windpresslivecanvas', ['_version' => WIND_PRESS::VERSION, 'assets' => ['url' => AssetVite::asset_base_url()], 'site_meta' => ['name' => get_bloginfo('name'), 'site_url' => get_site_url(), 'admin_url' => AdminPage::get_page_url()]]);
+        Vite::assets()->enqueue('assets/integration/livecanvas/main.js', ['handle' => $handle, 'in_footer' => \true, 'dependencies' => ['wp-hooks']]);
+        wp_localize_script($handle, 'windpresslivecanvas', ['_version' => WIND_PRESS::VERSION, 'assets' => ['url' => Vite::base_url()], 'site_meta' => ['name' => get_bloginfo('name'), 'site_url' => get_site_url(), 'admin_url' => AdminPage::get_page_url()]]);
         $wp_scripts = wp_scripts();
         $queue = $wp_scripts->queue;
         foreach ($queue as $handle) {

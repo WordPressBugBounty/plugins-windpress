@@ -1,1 +1,38 @@
-new MutationObserver(function(t){t.forEach(function(s){if(s.type==="attributes"){let i=s.attributeName;if(i!=="class"&&i!=="plainclass")return;let a=s.target,r=(s.oldValue||"").split(/\s+/).filter(e=>e!==""),l=a.getAttribute(i).split(/\s+/).filter(e=>e!=="");i==="plainclass"?(r.forEach(function(e){l.includes(e)||a.classList.remove(e)}),l.forEach(function(e){r.includes(e)||a.classList.add(e)})):i==="class"&&a.hasAttribute("plainclass")&&a.getAttribute("plainclass").split(/\s+/).filter(e=>e!=="").forEach(function(e){l.includes(e)||a.classList.add(e)})}})}).observe(document.body,{attributes:!0,subtree:!0,attributeFilter:["class","plainclass"],attributeOldValue:!0}),window.addEventListener("message",function(t){var s;if(((s=t.data)==null?void 0:s.action)==="windpressoxygen-preview-class"){if(t.data.do==="remove")n();else if(t.data.do==="add"){let i=document.querySelector(`[ng-attr-component-id="${t.data.elementId}"]`);i&&(n(),c(i,t.data.className))}}});function c(t,s){t.setAttribute("previewclass",s),t.classList.add(s)}function u(t){if(!t.hasAttribute("previewclass")||t.getAttribute("previewclass")==="")return;let s=t.getAttribute("previewclass");t.removeAttribute("previewclass"),!(t.hasAttribute("plainclass")&&t.getAttribute("plainclass").split(/\s+/).filter(i=>i!=="").includes(s))&&t.classList.remove(s)}function n(){document.querySelectorAll("[ng-attr-component-id]").forEach(function(t){u(t)})}
+new MutationObserver(function(e2) {
+  e2.forEach(function(e3) {
+    if (e3.type === `attributes`) {
+      let t2 = e3.attributeName;
+      if (t2 !== `class` && t2 !== `plainclass`) return;
+      let n2 = e3.target, r = (e3.oldValue || ``).split(/\s+/).filter((e4) => e4 !== ``), i = n2.getAttribute(t2).split(/\s+/).filter((e4) => e4 !== ``);
+      t2 === `plainclass` ? (r.forEach(function(e4) {
+        i.includes(e4) || n2.classList.remove(e4);
+      }), i.forEach(function(e4) {
+        r.includes(e4) || n2.classList.add(e4);
+      })) : t2 === `class` && n2.hasAttribute(`plainclass`) && n2.getAttribute(`plainclass`).split(/\s+/).filter((e4) => e4 !== ``).forEach(function(e4) {
+        i.includes(e4) || n2.classList.add(e4);
+      });
+    }
+  });
+}).observe(document.body, { attributes: true, subtree: true, attributeFilter: [`class`, `plainclass`], attributeOldValue: true }), window.addEventListener(`message`, function(t2) {
+  var _a;
+  if (((_a = t2.data) == null ? void 0 : _a.action) === `windpressoxygen-preview-class`) {
+    if (t2.data.do === `remove`) n();
+    else if (t2.data.do === `add`) {
+      let r = document.querySelector(`[ng-attr-component-id="${t2.data.elementId}"]`);
+      r && (n(), e(r, t2.data.className));
+    }
+  }
+});
+function e(e2, t2) {
+  e2.setAttribute(`previewclass`, t2), e2.classList.add(t2);
+}
+function t(e2) {
+  if (!e2.hasAttribute(`previewclass`) || e2.getAttribute(`previewclass`) === ``) return;
+  let t2 = e2.getAttribute(`previewclass`);
+  e2.removeAttribute(`previewclass`), !(e2.hasAttribute(`plainclass`) && e2.getAttribute(`plainclass`).split(/\s+/).filter((e3) => e3 !== ``).includes(t2)) && e2.classList.remove(t2);
+}
+function n() {
+  document.querySelectorAll(`[ng-attr-component-id]`).forEach(function(e2) {
+    t(e2);
+  });
+}

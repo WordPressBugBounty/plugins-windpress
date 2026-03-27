@@ -13,6 +13,7 @@ return array(
     '8825ede83f2f289127722d4e842cf7e8' => $vendorDir . '/symfony/polyfill-intl-grapheme/bootstrap.php',
     'e69f7f6ee287b969198c3c9d6777bd38' => $vendorDir . '/symfony/polyfill-intl-normalizer/bootstrap.php',
     'b6b991a57620e2fb6b2f66f03fe9ddc2' => $vendorDir . '/symfony/string/Resources/functions.php',
+    '3c9ebf3d7a29b377eb2a8001857b1f68' => $vendorDir . '/nabasa/vp-wp/vp-wp.php',
     '2d223b650b5c56928c1affa16ee5cfe2' => $vendorDir . '/wordpress/abilities-api/includes/bootstrap.php',
     '9f9420178997db359cb93e6bc5893298' => $baseDir . '/constant.php',
 );

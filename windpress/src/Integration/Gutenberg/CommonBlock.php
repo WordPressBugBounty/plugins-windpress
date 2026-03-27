@@ -13,8 +13,8 @@ namespace WindPress\WindPress\Integration\Gutenberg;
 
 use WindPressDeps\enshrined\svgSanitize\Sanitizer;
 use WIND_PRESS;
-use WindPress\WindPress\Utils\AssetVite;
 use WindPress\WindPress\Utils\Config;
+use WindPress\WindPress\Utils\Vite;
 /**
  * Common Block - A generic block that can be any HTML element.
  *
@@ -80,7 +80,7 @@ class CommonBlock
      */
     public function enqueue_isolate_styles($modules)
     {
-        AssetVite::get_instance()->enqueue_asset('assets/integration/gutenberg/common-block/isolate-styles.js', ['handle' => WIND_PRESS::WP_OPTION . ':gutenberg-editor-isolate-styles', 'in-footer' => \true]);
+        Vite::assets()->enqueue('assets/integration/gutenberg/common-block/isolate-styles.js', ['handle' => WIND_PRESS::WP_OPTION . ':gutenberg-editor-isolate-styles', 'in_footer' => \true]);
         $modules[] = WIND_PRESS::WP_OPTION . ':gutenberg-editor-isolate-styles';
         return $modules;
     }

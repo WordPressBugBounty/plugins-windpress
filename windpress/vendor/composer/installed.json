@@ -179,6 +179,49 @@
             "install-path": "..\/masterminds\/html5"
         },
         {
+            "name": "nabasa\/vp-wp",
+            "version": "v0.3.1",
+            "version_normalized": "0.3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/nabasa-dev\/vp-wp.git",
+                "reference": "6b8e91b8265260fb5337b7a0e5d0192b8ea6e0f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/nabasa-dev\/vp-wp\/zipball\/6b8e91b8265260fb5337b7a0e5d0192b8ea6e0f3",
+                "reference": "6b8e91b8265260fb5337b7a0e5d0192b8ea6e0f3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "time": "2026-03-25T13:19:31+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "vp-wp.php"
+                ]
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "description": "WordPress integration for Vite+.",
+            "homepage": "https:\/\/github.com\/nabasa-dev\/vp-wp",
+            "keywords": [
+                "vite",
+                "vite-plus",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https:\/\/github.com\/nabasa-dev\/vp-wp\/issues",
+                "source": "https:\/\/github.com\/nabasa-dev\/vp-wp"
+            },
+            "install-path": "..\/nabasa\/vp-wp"
+        },
+        {
             "name": "paragonie\/random_compat",
             "version": "v9.99.100",
             "version_normalized": "9.99.100.0",

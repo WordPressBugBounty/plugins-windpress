@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css, block
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 3.2.76
+Stable tag: 3.2.77
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ WindPress is a platform agnostic [Tailwind CSS](https://tailwindcss.com/) integr
 
 **Tailwind CSS version**:
 - 3.4.19
-- 4.2.1
+- 4.2.2
 
 ### Features
 
@@ -56,7 +56,7 @@ It's easy to build design with Tailwind CSS thanks to the seamless integration w
 * [Breakdance](https://breakdance.com/ref/165/) — **Pro**
 * [Bricks](https://bricksbuilder.io/) — **Pro**
 * [Builderius](https://builderius.io/?referral=afdfca82c8) — **Pro**
-* [Etch](https://etchwp.com/) — **Pro**
+* [Etch](https://etchwp.com?aff=bce0d1ab) — **Pro**
 * [Meta Box Views](https://metabox.sjv.io/OeOeZr) — **Pro**
 * [Oxygen 6 / Classic](https://oxygenbuilder.com/ref/12/) — **Pro**
 * [WPCodeBox 2](https://wpcodebox.com/?ref=185) — **Pro**
@@ -118,6 +118,16 @@ No, by default, you do not need an internet connection to use WindPress. However
 WindPress is compatible with any WordPress theme. A small adjustment may be needed for the compiler scanner to detect the used classes in the theme.
 
 == Changelog ==
+
+= 3.2.77 - 2026-03-27 =
+
+**Added**
+
+* Updated bundled Tailwind CSS v4 to 4.2.2
+
+**Changed**
+
+* Migrate the build system to [`@nabasa/vp-wp`](https://github.com/nabasa-dev/vp-wp) for improved performance and better WordPress integration
 
 = 3.2.76 - 2026-02-28 =
 
@@ -394,7 +404,7 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 **Added**
 
-* [Etch](https://etchwp.com/) integration **[Pro]** (experimental)
+* [Etch](https://etchwp.com?aff=bce0d1ab) integration **[Pro]** (experimental)
 
 = 3.2.33 - 2025-05-20 =
 
