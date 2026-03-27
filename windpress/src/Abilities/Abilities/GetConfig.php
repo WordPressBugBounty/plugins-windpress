@@ -25,11 +25,10 @@ class GetConfig
 {
     /**
      * Execute the ability
-     * 
-     * @param mixed $input Not used for this ability
+     *
      * @return array Configuration data
      */
-    public static function execute($input): array
+    public static function execute(): array
     {
         $settings = get_option(WIND_PRESS::WP_OPTION, []);
         return ['version' => WIND_PRESS::VERSION, 'tailwind_version' => Runtime::tailwindcss_version(), 'settings' => $settings, 'data_dir' => ['path' => wp_upload_dir()['basedir'] . WIND_PRESS::DATA_DIR, 'url' => wp_upload_dir()['baseurl'] . WIND_PRESS::DATA_DIR], 'cache_dir' => ['path' => wp_upload_dir()['basedir'] . WIND_PRESS::CACHE_DIR, 'url' => wp_upload_dir()['baseurl'] . WIND_PRESS::CACHE_DIR]];
