@@ -9,7 +9,7 @@ var e = (function() {
     let l = function(e2) {
       return Promise.all(e2.map((e3) => Promise.resolve(e3).then((e4) => ({ status: `fulfilled`, value: e4 }), (e4) => ({ status: `rejected`, reason: e4 }))));
     };
-    let r3 = document.getElementsByTagName(`link`), s2 = document.querySelector(`meta[property=csp-nonce]`), c = (s2 == null ? void 0 : s2.nonce) || (s2 == null ? void 0 : s2.getAttribute(`nonce`));
+    let r3 = document.getElementsByTagName(`link`), s2 = document.querySelector(`meta[property=csp-nonce]`), c = s2?.nonce || s2?.getAttribute(`nonce`);
     o = l(i.map((i2) => {
       if (i2 = t(i2, a), i2 in n) return;
       n[i2] = true;

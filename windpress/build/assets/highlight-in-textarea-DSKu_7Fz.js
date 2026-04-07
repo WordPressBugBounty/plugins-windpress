@@ -20,11 +20,11 @@ typeof window > `u` ? ((r = function(e2) {
       if (t4 && t4.nodeName && t4.nodeName === `TEXTAREA` && !e.has(t4)) {
         var n3, r2 = null, i2 = window.getComputedStyle(t4), a2 = (n3 = t4.value, function() {
           s({ testForHeightReduction: n3 === `` || !t4.value.startsWith(n3), restoreTextAlign: null }), n3 = t4.value;
-        }), o = (function(n4) {
+        }), o = function(n4) {
           t4.removeEventListener(`autosize:destroy`, o), t4.removeEventListener(`autosize:update`, c), t4.removeEventListener(`input`, a2), window.removeEventListener(`resize`, c), Object.keys(n4).forEach(function(e2) {
             return t4.style[e2] = n4[e2];
           }), e.delete(t4);
-        }).bind(t4, { height: t4.style.height, resize: t4.style.resize, textAlign: t4.style.textAlign, overflowY: t4.style.overflowY, overflowX: t4.style.overflowX, wordWrap: t4.style.wordWrap });
+        }.bind(t4, { height: t4.style.height, resize: t4.style.resize, textAlign: t4.style.textAlign, overflowY: t4.style.overflowY, overflowX: t4.style.overflowX, wordWrap: t4.style.wordWrap });
         t4.addEventListener(`autosize:destroy`, o), t4.addEventListener(`autosize:update`, c), t4.addEventListener(`input`, a2), window.addEventListener(`resize`, c), t4.style.overflowX = `hidden`, t4.style.wordWrap = `break-word`, e.set(t4, { destroy: o, update: c }), c();
       }
       function s(e2) {

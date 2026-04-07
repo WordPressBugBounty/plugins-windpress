@@ -33,7 +33,7 @@ var g = new BroadcastChannel(`windpress`);
   window.fetch = function(n2, r2) {
     let i2 = typeof n2 == `string` ? n2 : n2.url;
     if (!m()) return t2.apply(this, arguments);
-    if (((r2 == null ? void 0 : r2.method) === `POST` || (r2 == null ? void 0 : r2.method) === `PUT`) && (i2.includes(`/wp/v2/posts/`) || i2.includes(`/wp/v2/pages/`) || i2.includes(`/wp/v2/wp_template/`) || i2.includes(`/wp/v2/wp_template_part/`))) {
+    if ((r2?.method === `POST` || r2?.method === `PUT`) && (i2.includes(`/wp/v2/posts/`) || i2.includes(`/wp/v2/pages/`) || i2.includes(`/wp/v2/wp_template/`) || i2.includes(`/wp/v2/wp_template_part/`))) {
       let n3 = t2.apply(this, arguments);
       return n3.then((t3) => {
         t3.ok && (e(`Post saved, generating cache...`, { module: `generate-cache` }), g.postMessage({ task: `generate-cache`, source: `windpress/integration`, target: `windpress/compiler`, data: { kind: `incremental`, incremental: { providers: [`gutenberg`] } } }));

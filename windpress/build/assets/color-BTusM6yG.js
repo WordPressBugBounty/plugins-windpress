@@ -74,11 +74,10 @@ function g(e4, t2, n2 = 0, r2 = e4.length) {
   return n2;
 }
 function _(e4, t2) {
-  var _a2;
   if (e4 instanceof t2) return true;
   let n2 = t2.name;
   for (; e4; ) {
-    let t3 = Object.getPrototypeOf(e4), r2 = (_a2 = t3 == null ? void 0 : t3.constructor) == null ? void 0 : _a2.name;
+    let t3 = Object.getPrototypeOf(e4), r2 = t3?.constructor?.name;
     if (r2 === n2) return true;
     if (!r2 || r2 === `Object`) return false;
     e4 = t3;
@@ -100,9 +99,8 @@ var v = Object.freeze({ __proto__: null, bisectLeft: g, clamp: f, copySign: p, i
       e5.call(t2 && t2.context ? t2.context : t2, t2);
     });
   }
-}(), b = { gamut_mapping: `css`, precision: 5, deltaE: `76`, verbose: ("production" == null ? void 0 : "production".toLowerCase()) !== `test`, warn: function(e4) {
-  var _a2, _b;
-  this.verbose && ((_b = (_a2 = globalThis == null ? void 0 : globalThis.console) == null ? void 0 : _a2.warn) == null ? void 0 : _b.call(_a2, e4));
+}(), b = { gamut_mapping: `css`, precision: 5, deltaE: `76`, verbose: `production`?.toLowerCase() !== `test`, warn: function(e4) {
+  this.verbose && globalThis?.console?.warn?.(e4);
 } }, x = class {
   constructor(e4, t2) {
     __publicField(this, "type");
@@ -164,7 +162,7 @@ var v = Object.freeze({ __proto__: null, bisectLeft: g, clamp: f, copySign: p, i
     }));
   }
   serializeCoords(e4, t2, n2) {
-    return n2 = e4.map((e5, t3) => x.get((n2 == null ? void 0 : n2[t3]) ?? this.coords[t3][0], this.spaceCoords[t3])), e4.map((e5, r2) => n2[r2].serialize(e5, t2));
+    return n2 = e4.map((e5, t3) => x.get(n2?.[t3] ?? this.coords[t3][0], this.spaceCoords[t3])), e4.map((e5, r2) => n2[r2].serialize(e5, t2));
   }
   coerceCoords(e4, t2) {
     return Object.entries(this.space.coords).map(([n2, r2], i2) => {
@@ -173,7 +171,7 @@ var v = Object.freeze({ __proto__: null, bisectLeft: g, clamp: f, copySign: p, i
       let s2 = t2[i2], c2 = this.coords[i2].find((e5) => e5.type == s2);
       if (!c2) {
         let e5 = r2.name || n2;
-        throw TypeError(`${s2 ?? (a2 == null ? void 0 : a2.raw) ?? a2} not allowed for ${e5} in ${this.name}()`);
+        throw TypeError(`${s2 ?? a2?.raw ?? a2} not allowed for ${e5} in ${this.name}()`);
       }
       return a2 = c2.resolve(a2), c2.range && (t2[i2] = c2.toString()), a2;
     });
@@ -199,16 +197,12 @@ function E(e4, t2, r2, i2 = {}) {
   throw TypeError(`Only Bradford CAT with white points D50 and D65 supported for now.`);
 }
 function D(e4, t2) {
-  var _a2, _b, _c;
-  let n2 = { str: (_a2 = String(e4)) == null ? void 0 : _a2.trim(), options: t2 };
+  let n2 = { str: String(e4)?.trim(), options: t2 };
   if (y.run(`parse-start`, n2), n2.color) return n2.color;
   n2.parsed = ee(n2.str);
   let r2, i2 = n2.options ? n2.options.parseMeta ?? n2.options.meta : null;
   if (n2.parsed) {
-    let t3 = n2.parsed.name, a2, o2, s2 = n2.parsed.args, c2 = s2.map((e5, t4) => {
-      var _a3;
-      return (_a3 = n2.parsed.argMeta[t4]) == null ? void 0 : _a3.type;
-    });
+    let t3 = n2.parsed.name, a2, o2, s2 = n2.parsed.args, c2 = s2.map((e5, t4) => n2.parsed.argMeta[t4]?.type);
     if (t3 === `color`) {
       let r3 = s2.shift();
       c2.shift();
@@ -216,7 +210,7 @@ function D(e4, t2) {
       if (a2 = N.findFormat({ name: t3, id: l3, type: `function` }), !a2) {
         let t4, a3 = r3 in N.registry ? r3 : i3;
         if (a3 in N.registry) {
-          let n3 = (_c = (_b = N.registry[a3].formats) == null ? void 0 : _b.color) == null ? void 0 : _c.id;
+          let n3 = N.registry[a3].formats?.color?.id;
           n3 && (t4 = `Did you mean ${e4.replace(`color(` + r3, `color(` + n3)}?`);
         }
         throw TypeError(`Cannot parse ${n2.str}. ` + (t4 ?? `Missing a plugin?`));
@@ -243,8 +237,7 @@ function D(e4, t2) {
 }
 var O = { "%": 0.01, deg: 1, grad: 0.9, rad: 180 / Math.PI, turn: 360 }, k = { function: /^([a-z]+)\(((?:calc\(NaN\)|.)+?)\)$/i, number: /^([-+]?(?:[0-9]*\.)?[0-9]+(e[-+]?[0-9]+)?)$/i, unitValue: RegExp(`(${Object.keys(O).join(`|`)})$`), singleArgument: /\/?\s*(none|NaN|calc\(NaN\)|[-+\w.]+(?:%|deg|g?rad|turn)?)/g };
 function A(e4) {
-  var _a2;
-  let t2 = {}, n2 = (_a2 = e4.match(k.unitValue)) == null ? void 0 : _a2[0], r2 = t2.raw = e4;
+  let t2 = {}, n2 = e4.match(k.unitValue)?.[0], r2 = t2.raw = e4;
   return n2 ? (t2.type = n2 === `%` ? `<percentage>` : `<angle>`, t2.unit = n2, t2.unitless = Number(r2.slice(0, -n2.length)), r2 = t2.unitless * O[n2]) : k.number.test(r2) ? (r2 = Number(r2), t2.type = `<number>`) : r2 === `none` ? r2 = null : r2 === `NaN` || r2 === `calc(NaN)` ? (r2 = NaN, t2.type = `<number>`) : t2.type = `<ident>`, { value: r2, meta: t2 };
 }
 function ee(e4) {
@@ -268,7 +261,6 @@ function j(e4, t2) {
 }
 var M = 75e-6, N = (_a = class {
   constructor(t2) {
-    var _a2;
     this.id = t2.id, this.name = t2.name, this.base = t2.base ? _a.get(t2.base) : null, this.aliases = t2.aliases, this.base && (this.fromBase = t2.fromBase, this.toBase = t2.toBase);
     let n2 = t2.coords ?? this.base.coords;
     for (let e4 in n2) `name` in n2[e4] || (n2[e4].name = e4);
@@ -277,7 +269,7 @@ var M = 75e-6, N = (_a = class {
       let t3 = this.formats[e4];
       t3.type || (t3.type = `function`), t3.name || (t3.name = e4);
     }
-    ((_a2 = this.formats.color) == null ? void 0 : _a2.id) || (this.formats.color = { ...this.formats.color ?? {}, id: t2.cssId || this.id }), t2.gamutSpace ? this.gamutSpace = t2.gamutSpace === `self` ? this : _a.get(t2.gamutSpace) : this.isPolar ? this.gamutSpace = this.base : this.gamutSpace = this, this.gamutSpace.isUnbounded && (this.inGamut = (e4, t3) => true), this.referred = t2.referred, Object.defineProperty(this, `path`, { value: te(this).reverse(), writable: false, enumerable: true, configurable: true }), y.run(`colorspace-init-end`, this);
+    this.formats.color?.id || (this.formats.color = { ...this.formats.color ?? {}, id: t2.cssId || this.id }), t2.gamutSpace ? this.gamutSpace = t2.gamutSpace === `self` ? this : _a.get(t2.gamutSpace) : this.isPolar ? this.gamutSpace = this.base : this.gamutSpace = this, this.gamutSpace.isUnbounded && (this.inGamut = (e4, t3) => true), this.referred = t2.referred, Object.defineProperty(this, `path`, { value: te(this).reverse(), writable: false, enumerable: true, configurable: true }), y.run(`colorspace-init-end`, this);
   }
   inGamut(e4, { epsilon: t2 = M } = {}) {
     if (!this.equals(this.gamutSpace)) return e4 = this.to(this.gamutSpace, e4), this.gamutSpace.inGamut(e4, { epsilon: t2 });
@@ -296,8 +288,7 @@ var M = 75e-6, N = (_a = class {
     return Object.values(this.coords).every((e4) => !(`range` in e4));
   }
   get cssId() {
-    var _a2, _b;
-    return ((_b = (_a2 = this.formats) == null ? void 0 : _a2.color) == null ? void 0 : _b.id) || this.id;
+    return this.formats?.color?.id || this.id;
   }
   get isPolar() {
     for (let e4 in this.coords) if (this.coords[e4].type === `angle`) return true;
@@ -340,7 +331,7 @@ var M = 75e-6, N = (_a = class {
     let e4 = [];
     for (let t2 in this.coords) {
       let n2 = this.coords[t2], r2 = n2.range || n2.refRange;
-      e4.push((r2 == null ? void 0 : r2.min) ?? 0);
+      e4.push(r2?.min ?? 0);
     }
     return e4;
   }
@@ -380,7 +371,6 @@ var M = 75e-6, N = (_a = class {
     return null;
   }
   static resolveCoord(t2, n2) {
-    var _a2;
     let r2 = i(t2), a2, o2;
     if (r2 === `string` ? t2.includes(`.`) ? [a2, o2] = t2.split(`.`) : [a2, o2] = [, t2] : Array.isArray(t2) ? [a2, o2] = t2 : (a2 = t2.space, o2 = t2.coordId), a2 = _a.get(a2), a2 || (a2 = n2), !a2) throw TypeError(`Cannot resolve coordinate reference ${t2}: No color space specified and relative references are not allowed here`);
     if (r2 = i(o2), r2 === `number` || r2 === `string` && o2 >= 0) {
@@ -391,7 +381,7 @@ var M = 75e-6, N = (_a = class {
     let s2 = o2.toLowerCase(), c2 = 0;
     for (let e4 in a2.coords) {
       let t3 = a2.coords[e4];
-      if (e4.toLowerCase() === s2 || ((_a2 = t3.name) == null ? void 0 : _a2.toLowerCase()) === s2) return { space: a2, id: e4, index: c2, ...t3 };
+      if (e4.toLowerCase() === s2 || t3.name?.toLowerCase() === s2) return { space: a2, id: e4, index: c2, ...t3 };
       c2++;
     }
     throw TypeError(`No "${o2}" coordinate found in ${a2.name}. Its coordinates are: ${Object.keys(a2.coords).join(`, `)}`);
@@ -434,7 +424,7 @@ function ne(e4, t2 = {}) {
 }
 function I(e4, t2) {
   e4 = j(e4);
-  let n2 = N.get(t2, t2 == null ? void 0 : t2.space), r2 = t2 == null ? void 0 : t2.precision, i2;
+  let n2 = N.get(t2, t2?.space), r2 = t2?.precision, i2;
   return i2 = !n2 || e4.space.equals(n2) ? e4.coords.slice() : n2.from(e4), r2 === void 0 ? i2 : i2.map((e5) => c(e5, r2));
 }
 function L(e4, t2) {
@@ -804,7 +794,6 @@ function J(e4, t2, { inGamut: n2 } = {}) {
 }
 J.returns = `color`;
 function Wt(e4, t2 = {}) {
-  var _a2;
   let { precision: n2 = b.precision, format: r2, inGamut: i2 = true, coords: o2, alpha: s2, commas: c2 } = t2, l2, u2 = j(e4), d2 = r2, f2 = u2.parseMeta;
   f2 && !r2 && (f2.format.canSerialize() && (r2 = f2.format, d2 = f2.formatId), o2 ?? (o2 = f2.types), s2 ?? (s2 = f2.alphaType), c2 ?? (c2 = f2.commas)), d2 && (r2 = u2.space.getFormat(r2) ?? N.findFormat(d2)), r2 || (r2 = u2.space.getFormat(`default`) ?? N.DEFAULT_FORMAT, d2 = r2.name), r2 && r2.space && r2.space !== u2.space && (u2 = J(u2, r2.space));
   let p2 = u2.coords.slice();
@@ -813,12 +802,12 @@ function Wt(e4, t2 = {}) {
   else {
     let e5 = r2.name || `color`, t3 = r2.serializeCoords(p2, n2, o2);
     if (e5 === `color`) {
-      let e6 = r2.id || ((_a2 = r2.ids) == null ? void 0 : _a2[0]) || u2.space.cssId || u2.space.id;
+      let e6 = r2.id || r2.ids?.[0] || u2.space.cssId || u2.space.id;
       t3.unshift(e6);
     }
     let i3 = u2.alpha;
     s2 !== void 0 && typeof s2 != `object` && (s2 = typeof s2 == `string` ? { type: s2 } : { include: s2 });
-    let d3 = (s2 == null ? void 0 : s2.type) ?? `<number>`, f3 = (s2 == null ? void 0 : s2.include) === true || r2.alpha === true || (s2 == null ? void 0 : s2.include) !== false && r2.alpha !== false && i3 < 1, m2 = ``;
+    let d3 = s2?.type ?? `<number>`, f3 = s2?.include === true || r2.alpha === true || s2?.include !== false && r2.alpha !== false && i3 < 1, m2 = ``;
     if (c2 ?? (c2 = r2.commas), f3) {
       if (n2 !== null) {
         let e6;
@@ -1392,8 +1381,7 @@ $.defineFunctions({ get: L, getAll: I, set: z, setAll: R, to: J, equals: an, inG
 for (let e4 of Object.keys(Oi)) N.register(Oi[e4]);
 for (let e4 in N.registry) ki(e4, N.registry[e4]);
 y.add(`colorspace-init-end`, (e4) => {
-  var _a2;
-  ki(e4.id, e4), (_a2 = e4.aliases) == null ? void 0 : _a2.forEach((t2) => {
+  ki(e4.id, e4), e4.aliases?.forEach((t2) => {
     ki(t2, e4);
   });
 });

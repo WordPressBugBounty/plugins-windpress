@@ -1,6 +1,6 @@
 function e(e2, t = {}) {
   let n = e2.detail.originalEvent, r = n.target;
-  if (!(r == null ? void 0 : r.isConnected)) {
+  if (!r?.isConnected) {
     e2.preventDefault();
     return;
   }

@@ -14,8 +14,7 @@ new MutationObserver(function(e2) {
     }
   });
 }).observe(document.body, { attributes: true, subtree: true, attributeFilter: [`class`, `plainclass`], attributeOldValue: true }), window.addEventListener(`message`, function(t2) {
-  var _a;
-  if (((_a = t2.data) == null ? void 0 : _a.action) === `windpressoxygen-preview-class`) {
+  if (t2.data?.action === `windpressoxygen-preview-class`) {
     if (t2.data.do === `remove`) n();
     else if (t2.data.do === `add`) {
       let r = document.querySelector(`[ng-attr-component-id="${t2.data.elementId}"]`);

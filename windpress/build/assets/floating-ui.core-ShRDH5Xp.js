@@ -122,45 +122,43 @@ function F(e2, t2, n2) {
 }
 var I = function(e2) {
   return e2 === void 0 && (e2 = {}), { name: `autoPlacement`, options: e2, async fn(t2) {
-    var _a, _b, _c;
-    let { rects: r2, middlewareData: i2, placement: a2, platform: o2, elements: s2 } = t2, { crossAxis: c2 = false, alignment: l2, allowedPlacements: p2 = n, autoAlignment: m2 = true, ...h2 } = u(e2, t2), g2 = l2 !== void 0 || p2 === n ? F(l2 || null, m2, p2) : p2, v2 = await o2.detectOverflow(t2, h2), y2 = ((_a = i2.autoPlacement) == null ? void 0 : _a.index) || 0, b2 = g2[y2];
+    let { rects: r2, middlewareData: i2, placement: a2, platform: o2, elements: s2 } = t2, { crossAxis: c2 = false, alignment: l2, allowedPlacements: p2 = n, autoAlignment: m2 = true, ...h2 } = u(e2, t2), g2 = l2 !== void 0 || p2 === n ? F(l2 || null, m2, p2) : p2, v2 = await o2.detectOverflow(t2, h2), y2 = i2.autoPlacement?.index || 0, b2 = g2[y2];
     if (b2 == null) return {};
     let x2 = _(b2, r2, await (o2.isRTL == null ? void 0 : o2.isRTL(s2.floating)));
     if (a2 !== b2) return { reset: { placement: g2[0] } };
-    let S2 = [v2[d(b2)], v2[x2[0]], v2[x2[1]]], C2 = [...((_b = i2.autoPlacement) == null ? void 0 : _b.overflows) || [], { placement: b2, overflows: S2 }], w2 = g2[y2 + 1];
+    let S2 = [v2[d(b2)], v2[x2[0]], v2[x2[1]]], C2 = [...i2.autoPlacement?.overflows || [], { placement: b2, overflows: S2 }], w2 = g2[y2 + 1];
     if (w2) return { data: { index: y2 + 1, overflows: C2 }, reset: { placement: w2 } };
     let T2 = C2.map((e3) => {
       let t3 = f(e3.placement);
       return [e3.placement, t3 && c2 ? e3.overflows.slice(0, 2).reduce((e4, t4) => e4 + t4, 0) : e3.overflows[0], e3.overflows];
-    }).sort((e3, t3) => e3[1] - t3[1]), E2 = ((_c = T2.filter((e3) => e3[2].slice(0, f(e3[0]) ? 2 : 3).every((e4) => e4 <= 0))[0]) == null ? void 0 : _c[0]) || T2[0][0];
+    }).sort((e3, t3) => e3[1] - t3[1]), E2 = T2.filter((e3) => e3[2].slice(0, f(e3[0]) ? 2 : 3).every((e4) => e4 <= 0))[0]?.[0] || T2[0][0];
     return E2 === a2 ? {} : { data: { index: y2 + 1, overflows: C2 }, reset: { placement: E2 } };
   } };
 }, L = function(e2) {
   return e2 === void 0 && (e2 = {}), { name: `flip`, options: e2, async fn(t2) {
-    var _a, _b, _c, _d;
     var n2;
     let { placement: r2, middlewareData: i2, rects: a2, initialPlacement: o2, platform: s2, elements: c2 } = t2, { mainAxis: l2 = true, crossAxis: f2 = true, fallbackPlacements: p2, fallbackStrategy: m2 = `bestFit`, fallbackAxisSideDirection: g2 = `none`, flipAlignment: y2 = true, ...b2 } = u(e2, t2);
     if ((n2 = i2.arrow) != null && n2.alignmentOffset) return {};
     let x2 = d(r2), S2 = h(o2), C2 = d(o2) === o2, w2 = await (s2.isRTL == null ? void 0 : s2.isRTL(c2.floating)), D2 = p2 || (C2 || !y2 ? [E(o2)] : v(o2)), O2 = g2 !== `none`;
     !p2 && O2 && D2.push(...T(o2, y2, g2, w2));
-    let k2 = [o2, ...D2], A2 = await s2.detectOverflow(t2, b2), j2 = [], M2 = ((_a = i2.flip) == null ? void 0 : _a.overflows) || [];
+    let k2 = [o2, ...D2], A2 = await s2.detectOverflow(t2, b2), j2 = [], M2 = i2.flip?.overflows || [];
     if (l2 && j2.push(A2[x2]), f2) {
       let e3 = _(r2, a2, w2);
       j2.push(A2[e3[0]], A2[e3[1]]);
     }
     if (M2 = [...M2, { placement: r2, overflows: j2 }], !j2.every((e3) => e3 <= 0)) {
-      let e3 = (((_b = i2.flip) == null ? void 0 : _b.index) || 0) + 1, t3 = k2[e3];
+      let e3 = (i2.flip?.index || 0) + 1, t3 = k2[e3];
       if (t3 && (!(f2 === `alignment` && S2 !== h(t3)) || M2.every((e4) => h(e4.placement) === S2 ? e4.overflows[0] > 0 : true))) return { data: { index: e3, overflows: M2 }, reset: { placement: t3 } };
-      let n3 = (_c = M2.filter((e4) => e4.overflows[0] <= 0).sort((e4, t4) => e4.overflows[1] - t4.overflows[1])[0]) == null ? void 0 : _c.placement;
+      let n3 = M2.filter((e4) => e4.overflows[0] <= 0).sort((e4, t4) => e4.overflows[1] - t4.overflows[1])[0]?.placement;
       if (!n3) switch (m2) {
         case `bestFit`: {
-          let e4 = (_d = M2.filter((e5) => {
+          let e4 = M2.filter((e5) => {
             if (O2) {
               let t4 = h(e5.placement);
               return t4 === S2 || t4 === `y`;
             }
             return true;
-          }).map((e5) => [e5.placement, e5.overflows.filter((e6) => e6 > 0).reduce((e6, t4) => e6 + t4, 0)]).sort((e5, t4) => e5[1] - t4[1])[0]) == null ? void 0 : _d[0];
+          }).map((e5) => [e5.placement, e5.overflows.filter((e6) => e6 > 0).reduce((e6, t4) => e6 + t4, 0)]).sort((e5, t4) => e5[1] - t4[1])[0]?.[0];
           e4 && (n3 = e4);
           break;
         }
@@ -202,10 +200,9 @@ async function H(e2, t2) {
 }
 var U = function(e2) {
   return e2 === void 0 && (e2 = 0), { name: `offset`, options: e2, async fn(t2) {
-    var _a;
     var n2;
     let { x: r2, y: i2, placement: a2, middlewareData: o2 } = t2, s2 = await H(t2, e2);
-    return a2 === ((_a = o2.offset) == null ? void 0 : _a.placement) && (n2 = o2.arrow) != null && n2.alignmentOffset ? {} : { x: r2 + s2.x, y: i2 + s2.y, data: { ...s2, placement: a2 } };
+    return a2 === o2.offset?.placement && (n2 = o2.arrow) != null && n2.alignmentOffset ? {} : { x: r2 + s2.x, y: i2 + s2.y, data: { ...s2, placement: a2 } };
   } };
 }, W = function(e2) {
   return e2 === void 0 && (e2 = {}), { name: `shift`, options: e2, async fn(t2) {
@@ -226,14 +223,13 @@ var U = function(e2) {
   } };
 }, G = function(e2) {
   return e2 === void 0 && (e2 = {}), { options: e2, fn(t2) {
-    var _a, _b;
     let { x: n2, y: r2, placement: i2, rects: a2, middlewareData: o2 } = t2, { offset: s2 = 0, mainAxis: c2 = true, crossAxis: l2 = true } = u(e2, t2), f2 = { x: n2, y: r2 }, m2 = h(i2), g2 = p(m2), _2 = f2[g2], v2 = f2[m2], y2 = u(s2, t2), b2 = typeof y2 == `number` ? { mainAxis: y2, crossAxis: 0 } : { mainAxis: 0, crossAxis: 0, ...y2 };
     if (c2) {
       let e3 = g2 === `y` ? `height` : `width`, t3 = a2.reference[g2] - a2.floating[e3] + b2.mainAxis, n3 = a2.reference[g2] + a2.reference[e3] - b2.mainAxis;
       _2 < t3 ? _2 = t3 : _2 > n3 && (_2 = n3);
     }
     if (l2) {
-      let e3 = g2 === `y` ? `width` : `height`, t3 = V.has(d(i2)), n3 = a2.reference[m2] - a2.floating[e3] + (t3 && ((_a = o2.offset) == null ? void 0 : _a[m2]) || 0) + (t3 ? 0 : b2.crossAxis), r3 = a2.reference[m2] + a2.reference[e3] + (t3 ? 0 : ((_b = o2.offset) == null ? void 0 : _b[m2]) || 0) - (t3 ? b2.crossAxis : 0);
+      let e3 = g2 === `y` ? `width` : `height`, t3 = V.has(d(i2)), n3 = a2.reference[m2] - a2.floating[e3] + (t3 && o2.offset?.[m2] || 0) + (t3 ? 0 : b2.crossAxis), r3 = a2.reference[m2] + a2.reference[e3] + (t3 ? 0 : o2.offset?.[m2] || 0) - (t3 ? b2.crossAxis : 0);
       v2 < n3 ? v2 = n3 : v2 > r3 && (v2 = r3);
     }
     return { [g2]: _2, [m2]: v2 };

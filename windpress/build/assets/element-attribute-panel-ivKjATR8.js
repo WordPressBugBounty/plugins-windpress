@@ -40,8 +40,7 @@ async function o(e2) {
   })), e2.dataset.windpressInjected = `true`;
 }
 new MutationObserver(() => {
-  var _a;
-  let e2 = (_a = document.evaluate(`//div[contains(@class, 'etch-html-block-properties-wrapper')]//label[contains(@class, 'etch-label')]/span[text()='class']`, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue) == null ? void 0 : _a.parentElement;
+  let e2 = document.evaluate(`//div[contains(@class, 'etch-html-block-properties-wrapper')]//label[contains(@class, 'etch-label')]/span[text()='class']`, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue?.parentElement;
   e2 && !e2.dataset.windpressInjected && setTimeout(() => {
     e2.dataset.windpressInjected || o(e2);
   }, 100);

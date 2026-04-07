@@ -1,4 +1,4 @@
-var e = document.querySelector(`#app`), t = e.__vue__, n = document.querySelector(`#app #iframe`), r = n == null ? void 0 : n.contentDocument.querySelector(`#breakdance_canvas`), i = r.__vue__;
+var e = document.querySelector(`#app`), t = e.__vue__, n = document.querySelector(`#app #iframe`), r = n?.contentDocument.querySelector(`#breakdance_canvas`), i = r.__vue__;
 export {
   t as a,
   i,

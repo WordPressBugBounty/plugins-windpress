@@ -92,7 +92,7 @@ var c = class {
     __publicField(this, "level", 0);
     __publicField(this, "indentation", `  `);
     __publicField(this, "compress", false);
-    typeof (e2 == null ? void 0 : e2.indent) == `string` && (this.indentation = e2 == null ? void 0 : e2.indent), (e2 == null ? void 0 : e2.compress) && (this.compress = true);
+    typeof e2?.indent == `string` && (this.indentation = e2?.indent), e2?.compress && (this.compress = true);
   }
   emit(e2, t2) {
     return e2;
@@ -272,12 +272,12 @@ ${this.indent()}}`);
   let l2 = 1, u2 = 1;
   function d() {
     let e2 = { line: l2, column: u2 };
-    return (n2) => (n2.position = new t(e2, { line: l2, column: u2 }, (c2 == null ? void 0 : c2.source) || ``), v(), n2);
+    return (n2) => (n2.position = new t(e2, { line: l2, column: u2 }, c2?.source || ``), v(), n2);
   }
   let f = [];
   function p(t2) {
-    let n2 = new e((c2 == null ? void 0 : c2.source) || ``, t2, l2, u2, r2);
-    if (!(c2 == null ? void 0 : c2.silent)) throw n2;
+    let n2 = new e(c2?.source || ``, t2, l2, u2, r2);
+    if (!c2?.silent) throw n2;
     f.push(n2);
   }
   function m() {
@@ -461,7 +461,7 @@ ${this.indent()}}`);
   }
   return s((function() {
     let e2 = g();
-    return { type: n.stylesheet, stylesheet: { source: c2 == null ? void 0 : c2.source, rules: e2, parsingErrors: f } };
+    return { type: n.stylesheet, stylesheet: { source: c2?.source, rules: e2, parsingErrors: f } };
   })());
 }, u = (e2, t2) => new c(t2 || {}).compile(e2);
 export {
