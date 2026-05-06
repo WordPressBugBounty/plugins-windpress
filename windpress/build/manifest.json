@@ -302,29 +302,17 @@
     "file": "assets/base64-DYxoxXqt.js",
     "name": "base64"
   },
-  "_build-BOfldFz1.js": {
-    "file": "assets/build-BOfldFz1.js",
-    "name": "build",
-    "imports": [
-      "_chunk-DcEfI0Mx.js",
-      "_cssesc-D57kXlof.js",
-      "_default-map-HeR38FrA.js",
-      "_lightningcss-wasm-CFV676IQ.js",
-      "_source-map-generator-Bvx-3KHt.js",
-      "_dist-CansbW7y.js"
-    ]
-  },
-  "_build-DPPjwSTU.js": {
-    "file": "assets/build-DPPjwSTU.js",
+  "_build-B6Hp7_6P.js": {
+    "file": "assets/build-B6Hp7_6P.js",
     "name": "build",
     "imports": [
       "_chunk-DcEfI0Mx.js",
       "_preload-helper-Cb81DA_d.js",
-      "_resolve-config-FFAn7uCu.js",
-      "_cssesc-D57kXlof.js",
-      "_lib-COJH7Mqf.js",
+      "_resolve-config-CkjD7pAQ.js",
+      "_cssesc-DEUDTBaR.js",
+      "_lib-BpYAc4ol.js",
       "_dlv.umd-BoFV71gt.js",
-      "_lightningcss-wasm-CFV676IQ.js",
+      "_lightningcss-wasm-BhTiiZIU.js",
       "_path-browserify-4cnqpSC3.js",
       "_package-BsrS9kUU.js",
       "_dist-CansbW7y.js",
@@ -332,6 +320,18 @@
     ],
     "dynamicImports": [
       "node_modules/.pnpm/browserslist@4.28.2/node_modules/browserslist/index.js"
+    ]
+  },
+  "_build-DTrDue3H.js": {
+    "file": "assets/build-DTrDue3H.js",
+    "name": "build",
+    "imports": [
+      "_chunk-DcEfI0Mx.js",
+      "_cssesc-DEUDTBaR.js",
+      "_default-map-Cw3uSgAb.js",
+      "_lightningcss-wasm-BhTiiZIU.js",
+      "_source-map-generator-Bvx-3KHt.js",
+      "_dist-CansbW7y.js"
     ]
   },
   "_chevron-right-ClF9HlQ2.js": {
@@ -386,13 +386,13 @@
     "file": "assets/constant-DsPlz14O2.js",
     "name": "constant"
   },
-  "_cssesc-D57kXlof.js": {
-    "file": "assets/cssesc-D57kXlof.js",
+  "_cssesc-DEUDTBaR.js": {
+    "file": "assets/cssesc-DEUDTBaR.js",
     "name": "cssesc",
     "imports": [
       "_chunk-DcEfI0Mx.js",
       "_preload-helper-Cb81DA_d.js",
-      "_lib-COJH7Mqf.js",
+      "_lib-BpYAc4ol.js",
       "_base64-DYxoxXqt.js",
       "_path-browserify-4cnqpSC3.js",
       "_dist-CansbW7y.js"
@@ -412,13 +412,13 @@
       "_isObject-DdF6vEWQ.js"
     ]
   },
-  "_default-map-HeR38FrA.js": {
-    "file": "assets/default-map-HeR38FrA.js",
+  "_default-map-Cw3uSgAb.js": {
+    "file": "assets/default-map-Cw3uSgAb.js",
     "name": "default-map",
     "imports": [
       "_chunk-DcEfI0Mx.js",
-      "_cssesc-D57kXlof.js",
-      "_lib-COJH7Mqf.js",
+      "_cssesc-DEUDTBaR.js",
+      "_lib-BpYAc4ol.js",
       "_path-browserify-4cnqpSC3.js",
       "_chunk-X4GG3EDV-DB6k4nCN.js"
     ]
@@ -454,12 +454,12 @@
       "_chunk-DcEfI0Mx.js"
     ]
   },
-  "_dist-KsI_NPzw.js": {
-    "file": "assets/dist-KsI_NPzw.js",
+  "_dist-DRk9LJ9_.js": {
+    "file": "assets/dist-DRk9LJ9_.js",
     "name": "dist",
     "imports": [
       "_chunk-DcEfI0Mx.js",
-      "_lib-COJH7Mqf.js"
+      "_lib-BpYAc4ol.js"
     ]
   },
   "_dist-UMash2f5.js": {
@@ -517,13 +517,13 @@
     "file": "assets/instrumentation-DFdmvr2y.js",
     "name": "instrumentation"
   },
-  "_intellisense-B03cqEsw.js": {
-    "file": "assets/intellisense-B03cqEsw.js",
+  "_intellisense-iY_xPBd-.js": {
+    "file": "assets/intellisense-iY_xPBd-.js",
     "name": "intellisense",
     "imports": [
       "_chunk-DcEfI0Mx.js",
-      "_cssesc-D57kXlof.js",
-      "_default-map-HeR38FrA.js",
+      "_cssesc-DEUDTBaR.js",
+      "_default-map-Cw3uSgAb.js",
       "_adobe-css-tools-DPH8i0dL.js",
       "_dlv.umd-BoFV71gt.js"
     ]
@@ -544,16 +544,8 @@
       "_dist-CFDaZ429.js"
     ]
   },
-  "_lib-BuijiK-3.js": {
-    "file": "assets/lib-BuijiK-3.js",
-    "name": "lib",
-    "imports": [
-      "_chunk-DcEfI0Mx.js",
-      "_source-map-generator-Bvx-3KHt.js"
-    ]
-  },
-  "_lib-COJH7Mqf.js": {
-    "file": "assets/lib-COJH7Mqf.js",
+  "_lib-BpYAc4ol.js": {
+    "file": "assets/lib-BpYAc4ol.js",
     "name": "lib",
     "imports": [
       "_chunk-DcEfI0Mx.js",
@@ -563,15 +555,23 @@
       "_dist-UMash2f5.js"
     ]
   },
-  "_lightningcss-wasm-CFV676IQ.js": {
-    "file": "assets/lightningcss-wasm-CFV676IQ.js",
+  "_lib-BuijiK-3.js": {
+    "file": "assets/lib-BuijiK-3.js",
+    "name": "lib",
+    "imports": [
+      "_chunk-DcEfI0Mx.js",
+      "_source-map-generator-Bvx-3KHt.js"
+    ]
+  },
+  "_lightningcss-wasm-BhTiiZIU.js": {
+    "file": "assets/lightningcss-wasm-BhTiiZIU.js",
     "name": "lightningcss-wasm",
     "imports": [
       "_chunk-DcEfI0Mx.js",
       "_preload-helper-Cb81DA_d.js"
     ],
     "dynamicImports": [
-      "_lib-COJH7Mqf.js"
+      "_lib-BpYAc4ol.js"
     ],
     "assets": [
       "assets/lightningcss_node-YoK8fJ2x.wasm"
@@ -649,13 +649,13 @@
     "file": "assets/preload-helper-Cb81DA_d.js",
     "name": "preload-helper"
   },
-  "_resolve-config-FFAn7uCu.js": {
-    "file": "assets/resolve-config-FFAn7uCu.js",
+  "_resolve-config-CkjD7pAQ.js": {
+    "file": "assets/resolve-config-CkjD7pAQ.js",
     "name": "resolve-config",
     "imports": [
       "_chunk-DcEfI0Mx.js",
-      "_cssesc-D57kXlof.js",
-      "_lib-COJH7Mqf.js",
+      "_cssesc-DEUDTBaR.js",
+      "_lib-BpYAc4ol.js",
       "_dlv.umd-BoFV71gt.js",
       "_path-browserify-4cnqpSC3.js",
       "_package-BsrS9kUU.js",
@@ -706,21 +706,21 @@
     "file": "assets/style-DadGt3jf.css",
     "src": "_style-DadGt3jf.css"
   },
-  "_tailwindcss-DBB9nNdA.js": {
-    "file": "assets/tailwindcss-DBB9nNdA.js",
+  "_tailwindcss-O_juf7r1.js": {
+    "file": "assets/tailwindcss-O_juf7r1.js",
     "name": "tailwindcss",
     "imports": [
       "_preload-helper-Cb81DA_d.js",
       "_api-3yDUayxW.js",
       "_log-BcOb3xTO.js",
-      "_build-BOfldFz1.js",
-      "_intellisense-B03cqEsw.js",
-      "_cssesc-D57kXlof.js",
+      "_build-DTrDue3H.js",
+      "_intellisense-iY_xPBd-.js",
+      "_cssesc-DEUDTBaR.js",
       "_vfs-DziqLF6T.js",
       "_dist-UMash2f5.js"
     ],
     "dynamicImports": [
-      "node_modules/.pnpm/@windpress+oxide-parser@1.0.26/node_modules/@windpress/oxide-parser/dist/oxide_parser-BOBx97C4.mjs"
+      "node_modules/.pnpm/@windpress+oxide-parser@1.0.27/node_modules/@windpress/oxide-parser/dist/oxide_parser-_sTCyEH9.mjs"
     ]
   },
   "_tippy.esm-D2-E1MIu.js": {
@@ -757,8 +757,8 @@
     "file": "assets/useDarkMode-Dh2jjpNo.js",
     "name": "useDarkMode"
   },
-  "_useFileAction-D_UBpSlv.js": {
-    "file": "assets/useFileAction-D_UBpSlv.js",
+  "_useFileAction-D4gusgMy.js": {
+    "file": "assets/useFileAction-D4gusgMy.js",
     "name": "useFileAction",
     "imports": [
       "_chunk-DcEfI0Mx.js",
@@ -781,7 +781,7 @@
       "_dist-BY3QSpe-.js",
       "_dayjs.min-Cl8Nnywg.js",
       "_isEqual-i1JvoB7a.js",
-      "_dist-KsI_NPzw.js",
+      "_dist-DRk9LJ9_.js",
       "_index.browser-DTH_RVqO.js",
       "_path-browserify-4cnqpSC3.js",
       "_VisuallyHiddenInput-Dr3Nvdqq.js",
@@ -869,8 +869,8 @@
     "file": "assets/windpress-anR1TjG4.js",
     "name": "windpress"
   },
-  "_worker-BOuOBU9S.js": {
-    "file": "assets/worker-BOuOBU9S.js",
+  "_worker-B7cy9wD8.js": {
+    "file": "assets/worker-B7cy9wD8.js",
     "name": "worker",
     "imports": [
       "_preload-helper-Cb81DA_d.js",
@@ -878,11 +878,11 @@
       "_log-BcOb3xTO.js",
       "_base64-DYxoxXqt.js",
       "_get-CA0PtJWw.js",
-      "_dist-KsI_NPzw.js",
+      "_dist-DRk9LJ9_.js",
       "_index.browser-DTH_RVqO.js"
     ],
     "dynamicImports": [
-      "_tailwindcss-DBB9nNdA.js",
+      "_tailwindcss-O_juf7r1.js",
       "assets/packages/core/tailwindcss-v3/index.ts"
     ]
   },
@@ -894,7 +894,7 @@
     ]
   },
   "assets/dashboard/main.ts": {
-    "file": "assets/dashboard-t28oaKh6.js",
+    "file": "assets/dashboard-BUhc4gSv.js",
     "name": "dashboard",
     "src": "assets/dashboard/main.ts",
     "isEntry": true,
@@ -903,7 +903,7 @@
       "_useGenerateCache-DLebHQlz.js",
       "_settings-CIp0eD-X.js",
       "_log-BcOb3xTO.js",
-      "_worker-BOuOBU9S.js",
+      "_worker-B7cy9wD8.js",
       "_Tooltip-DkuatXWt.js",
       "_es-MnqOf9qc.js",
       "_Button-BArxwKIq.js",
@@ -969,16 +969,16 @@
     ]
   },
   "assets/dashboard/pages/File.vue": {
-    "file": "assets/File-vDawmsxs.js",
+    "file": "assets/File-D2rnlzi7.js",
     "name": "File",
     "src": "assets/dashboard/pages/File.vue",
     "isDynamicEntry": true,
     "imports": [
       "_chunk-DcEfI0Mx.js",
-      "_useFileAction-D_UBpSlv.js",
+      "_useFileAction-D4gusgMy.js",
       "_settings-CIp0eD-X.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_Tooltip-DkuatXWt.js",
       "_Button-BArxwKIq.js",
       "_Badge-BtUXFb0u.js",
@@ -1373,12 +1373,12 @@
     ]
   },
   "assets/dashboard/pages/Wizard.vue": {
-    "file": "assets/Wizard-MDPkAfeH.js",
+    "file": "assets/Wizard--ZVGNIJ3.js",
     "name": "Wizard",
     "src": "assets/dashboard/pages/Wizard.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_useFileAction-D_UBpSlv.js",
+      "_useFileAction-D4gusgMy.js",
       "_settings-CIp0eD-X.js",
       "_adobe-css-tools-DPH8i0dL.js",
       "_Tooltip-DkuatXWt.js",
@@ -1501,7 +1501,7 @@
     ]
   },
   "assets/integration/breakdance/main.js": {
-    "file": "assets/integration/breakdance-B7CvbBiD.js",
+    "file": "assets/integration/breakdance-BMZw7Yii.js",
     "name": "integration/breakdance",
     "src": "assets/integration/breakdance/main.js",
     "isEntry": true,
@@ -1558,7 +1558,7 @@
     ]
   },
   "assets/integration/breakdance/modules/variable-picker/main.js": {
-    "file": "assets/main-DQboLRZs.js",
+    "file": "assets/main-Bzg-Cefm.js",
     "name": "main",
     "src": "assets/integration/breakdance/modules/variable-picker/main.js",
     "isDynamicEntry": true,
@@ -1566,8 +1566,8 @@
       "__plugin-vue_export-helper-4qEyeFbT.js",
       "_constant-C_wfKur4.js",
       "_logger-BvowV9fY.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_vfs-DziqLF6T.js",
       "_chevron-right-ClF9HlQ2.js",
       "_runtime-core.esm-bundler-DCPO6ZWt.js",
@@ -1580,15 +1580,15 @@
     ]
   },
   "assets/integration/breakdance/modules/variables/main.ts": {
-    "file": "assets/main-B7GWL_CK.js",
+    "file": "assets/main-B_XrGkqj.js",
     "name": "main",
     "src": "assets/integration/breakdance/modules/variables/main.ts",
     "isDynamicEntry": true,
     "imports": [
       "_constant-C_wfKur4.js",
       "_logger-BvowV9fY.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_vfs-DziqLF6T.js"
     ]
   },
@@ -1602,7 +1602,7 @@
     ]
   },
   "assets/integration/bricks/main.js": {
-    "file": "assets/integration/bricks-DMdGWPFo.js",
+    "file": "assets/integration/bricks-DU2dywmW.js",
     "name": "integration/bricks",
     "src": "assets/integration/bricks/main.js",
     "isEntry": true,
@@ -1623,15 +1623,15 @@
     ]
   },
   "assets/integration/bricks/modules/color-palette/main.ts": {
-    "file": "assets/main-CmAqvlxW.js",
+    "file": "assets/main-DY8IN04g.js",
     "name": "main",
     "src": "assets/integration/bricks/modules/color-palette/main.ts",
     "isDynamicEntry": true,
     "imports": [
       "_constant-BJspwAtg.js",
       "_logger-BvowV9fY.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_vfs-DziqLF6T.js",
       "_dist-CansbW7y.js"
     ]
@@ -1736,7 +1736,7 @@
     ]
   },
   "assets/integration/bricks/modules/variable-picker/main.js": {
-    "file": "assets/main-Br7T_UPX.js",
+    "file": "assets/main-Bc1C5cW_.js",
     "name": "main",
     "src": "assets/integration/bricks/modules/variable-picker/main.js",
     "isDynamicEntry": true,
@@ -1744,8 +1744,8 @@
       "__plugin-vue_export-helper-4qEyeFbT.js",
       "_constant-BJspwAtg.js",
       "_logger-BvowV9fY.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_vfs-DziqLF6T.js",
       "_chevron-right-ClF9HlQ2.js",
       "_runtime-core.esm-bundler-DCPO6ZWt.js",
@@ -1758,15 +1758,15 @@
     ]
   },
   "assets/integration/bricks/modules/variables/main.ts": {
-    "file": "assets/main-BZY4FNNd.js",
+    "file": "assets/main-D3JYZmmF.js",
     "name": "main",
     "src": "assets/integration/bricks/modules/variables/main.ts",
     "isDynamicEntry": true,
     "imports": [
       "_constant-BJspwAtg.js",
       "_logger-BvowV9fY.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_vfs-DziqLF6T.js",
       "_index.browser-DTH_RVqO.js"
     ]
@@ -1781,7 +1781,7 @@
     ]
   },
   "assets/integration/builderius/main.js": {
-    "file": "assets/integration/builderius-CC_oA61s.js",
+    "file": "assets/integration/builderius-DVz8RVI0.js",
     "name": "integration/builderius",
     "src": "assets/integration/builderius/main.js",
     "isEntry": true,
@@ -1808,15 +1808,15 @@
     ]
   },
   "assets/integration/builderius/modules/monaco/main.js": {
-    "file": "assets/main-BAKzt4f9.js",
+    "file": "assets/main-DUuC0G_n.js",
     "name": "main",
     "src": "assets/integration/builderius/modules/monaco/main.js",
     "isDynamicEntry": true,
     "imports": [
       "_constant-BIDASZgN.js",
       "_logger-BvowV9fY.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_vfs-DziqLF6T.js"
     ]
   },
@@ -1835,7 +1835,7 @@
     ]
   },
   "assets/integration/builderius/modules/variable-picker/main.js": {
-    "file": "assets/main-BhowMITS.js",
+    "file": "assets/main-C4v7bxGg.js",
     "name": "main",
     "src": "assets/integration/builderius/modules/variable-picker/main.js",
     "isDynamicEntry": true,
@@ -1843,8 +1843,8 @@
       "__plugin-vue_export-helper-4qEyeFbT.js",
       "_constant-BIDASZgN.js",
       "_logger-BvowV9fY.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_vfs-DziqLF6T.js",
       "_chevron-right-ClF9HlQ2.js",
       "_runtime-core.esm-bundler-DCPO6ZWt.js",
@@ -1857,15 +1857,15 @@
     ]
   },
   "assets/integration/builderius/modules/variables/main.ts": {
-    "file": "assets/main-CoK9OBZ_.js",
+    "file": "assets/main-Be5tvx0M.js",
     "name": "main",
     "src": "assets/integration/builderius/modules/variables/main.ts",
     "isDynamicEntry": true,
     "imports": [
       "_constant-BIDASZgN.js",
       "_logger-BvowV9fY.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_vfs-DziqLF6T.js"
     ]
   },
@@ -2018,7 +2018,7 @@
     ]
   },
   "assets/integration/livecanvas/main.js": {
-    "file": "assets/integration/livecanvas-CaCHK47H.js",
+    "file": "assets/integration/livecanvas-DU3f956h.js",
     "name": "integration/livecanvas",
     "src": "assets/integration/livecanvas/main.js",
     "isEntry": true,
@@ -2102,15 +2102,15 @@
     ]
   },
   "assets/integration/livecanvas/modules/variables/main.ts": {
-    "file": "assets/main-jR1A6vM72.js",
+    "file": "assets/main-kZRhwvwp2.js",
     "name": "main",
     "src": "assets/integration/livecanvas/modules/variables/main.ts",
     "isDynamicEntry": true,
     "imports": [
       "_logger-BvowV9fY.js",
       "_constant-DBJJvG33.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_vfs-DziqLF6T.js"
     ]
   },
@@ -2124,7 +2124,7 @@
     ]
   },
   "assets/integration/oxygen-classic/editor/main.js": {
-    "file": "assets/integration/oxygen-classic/editor-CjPjrfAg.js",
+    "file": "assets/integration/oxygen-classic/editor-Ds1wjm5Z.js",
     "name": "integration/oxygen-classic/editor",
     "src": "assets/integration/oxygen-classic/editor/main.js",
     "isEntry": true,
@@ -2193,7 +2193,7 @@
     ]
   },
   "assets/integration/oxygen-classic/editor/modules/variable-picker/main.js": {
-    "file": "assets/main-Imc5OHPR.js",
+    "file": "assets/main-Cy6evo0T.js",
     "name": "main",
     "src": "assets/integration/oxygen-classic/editor/modules/variable-picker/main.js",
     "isDynamicEntry": true,
@@ -2201,8 +2201,8 @@
       "__plugin-vue_export-helper-4qEyeFbT.js",
       "_logger-BvowV9fY.js",
       "_constant-BV9AjptB.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_vfs-DziqLF6T.js",
       "_chevron-right-ClF9HlQ2.js",
       "_runtime-core.esm-bundler-DCPO6ZWt.js",
@@ -2215,15 +2215,15 @@
     ]
   },
   "assets/integration/oxygen-classic/editor/modules/variables/main.ts": {
-    "file": "assets/main-WEI0UgFw2.js",
+    "file": "assets/main-BmrFbjkp2.js",
     "name": "main",
     "src": "assets/integration/oxygen-classic/editor/modules/variables/main.ts",
     "isDynamicEntry": true,
     "imports": [
       "_logger-BvowV9fY.js",
       "_constant-BV9AjptB.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
       "_vfs-DziqLF6T.js"
     ]
   },
@@ -2234,28 +2234,28 @@
     "isEntry": true
   },
   "assets/packages/core/tailwindcss-v3/index.ts": {
-    "file": "assets/tailwindcss-v3-D40P5gF9.js",
+    "file": "assets/tailwindcss-v3-hsqee7ay.js",
     "name": "tailwindcss-v3",
     "src": "assets/packages/core/tailwindcss-v3/index.ts",
     "isDynamicEntry": true,
     "imports": [
-      "_build-DPPjwSTU.js"
+      "_build-B6Hp7_6P.js"
     ]
   },
   "assets/packages/core/tailwindcss-v3/play/intellisense.ts": {
-    "file": "assets/packages/core/tailwindcss-v3/play/intellisense-ymYoTEqk.js",
+    "file": "assets/packages/core/tailwindcss-v3/play/intellisense-CyQJe-1U.js",
     "name": "packages/core/tailwindcss-v3/play/intellisense",
     "src": "assets/packages/core/tailwindcss-v3/play/intellisense.ts",
     "isEntry": true,
     "imports": [
       "_chunk-DcEfI0Mx.js",
-      "_resolve-config-FFAn7uCu.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
-      "_cssesc-D57kXlof.js",
-      "_default-map-HeR38FrA.js",
+      "_resolve-config-CkjD7pAQ.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
+      "_cssesc-DEUDTBaR.js",
+      "_default-map-Cw3uSgAb.js",
       "_vfs-DziqLF6T.js",
-      "_lib-COJH7Mqf.js",
+      "_lib-BpYAc4ol.js",
       "_dlv.umd-BoFV71gt.js",
       "_fuse-B1xTA2op.js",
       "_set-Bnp0_Ia6.js",
@@ -2265,36 +2265,36 @@
     ]
   },
   "assets/packages/core/tailwindcss-v3/play/observer.ts": {
-    "file": "assets/packages/core/tailwindcss-v3/play/observer-BE0rajoG.js",
+    "file": "assets/packages/core/tailwindcss-v3/play/observer-B0gNYztM.js",
     "name": "packages/core/tailwindcss-v3/play/observer",
     "src": "assets/packages/core/tailwindcss-v3/play/observer.ts",
     "isEntry": true,
     "imports": [
-      "_build-DPPjwSTU.js",
+      "_build-B6Hp7_6P.js",
       "_instrumentation-DFdmvr2y.js",
       "_vfs-DziqLF6T.js"
     ]
   },
   "assets/packages/core/tailwindcss/index.ts": {
-    "file": "assets/tailwindcss-tGVPzoii.js",
+    "file": "assets/tailwindcss-FR8VGY_0.js",
     "name": "tailwindcss",
     "src": "assets/packages/core/tailwindcss/index.ts",
     "isDynamicEntry": true,
     "imports": [
-      "_build-BOfldFz1.js",
-      "_intellisense-B03cqEsw.js",
-      "_tailwindcss-DBB9nNdA.js",
-      "_cssesc-D57kXlof.js",
+      "_build-DTrDue3H.js",
+      "_intellisense-iY_xPBd-.js",
+      "_tailwindcss-O_juf7r1.js",
+      "_cssesc-DEUDTBaR.js",
       "_vfs-DziqLF6T.js"
     ]
   },
   "assets/packages/core/tailwindcss/play/intellisense.ts": {
-    "file": "assets/packages/core/tailwindcss/play/intellisense-Djzu5c5Y.js",
+    "file": "assets/packages/core/tailwindcss/play/intellisense-Cl9LAVji.js",
     "name": "packages/core/tailwindcss/play/intellisense",
     "src": "assets/packages/core/tailwindcss/play/intellisense.ts",
     "isEntry": true,
     "imports": [
-      "_intellisense-B03cqEsw.js",
+      "_intellisense-iY_xPBd-.js",
       "_vfs-DziqLF6T.js",
       "_lib-BuijiK-3.js",
       "_fuse-B1xTA2op.js",
@@ -2302,40 +2302,40 @@
     ]
   },
   "assets/packages/core/tailwindcss/play/observer.ts": {
-    "file": "assets/packages/core/tailwindcss/play/observer-BiapiSdb.js",
+    "file": "assets/packages/core/tailwindcss/play/observer-BMsekXVt.js",
     "name": "packages/core/tailwindcss/play/observer",
     "src": "assets/packages/core/tailwindcss/play/observer.ts",
     "isEntry": true,
     "imports": [
-      "_build-BOfldFz1.js",
+      "_build-DTrDue3H.js",
       "_instrumentation-DFdmvr2y.js",
       "_vfs-DziqLF6T.js"
     ]
   },
   "assets/packages/core/tailwindcss/play/worker.ts": {
-    "file": "assets/packages/core/tailwindcss/play/worker-DghN_aMO.js",
+    "file": "assets/packages/core/tailwindcss/play/worker-CBvOcnE_.js",
     "name": "packages/core/tailwindcss/play/worker",
     "src": "assets/packages/core/tailwindcss/play/worker.ts",
     "isEntry": true,
     "imports": [
-      "_worker-BOuOBU9S.js"
+      "_worker-B7cy9wD8.js"
     ]
   },
-  "node_modules/.pnpm/@windpress+oxide-parser@1.0.26/node_modules/@windpress/oxide-parser/dist/oxide_parser-BOBx97C4.mjs": {
-    "file": "assets/oxide_parser-BOBx97C4-DHRjwz66.js",
-    "name": "oxide_parser-BOBx97C4",
-    "src": "node_modules/.pnpm/@windpress+oxide-parser@1.0.26/node_modules/@windpress/oxide-parser/dist/oxide_parser-BOBx97C4.mjs",
+  "node_modules/.pnpm/@windpress+oxide-parser@1.0.27/node_modules/@windpress/oxide-parser/dist/oxide_parser-_sTCyEH9.mjs": {
+    "file": "assets/oxide_parser-_sTCyEH9-Ba28uM0R.js",
+    "name": "oxide_parser-_sTCyEH9",
+    "src": "node_modules/.pnpm/@windpress+oxide-parser@1.0.27/node_modules/@windpress/oxide-parser/dist/oxide_parser-_sTCyEH9.mjs",
     "isDynamicEntry": true,
     "assets": [
-      "assets/oxide_parser_bg-Ny-XIVaW.wasm"
+      "assets/oxide_parser_bg-BJa7DbWu.wasm"
     ]
   },
-  "node_modules/.pnpm/@windpress+oxide-parser@1.0.26/node_modules/@windpress/oxide-parser/dist/oxide_parser_bg.wasm": {
-    "file": "assets/oxide_parser_bg-Ny-XIVaW.wasm",
-    "src": "node_modules/.pnpm/@windpress+oxide-parser@1.0.26/node_modules/@windpress/oxide-parser/dist/oxide_parser_bg.wasm"
+  "node_modules/.pnpm/@windpress+oxide-parser@1.0.27/node_modules/@windpress/oxide-parser/dist/oxide_parser_bg.wasm": {
+    "file": "assets/oxide_parser_bg-BJa7DbWu.wasm",
+    "src": "node_modules/.pnpm/@windpress+oxide-parser@1.0.27/node_modules/@windpress/oxide-parser/dist/oxide_parser_bg.wasm"
   },
   "node_modules/.pnpm/browserslist@4.28.2/node_modules/browserslist/index.js": {
-    "file": "assets/browserslist-D-cmlR1r.js",
+    "file": "assets/browserslist-Dw1XuOPg.js",
     "name": "browserslist",
     "src": "node_modules/.pnpm/browserslist@4.28.2/node_modules/browserslist/index.js",
     "isDynamicEntry": true,
@@ -2350,12 +2350,12 @@
     "src": "node_modules/.pnpm/lightningcss-wasm@1.32.0/node_modules/lightningcss-wasm/lightningcss_node.wasm"
   },
   "node_modules/.pnpm/memfs@4.57.2_tslib@2.8.1/node_modules/memfs/lib/index.js": {
-    "file": "assets/lib-CHwTfOSA.js",
+    "file": "assets/lib-CN4JKC8-.js",
     "name": "lib",
     "src": "node_modules/.pnpm/memfs@4.57.2_tslib@2.8.1/node_modules/memfs/lib/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "_lib-COJH7Mqf.js"
+      "_lib-BpYAc4ol.js"
     ]
   },
   "node_modules/.pnpm/monaco-editor@0.55.1/node_modules/monaco-editor/esm/vs/base/browser/ui/codicons/codicon/codicon.ttf": {
