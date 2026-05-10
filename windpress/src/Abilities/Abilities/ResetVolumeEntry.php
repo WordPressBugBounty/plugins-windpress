@@ -17,21 +17,24 @@ use WindPress\WindPress\Core\Volume;
 use WP_Error;
 /**
  * Reset Volume Entry Ability
- * 
+ *
  * Resets main.css, tailwind.config.js, or wizard files to their default content.
- * 
+ *
  * @since 3.2.0
  */
 class ResetVolumeEntry
 {
     /**
      * Execute the ability
-     * 
+     *
      * @param array $input Input with relative_path
      * @return array|WP_Error Success status with default content or error
      */
     public static function execute($input)
     {
+        if (!is_array($input)) {
+            return new WP_Error('invalid_input', __('Input must be an object.', 'windpress'), ['status' => 400]);
+        }
         $relative_path = $input['relative_path'] ?? '';
         // List of files that can be reset
         $resettable_files = ['main.css', 'tailwind.config.js', 'wizard.js', 'wizard.css'];
@@ -40,7 +43,7 @@ class ResetVolumeEntry
                 /* translators: %s: comma-separated list of file names */
                 __('Only these files can be reset: %s', 'windpress'),
                 implode(', ', $resettable_files)
-            ));
+            ), ['status' => 400]);
         }
         $tailwind_version = Runtime::tailwindcss_version();
         $stubs_dir = dirname(WIND_PRESS::FILE) . '/stubs/tailwindcss-v' . $tailwind_version;
@@ -52,11 +55,18 @@ class ResetVolumeEntry
                 __('Default content for "%s" is not available for Tailwind CSS v%d.', 'windpress'),
                 $relative_path,
                 $tailwind_version
-            ));
+            ), ['status' => 404]);
         }
         try {
             // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local file
             $default_content = file_get_contents($stub_file);
+            if ($default_content === \false) {
+                return new WP_Error('stub_not_readable', sprintf(
+                    /* translators: %s: file name */
+                    __('Default content for "%s" could not be read.', 'windpress'),
+                    $relative_path
+                ), ['status' => 500]);
+            }
             // Get the current entry to retrieve its signature
             $entries = Volume::get_entries();
             $current_entry = null;
@@ -74,7 +84,10 @@ class ResetVolumeEntry
             }
             // Save the entry with default content
             $entry_to_reset = ['name' => basename($relative_path), 'relative_path' => $relative_path, 'content' => $default_content, 'handler' => 'internal', 'signature' => $signature];
-            Volume::save_entries([$entry_to_reset]);
+            $result = Volume::save_entries([$entry_to_reset]);
+            if (!empty($result['errors']) || !empty($result['skipped']) || empty($result['saved'])) {
+                return new WP_Error('reset_failed', __('The entry could not be reset.', 'windpress'), ['status' => empty($result['errors']) ? 400 : 500, 'details' => $result]);
+            }
             return ['success' => \true, 'message' => sprintf(
                 /* translators: %s: file name */
                 __('File "%s" reset to default successfully.', 'windpress'),
@@ -85,7 +98,7 @@ class ResetVolumeEntry
                 /* translators: %s: error message */
                 __('Failed to reset entry: %s', 'windpress'),
                 $throwable->getMessage()
-            ));
+            ), ['status' => 500]);
         }
     }
 }

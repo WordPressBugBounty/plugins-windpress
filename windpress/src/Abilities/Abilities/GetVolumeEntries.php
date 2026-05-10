@@ -14,9 +14,9 @@ namespace WindPress\WindPress\Abilities\Abilities;
 use WindPress\WindPress\Core\Volume;
 /**
  * Get Volume Entries Ability
- * 
+ *
  * Retrieves all files in the WindPress Simple File System.
- * 
+ *
  * @since 3.2.0
  */
 class GetVolumeEntries
@@ -28,6 +28,9 @@ class GetVolumeEntries
      */
     public static function execute(): array
     {
-        return Volume::get_entries();
+        return array_map(static function (array $entry): array {
+            unset($entry['path_on_disk']);
+            return $entry;
+        }, Volume::get_entries());
     }
 }
