@@ -1,0 +1,8 @@
+import { n as e } from "./rolldown-runtime-DAXXjFlN.js";
+var t, n = e((() => {
+  t = globalThis || self;
+}));
+export {
+  n,
+  t
+};

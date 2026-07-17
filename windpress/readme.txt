@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css, block
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 3.2.85
+Stable tag: 3.2.86
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ WindPress is a platform agnostic [Tailwind CSS](https://tailwindcss.com/) integr
 
 **Tailwind CSS version**:
 - 3.4.19
-- 4.3.1
+- 4.3.3
 
 ### Features
 
@@ -118,6 +118,17 @@ No, by default, you do not need an internet connection to use WindPress. However
 WindPress is compatible with any WordPress theme. A small adjustment may be needed for the compiler scanner to detect the used classes in the theme.
 
 == Changelog ==
+
+= 3.2.86 - 2026-07-17 =
+
+**Added**
+
+* Updated bundled Tailwind CSS v4 to 4.3.3.
+
+**Fixed**
+
+* [TW3] Browser compiler throws "Unable to determine current node version" [#78](https://github.com/wind-press/windpress/issues/78)
+* [Gutenberg] Fixed saving issues when WPML is enabled.
 
 = 3.2.85 - 2026-06-18 =
 
