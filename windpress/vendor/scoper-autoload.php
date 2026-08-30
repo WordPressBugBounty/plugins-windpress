@@ -6,15 +6,19 @@ $loader = (static function () {
     // Backup the autoloaded Composer files
     $existingComposerAutoloadFiles = isset($GLOBALS['__composer_autoload_files']) ? $GLOBALS['__composer_autoload_files'] : [];
 
+    $GLOBALS['__composer_autoload_files'] = $GLOBALS['__composer_autoload_files_windpress_deps'] ?? [];
+
     $loader = require_once __DIR__.'/autoload.php';
     // Ensure InstalledVersions is available
     $installedVersionsPath = __DIR__.'/composer/InstalledVersions.php';
     if (file_exists($installedVersionsPath)) require_once $installedVersionsPath;
 
+    $GLOBALS['__composer_autoload_files_windpress_deps'] = $GLOBALS['__composer_autoload_files'];
+
     // Restore the backup and ensure the excluded files are properly marked as loaded
     $GLOBALS['__composer_autoload_files'] = \array_merge(
         $existingComposerAutoloadFiles,
-        \array_fill_keys(['320cde22f66dd4f5d3fd621d3e88b98f', '9eaa6b0f3f04e58e17ae5ecb754ea313', '8825ede83f2f289127722d4e842cf7e8', 'acbe0d033c55cd0a032b415e08d14f4c', 'e69f7f6ee287b969198c3c9d6777bd38', '36dfd6ed9dd74e8062aa61f09caf8554', '0e6d7bf4a5811bfa5cf40c5ccd6fae6a', '5928a00fa978807cf85d90ec3f4b0147', 'a4a119a56e50fbb293281d9a48007e0e', '54b9ab13bc86d8251a04a939888e357e', '51421aa3e5e8003b70a289762d146a2a', '18e965175c6bcd96deba6bc791a44373', 'f49032536fdd06afd9df7191c3f21453', '7bdb062931f6e7102434c3ad28423eb6', '7edcabe1b67fbb38f4972a722bbbb429', '6a099327d1f9694737526ccd00bfd944', 'cf0bcfe0f5602da2103bbe327f19225c', 'f62335a8f6f7f7f4414fa96074bda702', '86aa1691af0be2057ff4b6c453db6c6c', '63fa8de9655d8331bf07592719bbba1c', '2acf50802a54a9a126e656b486aeab54', '36b60e4543e3a2fa5ff85be4f4b96cf6', '620bccfea918a59f88a707c890434313', '8e794e4061c17331d204e4e8ae4f90c7', '2d223b650b5c56928c1affa16ee5cfe2', 'ac36427f0a3d6d978fd7d5779ceac594', '08959129a5682ab79a4f5f65bddb9566', '7acea9128a4ae5dba9006cde886d4577', 'a1780cd2edf30a1f045434cd1550cff0'], true)
+        \array_fill_keys(['9eaa6b0f3f04e58e17ae5ecb754ea313', '320cde22f66dd4f5d3fd621d3e88b98f', 'acbe0d033c55cd0a032b415e08d14f4c', '8825ede83f2f289127722d4e842cf7e8', '36dfd6ed9dd74e8062aa61f09caf8554', 'e69f7f6ee287b969198c3c9d6777bd38', '5928a00fa978807cf85d90ec3f4b0147', '0e6d7bf4a5811bfa5cf40c5ccd6fae6a', 'a4a119a56e50fbb293281d9a48007e0e', '54b9ab13bc86d8251a04a939888e357e', '7edcabe1b67fbb38f4972a722bbbb429', '7bdb062931f6e7102434c3ad28423eb6', '18e965175c6bcd96deba6bc791a44373', 'f49032536fdd06afd9df7191c3f21453', '51421aa3e5e8003b70a289762d146a2a', 'a1780cd2edf30a1f045434cd1550cff0', '2d223b650b5c56928c1affa16ee5cfe2', 'f62335a8f6f7f7f4414fa96074bda702', 'cf0bcfe0f5602da2103bbe327f19225c', '63fa8de9655d8331bf07592719bbba1c', '86aa1691af0be2057ff4b6c453db6c6c', '08959129a5682ab79a4f5f65bddb9566', '7acea9128a4ae5dba9006cde886d4577', '8e794e4061c17331d204e4e8ae4f90c7', '2acf50802a54a9a126e656b486aeab54', '36b60e4543e3a2fa5ff85be4f4b96cf6', '620bccfea918a59f88a707c890434313', 'ac36427f0a3d6d978fd7d5779ceac594', '6a099327d1f9694737526ccd00bfd944'], true)
     );
 
     return $loader;

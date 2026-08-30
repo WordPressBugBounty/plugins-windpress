@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit25f6f0801f3d14eab8599349ada6fb65
+class ComposerStaticInitd0c8754db623c776b87ea01aab90ad11
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -328,6 +328,7 @@ class ComposerStaticInit25f6f0801f3d14eab8599349ada6fb65
         'WindPress\\WindPress\\Integration\\Loader' => __DIR__ . '/../..' . '/src/Integration/Loader.php',
         'WindPress\\WindPress\\Integration\\Timber\\Compile' => __DIR__ . '/../..' . '/src/Integration/Timber/Compile.php',
         'WindPress\\WindPress\\Integration\\Timber\\Main' => __DIR__ . '/../..' . '/src/Integration/Timber/Main.php',
+        'WindPress\\WindPress\\Licensing\\Manager' => __DIR__ . '/../..' . '/src/Licensing/Manager.php',
         'WindPress\\WindPress\\Plugin' => __DIR__ . '/../..' . '/src/Plugin.php',
         'WindPress\\WindPress\\Upgrade\\UpgradeManager' => __DIR__ . '/../..' . '/src/Upgrade/UpgradeManager.php',
         'WindPress\\WindPress\\Utils\\Cache' => __DIR__ . '/../..' . '/src/Utils/Cache.php',
@@ -342,9 +343,9 @@ class ComposerStaticInit25f6f0801f3d14eab8599349ada6fb65
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit25f6f0801f3d14eab8599349ada6fb65::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit25f6f0801f3d14eab8599349ada6fb65::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit25f6f0801f3d14eab8599349ada6fb65::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd0c8754db623c776b87ea01aab90ad11::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd0c8754db623c776b87ea01aab90ad11::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitd0c8754db623c776b87ea01aab90ad11::$classMap;
 
         }, null, ClassLoader::class);
     }

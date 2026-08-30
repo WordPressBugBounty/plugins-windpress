@@ -1,10 +1,10 @@
 === WindPress - Tailwind CSS integration for WordPress ===
-Contributors: suabahasa, rosua
+Contributors: suasgn, suabahasa
 Donate link: https://ko-fi.com/Q5Q75XSF7
 Tags: tailwind, tailwindcss, tailwind css, block
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 3.2.86
+Stable tag: 3.2.87
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -41,7 +41,7 @@ And some specific integrations also include the following features:
 * **Hover Preview the classes**: Hover over the classes to see the complete outputted CSS and the preview of the design canvas.
 * **Ubiquitous Panel**: A floating panel that allows you to quickly access the WindPress settings from anywhere on the page.
 
-Visit [our website](https://wind.press) for more information.
+Visit [our website](https://windpress.jooo.si) for more information.
 
 ### Seamless Integration
 
@@ -73,12 +73,12 @@ Note: The core feature will remain available on all versions, but some integrati
 ### Bring Your Own Integration
 
 WindPress is designed to be easily extensible, so you can build your integrations with Tailwind CSS. The plugin provides a simple API for adding integrations.
-Check out our detailed [guide](https://wind.press/docs/integrations/custom-theme) to get started.
+Check out our detailed [guide](https://windpress.jooo.si/docs/integrations/custom-theme) to get started.
 
 
 = Love WindPress? =
 - Give a [5-star review](https://wordpress.org/support/plugin/windpress/reviews/?filter=5/#new-post)
-- Purchase the [Pro version](https://wind.press)
+- Purchase the [Pro version](https://windpress.jooo.si)
 - Join our [Facebook Group](https://www.facebook.com/groups/1142662969627943)
 - Sponsor us on [GitHub](https://github.com/sponsors/suasgn) or [Ko-fi](https://ko-fi.com/Q5Q75XSF7)
 
@@ -119,6 +119,20 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 == Changelog ==
 
+= 3.2.87 - 2026-08-29 =
+
+**Added**
+
+* File tree drag-and-drop support.
+* Folder actions for creating files and folders.
+
+**Fixed**
+
+* Drag preview scrollbar flicker.
+* File editor hotkeys not working correctly on MacOS.
+* [Gutenberg] Canvas compatibility issue on the latest WordPress 7.1
+* [Wizard] Reported volume save failures instead of displaying a false success message [#81](https://github.com/jooosi-project/windpress/issues/81)
+
 = 3.2.86 - 2026-07-17 =
 
 **Added**
@@ -127,7 +141,7 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 **Fixed**
 
-* [TW3] Browser compiler throws "Unable to determine current node version" [#78](https://github.com/wind-press/windpress/issues/78)
+* [TW3] Browser compiler throws "Unable to determine current node version" [#78](https://github.com/jooosi-project/windpress/issues/78)
 * [Gutenberg] Fixed saving issues when WPML is enabled.
 
 = 3.2.85 - 2026-06-18 =
@@ -176,13 +190,13 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 **Fixed**
 
-* [Bricks] Prevented cache scans from crashing when `_cssGlobalClasses` is stored as a string [#77](https://github.com/wind-press/windpress/issues/77)
+* [Bricks] Prevented cache scans from crashing when `_cssGlobalClasses` is stored as a string [#77](https://github.com/jooosi-project/windpress/issues/77)
 
 = 3.2.78 - 2026-03-27 =
 
 **Fixed**
 
-* [Internal] Prevented no-input Abilities API callbacks from crashing when WordPress omits the input argument [#76](https://github.com/wind-press/windpress/issues/76)
+* [Internal] Prevented no-input Abilities API callbacks from crashing when WordPress omits the input argument [#76](https://github.com/jooosi-project/windpress/issues/76)
 
 = 3.2.77 - 2026-03-27 =
 
@@ -282,7 +296,7 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 **Removed**
 
-* Reverted file version history feature introduced in v3.2.65 due to complexity and performance concerns
+* Reverted file version history feature introduced in v3.3.65 due to complexity and performance concerns
 
 = 3.2.67 - 2025-11-04 =
 
@@ -312,14 +326,14 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 **Fixed**
 
-* Wizard tree doesn't show the children nodes correctly [#66](https://github.com/wind-press/windpress/issues/66)
-* [Bricks] Paste HTML feature keyboard shortcut not working correctly [#64](https://github.com/wind-press/windpress/issues/64) [#67](https://github.com/wind-press/windpress/issues/67) [#68](https://github.com/wind-press/windpress/issues/68)
+* Wizard tree doesn't show the children nodes correctly [#66](https://github.com/jooosi-project/windpress/issues/66)
+* [Bricks] Paste HTML feature keyboard shortcut not working correctly [#64](https://github.com/jooosi-project/windpress/issues/64) [#67](https://github.com/jooosi-project/windpress/issues/67) [#68](https://github.com/jooosi-project/windpress/issues/68)
 
 = 3.2.63 - 2025-09-27 =
 
 **Fixed**
 
-* [Breakdance] Integration doesn't load on the recent version of Breakdance (v2.4.1)
+* [Breakdance] Integration doesn't load on the recent version of Breakdance (v2.5.1)
 * [TW4] IntelliSense was failing to correctly clean up `@apply` directives
 
 = 3.2.62 - 2025-09-13 =
@@ -360,7 +374,7 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 **Fixed**
 
-* [TW3] Tailwind hover tooltips no longer show px equivalents [#58](https://github.com/wind-press/windpress/issues/58)
+* [TW3] Tailwind hover tooltips no longer show px equivalents [#58](https://github.com/jooosi-project/windpress/issues/58)
 
 = 3.2.56 - 2025-08-13 =
 
@@ -373,7 +387,7 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 **Added**
 
 * [TW4] IntelliSense on the Files tab for the CSS file
-* WP-Rocket exclusion for the WindPress CSS and JavaScript files [#54](https://github.com/wind-press/windpress/issues/54)
+* WP-Rocket exclusion for the WindPress CSS and JavaScript files [#54](https://github.com/jooosi-project/windpress/issues/54)
 
 **Changed**
 
@@ -387,7 +401,7 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 **Changed**
 
-* [Gutenberg] Compiler: The raw block data is now appended on the scanner data to improve the class name detection [#53](https://github.com/wind-press/windpress/issues/53)
+* [Gutenberg] Compiler: The raw block data is now appended on the scanner data to improve the class name detection [#53](https://github.com/jooosi-project/windpress/issues/53)
 * [Wizard] The Wizard's data is now can saved directly without the need to switch the Files tab first
 
 **Fixed**
@@ -502,12 +516,12 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 **Changed**
 
-* [Gutenberg] Loaded the Play Observer / Compiler in Pattern preview [#40](https://github.com/wind-press/windpress/issues/40)
-* [Bricks] The Plain Classes feature compatibility for version 2.0-alpha [#42](https://github.com/wind-press/windpress/issues/42)
+* [Gutenberg] Loaded the Play Observer / Compiler in Pattern preview [#40](https://github.com/jooosi-project/windpress/issues/40)
+* [Bricks] The Plain Classes feature compatibility for version 2.0-alpha [#42](https://github.com/jooosi-project/windpress/issues/42)
 
 **Fixed**
 
-* [Bricks] The Plain Classes field is not synchronized with the history (undo/redo) actions [#44](https://github.com/wind-press/windpress/issues/44)
+* [Bricks] The Plain Classes field is not synchronized with the history (undo/redo) actions [#44](https://github.com/jooosi-project/windpress/issues/44)
 
 = 3.2.29 - 2025-04-15 =
 
@@ -564,7 +578,7 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 **Fixed**
 
-* Storage issue on the Incremental Generate Cache feature [#34](https://github.com/wind-press/windpress/issues/34)
+* Storage issue on the Incremental Generate Cache feature [#34](https://github.com/jooosi-project/windpress/issues/34)
 
 = 3.2.21 - 2025-03-28 =
 
@@ -688,7 +702,7 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 **Added**
 
 * Updated bundled Tailwind CSS v4 to 4.0.6
-* [TW4] The `@source` directive is now supported but differs from the official Tailwind CSS version. Please refer to [our documentation](https://wind.press/docs/configuration/file-main-css#scanning-additional-sources) for details.
+* [TW4] The `@source` directive is now supported but differs from the official Tailwind CSS version. Please refer to [our documentation](https://windpress.jooo.si/docs/configuration/file-main-css#scanning-additional-sources) for details.
 
 = 3.1.28 - 2024-12-19 =
 
@@ -772,12 +786,12 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 **Added**
 
-* The new website and documentation is now live at [wind.press](https://wind.press)
+* The new website and documentation is now live at [windpress.jooo.si](https://windpress.jooo.si)
 * Updated bundled Tailwind CSS v4 to 4.0.0-beta.2
 
 **Fixed**
 
-* Scanned classes names are not unescaped correctly ([#4](https://github.com/wind-press/windpress/issues/4))
+* Scanned classes names are not unescaped correctly ([#4](https://github.com/jooosi-project/windpress/issues/4))
 
 = 3.1.16 - 2024-12-19 =
 
@@ -995,4 +1009,4 @@ WindPress is compatible with any WordPress theme. A small adjustment may be need
 
 * 🐣 Initial release.
 
-[See changelog for all versions.](https://github.com/wind-press/windpress/blob/main/CHANGELOG.md)
+[See changelog for all versions.](https://github.com/jooosi-project/windpress/blob/main/CHANGELOG.md)

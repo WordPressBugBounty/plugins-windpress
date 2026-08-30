@@ -80,7 +80,7 @@ class CommonBlock
      */
     public function enqueue_isolate_styles($modules)
     {
-        Vite::assets()->enqueue('assets/integration/gutenberg/common-block/isolate-styles.js', ['handle' => WIND_PRESS::WP_OPTION . ':gutenberg-editor-isolate-styles', 'in_footer' => \true]);
+        Vite::assets()->enqueue('resources/integration/gutenberg/common-block/isolate-styles.js', ['handle' => WIND_PRESS::WP_OPTION . ':gutenberg-editor-isolate-styles', 'in_footer' => \true]);
         $modules[] = WIND_PRESS::WP_OPTION . ':gutenberg-editor-isolate-styles';
         return $modules;
     }

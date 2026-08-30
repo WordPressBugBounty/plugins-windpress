@@ -25,7 +25,7 @@ class WIND_PRESS
     /**
      * @var string
      */
-    public const VERSION = '3.2.86';
+    public const VERSION = '3.2.87';
     /**
      * @var string
      */
@@ -44,12 +44,7 @@ class WIND_PRESS
     /**
      * @var array
      */
-    public const EDD_STORE = [
-        'store_url' => 'https://rosua.org',
-        'item_id' => 2250,
-        // WindPress or Yabe Siul
-        'author' => 'idrosua',
-    ];
+    public const EDD_STORE = ['store_url' => 'https://jooo.si', 'item_id' => 2250];
     /**
      * @var string
      */

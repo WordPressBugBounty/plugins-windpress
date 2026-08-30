@@ -26,7 +26,7 @@ class Editor
     public function register_livecanvas_autocomplete()
     {
         $handle = WIND_PRESS::WP_OPTION . ':integration-livecanvas-editor';
-        Vite::assets()->enqueue('assets/integration/livecanvas/main.js', ['handle' => $handle, 'in_footer' => \true, 'dependencies' => ['wp-hooks']]);
+        Vite::assets()->enqueue('resources/integration/livecanvas/main.js', ['handle' => $handle, 'in_footer' => \true, 'dependencies' => ['wp-hooks']]);
         wp_localize_script($handle, 'windpresslivecanvas', ['_version' => WIND_PRESS::VERSION, 'assets' => ['url' => Vite::base_url()], 'site_meta' => ['name' => get_bloginfo('name'), 'site_url' => get_site_url(), 'admin_url' => AdminPage::get_page_url()]]);
         $wp_scripts = wp_scripts();
         $queue = $wp_scripts->queue;

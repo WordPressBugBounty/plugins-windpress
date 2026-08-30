@@ -11,14 +11,15 @@
 declare (strict_types=1);
 namespace WindPress\WindPress;
 
-use WindPressDeps\EDD_SL\PluginUpdater;
+use EasyDigitalDownloads\Updater\Registry;
 use Exception;
 use WIND_PRESS;
+use WindPress\WindPress\Abilities\Loader as AbilitiesLoader;
 use WindPress\WindPress\Admin\AdminPage;
 use WindPress\WindPress\Api\Router as ApiRouter;
-use WindPress\WindPress\Abilities\Loader as AbilitiesLoader;
 use WindPress\WindPress\Core\Runtime;
 use WindPress\WindPress\Integration\Loader as IntegrationLoader;
+use WindPress\WindPress\Licensing\Manager as LicenseManager;
 use WindPress\WindPress\Upgrade\UpgradeManager;
 use WindPress\WindPress\Utils\Cache as UtilsCache;
 use WindPress\WindPress\Utils\Common;
@@ -32,10 +33,10 @@ use WP_Upgrader;
 final class Plugin
 {
     /**
-     * Easy Digital Downloads Software Licensing integration wrapper.
+     * Easy Digital Downloads Software Licensing integration manager.
      * Pro version only.
      *
-     * @var PluginUpdater|null
+     * @var LicenseManager|null
      */
     public $plugin_updater = null;
     /**
@@ -85,6 +86,7 @@ final class Plugin
     public function boot(): void
     {
         do_action('a!windpress/plugin:boot.start');
+        $this->boot_license_sdk();
         // (de)activation hooks.
         register_activation_hook(WIND_PRESS::FILE, fn() => $this->activate_plugin());
         register_deactivation_hook(WIND_PRESS::FILE, fn() => $this->deactivate_plugin());
@@ -98,10 +100,21 @@ final class Plugin
                 }
             }
         }, 10, 2);
-        $this->maybe_update_plugin();
         add_action('plugins_loaded', fn() => $this->plugins_loaded(), 9);
         add_action('init', fn() => $this->init_plugin());
         do_action('a!windpress/plugin:boot.end');
+    }
+    /**
+     * Get the initialized license manager.
+     * Pro version only.
+     */
+    public function maybe_update_plugin(): ?LicenseManager
+    {
+        return $this->plugin_updater instanceof LicenseManager ? $this->plugin_updater : null;
+    }
+    public static function is_pro_edition(): bool
+    {
+        return is_file(self::get_license_sdk_path());
     }
     /**
      * Handle the plugin's activation by (maybe) running database migrations
@@ -111,8 +124,10 @@ final class Plugin
     {
         do_action('a!windpress/plugin:activate_plugin.start');
         update_option(WIND_PRESS::WP_OPTION . '_version', WIND_PRESS::VERSION);
-        $this->maybe_new_plugin_version();
-        $this->maybe_embedded_license();
+        if ($this->plugin_updater instanceof LicenseManager) {
+            $this->maybe_embedded_license();
+            $this->plugin_updater->clear_cache();
+        }
         do_action('a!windpress/plugin:activate_plugin.end');
     }
     /**
@@ -182,33 +197,46 @@ final class Plugin
         return $links;
     }
     /**
-     * Initialize the plugin updater.
-     * Pro version only.
-     *
-     * @return PluginUpdater
+     * Register the plugin with EDD's official Software Licensing SDK.
      */
-    private function maybe_update_plugin()
+    private function boot_license_sdk(): void
     {
-        if (!class_exists(PluginUpdater::class)) {
-            return null;
-        }
-        if ($this->plugin_updater instanceof \WindPressDeps\EDD_SL\PluginUpdater) {
-            return $this->plugin_updater;
-        }
-        $license = get_option(WIND_PRESS::WP_OPTION . '_license', ['key' => '', 'opt_in_pre_release' => \false]);
-        $this->plugin_updater = new PluginUpdater(WIND_PRESS::WP_OPTION, ['version' => WIND_PRESS::VERSION, 'license' => $license['key'] ? trim($license['key']) : \false, 'beta' => $license['opt_in_pre_release'], 'plugin_file' => WIND_PRESS::FILE, 'item_id' => WIND_PRESS::EDD_STORE['item_id'], 'store_url' => WIND_PRESS::EDD_STORE['store_url'], 'author' => WIND_PRESS::EDD_STORE['author']]);
-        return $this->plugin_updater;
-    }
-    /**
-     * Check if the plugin has a new version by clearing the cache.
-     * Pro version only.
-     */
-    private function maybe_new_plugin_version(): void
-    {
-        if (!class_exists(PluginUpdater::class)) {
+        $sdk_path = self::get_license_sdk_path();
+        if (!is_file($sdk_path)) {
             return;
         }
-        $this->maybe_update_plugin()->clear_cache();
+        $this->plugin_updater = new LicenseManager();
+        add_action('init', [$this->plugin_updater, 'boot_updater']);
+        add_action('edd_sl_sdk_registry', function ($registry): void {
+            $this->register_license_integration($registry);
+        });
+        require_once $sdk_path;
+        // Plugin activation can happen after the SDK initialization hooks ran.
+        if (did_action('after_setup_theme') && class_exists(Registry::class)) {
+            $this->register_license_integration(Registry::instance());
+        }
+    }
+    /**
+     * @param mixed $registry
+     */
+    private function register_license_integration($registry): void
+    {
+        if (!$registry instanceof Registry) {
+            return;
+        }
+        if (!$registry->offsetExists(LicenseManager::INTEGRATION_ID)) {
+            $registry->register(LicenseManager::get_integration_args());
+        }
+        $handler = $registry->offsetGet(LicenseManager::INTEGRATION_ID);
+        if (is_object($handler) && method_exists($handler, 'auto_updater')) {
+            // The SDK registry does not pass wp_override or beta through in
+            // version 1.0.3, so Manager boots the official updater directly.
+            remove_action('init', [$handler, 'auto_updater']);
+        }
+    }
+    private static function get_license_sdk_path(): string
+    {
+        return dirname(WIND_PRESS::FILE) . '/vendor/easy-digital-downloads/edd-sl-sdk/edd-sl-sdk.php';
     }
     /**
      * Check if the plugin distributed with an embedded license and activate the license.
@@ -216,7 +244,7 @@ final class Plugin
      */
     private function maybe_embedded_license(): void
     {
-        if (!class_exists(PluginUpdater::class)) {
+        if (!$this->plugin_updater instanceof LicenseManager) {
             return;
         }
         $license_file = dirname(WIND_PRESS::FILE) . '/license-data.php';
@@ -224,14 +252,26 @@ final class Plugin
             return;
         }
         require_once $license_file;
-        $const_name = 'ROSUA_EMBEDDED_LICENSE_KEY_' . WIND_PRESS::EDD_STORE['item_id'];
-        if (!defined($const_name)) {
+        $const_names = [
+            'WIND_PRESS_EMBEDDED_LICENSE_KEY_' . WIND_PRESS::EDD_STORE['item_id'],
+            'JOOOSI_EMBEDDED_LICENSE_KEY_' . WIND_PRESS::EDD_STORE['item_id'],
+            // Preserve the embedded-license constant used by previous releases.
+            'ROSUA_EMBEDDED_LICENSE_KEY_' . WIND_PRESS::EDD_STORE['item_id'],
+        ];
+        $const_name = null;
+        foreach ($const_names as $candidate) {
+            if (defined($candidate)) {
+                $const_name = $candidate;
+                break;
+            }
+        }
+        if ($const_name === null) {
             return;
         }
         $license_key = constant($const_name);
         update_option(WIND_PRESS::WP_OPTION . '_license', ['key' => $license_key, 'opt_in_pre_release' => \false]);
         wp_delete_file($license_file);
         // activate the license.
-        $this->maybe_update_plugin()->activate($license_key);
+        $this->plugin_updater->activate((string) $license_key);
     }
 }

@@ -120,7 +120,7 @@ class Cache
         $wp_root = strval(substr(\ABSPATH, 0, -1));
         $cache_dir = CoreCache::get_cache_path();
         $data_dir = CoreVolume::data_dir_path();
-        $plugin_asset_dir = dirname(WIND_PRESS::FILE) . '/build';
+        $plugin_asset_dir = dirname(WIND_PRESS::FILE) . '/assets/dist';
         $excluded_folders = [$cache_dir, $data_dir, $plugin_asset_dir];
         $excluded_files = [];
         $inline_patterns = ['windpress', substr(CoreRuntime::get_instance()->getVFSHtml(), 45, 7)];

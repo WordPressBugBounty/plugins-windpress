@@ -144,7 +144,12 @@ class Runtime
     }
     public function getVFSHtml()
     {
-        $volumeEntries = array_reduce(\WindPress\WindPress\Core\Volume::get_entries(), fn($carry, $entry) => $carry + ['/' . $entry['relative_path'] => $entry['content']], []);
+        $volumeEntries = array_reduce(\WindPress\WindPress\Core\Volume::get_entries(), function ($carry, $entry) {
+            if (!empty($entry['directory'])) {
+                return $carry;
+            }
+            return $carry + ['/' . $entry['relative_path'] => $entry['content']];
+        }, []);
         // Script content are base64 encoded to prevent it from being executed by the browser.
         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         return sprintf('<script id="windpress:vfs" type="text/plain">%s</script>', base64_encode(wp_json_encode($volumeEntries)));
@@ -170,29 +175,29 @@ class Runtime
         // Register the modules
         $loaded_modules = [];
         if ($can_load_modules) {
-            Vite::assets()->register('assets/packages/core/tailwindcss/play/intellisense.ts', ['handle' => WIND_PRESS::WP_OPTION . ':intellisense', 'in_footer' => \true]);
+            Vite::assets()->register('resources/packages/core/tailwindcss/play/intellisense.ts', ['handle' => WIND_PRESS::WP_OPTION . ':intellisense', 'in_footer' => \true]);
             $loaded_modules[] = WIND_PRESS::WP_OPTION . ':intellisense';
-            Vite::assets()->register('assets/packages/core/tailwindcss/play/worker.ts', ['handle' => WIND_PRESS::WP_OPTION . ':worker', 'in_footer' => \true]);
+            Vite::assets()->register('resources/packages/core/tailwindcss/play/worker.ts', ['handle' => WIND_PRESS::WP_OPTION . ':worker', 'in_footer' => \true]);
             $loaded_modules[] = WIND_PRESS::WP_OPTION . ':worker';
             do_action('a!windpress/core/runtime:enqueue_play_modules.loaded_modules');
             $loaded_modules = apply_filters('f!windpress/core/runtime:enqueue_play_modules.loaded_modules', $loaded_modules);
         }
-        Vite::assets()->register('assets/packages/core/tailwindcss/play/observer.ts', ['handle' => WIND_PRESS::WP_OPTION . ':observer', 'in_footer' => \true, 'dependencies' => array_merge(['wp-i18n', 'wp-hooks'], is_array($loaded_modules) ? $loaded_modules : iterator_to_array($loaded_modules))]);
+        Vite::assets()->register('resources/packages/core/tailwindcss/play/observer.ts', ['handle' => WIND_PRESS::WP_OPTION . ':observer', 'in_footer' => \true, 'dependencies' => array_merge(['wp-i18n', 'wp-hooks'], is_array($loaded_modules) ? $loaded_modules : iterator_to_array($loaded_modules))]);
     }
     public function enqueue_play_modules_v3($can_load_modules)
     {
         // Register the modules
         $loaded_modules = [];
         if ($can_load_modules) {
-            Vite::assets()->register('assets/packages/core/tailwindcss-v3/play/intellisense.ts', ['handle' => WIND_PRESS::WP_OPTION . ':intellisense', 'in_footer' => \true]);
+            Vite::assets()->register('resources/packages/core/tailwindcss-v3/play/intellisense.ts', ['handle' => WIND_PRESS::WP_OPTION . ':intellisense', 'in_footer' => \true]);
             $loaded_modules[] = WIND_PRESS::WP_OPTION . ':intellisense';
         }
-        Vite::assets()->register('assets/packages/core/tailwindcss-v3/play/observer.ts', ['handle' => WIND_PRESS::WP_OPTION . ':observer', 'in_footer' => \true, 'dependencies' => array_merge(['wp-i18n', 'wp-hooks'], is_array($loaded_modules) ? $loaded_modules : iterator_to_array($loaded_modules))]);
+        Vite::assets()->register('resources/packages/core/tailwindcss-v3/play/observer.ts', ['handle' => WIND_PRESS::WP_OPTION . ':observer', 'in_footer' => \true, 'dependencies' => array_merge(['wp-i18n', 'wp-hooks'], is_array($loaded_modules) ? $loaded_modules : iterator_to_array($loaded_modules))]);
     }
     public function enqueue_front_panel()
     {
         $handle = WIND_PRESS::WP_OPTION . ':admin';
-        Vite::assets()->enqueue('assets/dashboard/main.ts', ['handle' => $handle, 'in_footer' => \true, 'dependencies' => ['wp-i18n', 'wp-hooks']]);
+        Vite::assets()->enqueue('resources/dashboard/main.ts', ['handle' => $handle, 'in_footer' => \true, 'dependencies' => ['wp-i18n', 'wp-hooks']]);
         wp_set_script_translations($handle, 'windpress');
         // do enqueue scripts manually as it already runned before
         wp_enqueue_scripts();

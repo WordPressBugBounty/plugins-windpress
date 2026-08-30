@@ -36,6 +36,11 @@ class Volume
             }
             $entries[] = ['name' => $file->getFilename(), 'relative_path' => $file->getRelativePathname(), 'content' => $file->getContents(), 'handler' => 'internal', 'signature' => wp_create_nonce(sprintf('%s:%s', WIND_PRESS::WP_OPTION, $file->getRelativePathname())), 'readonly' => strpos(wp_normalize_path($file->getPathname()), wp_normalize_path($data_dir)) === \false, 'path_on_disk' => $file->getPathname()];
         }
+        $directory_finder = new Finder();
+        $directory_finder->ignoreUnreadableDirs()->in($data_dir)->directories()->followLinks();
+        foreach ($directory_finder as $directory) {
+            $entries[] = ['name' => $directory->getBasename(), 'relative_path' => $directory->getRelativePathname(), 'content' => '', 'handler' => 'internal', 'directory' => \true, 'readonly' => \false, 'path_on_disk' => $directory->getPathname()];
+        }
         $tailwindcss_version = \WindPress\WindPress\Core\Runtime::tailwindcss_version();
         // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local file
         $stubs_main_css = file_get_contents(sprintf('%s/stubs/tailwindcss-v%d/main.css', dirname(WIND_PRESS::FILE), $tailwindcss_version));
@@ -104,6 +109,37 @@ class Volume
             // skip the readonly entries
             if (isset($entry['readonly']) && $entry['readonly']) {
                 $result['skipped'][] = ['relative_path' => $relative_path, 'reason' => 'readonly_entry', 'message' => __('Read-only entries cannot be saved.', 'windpress')];
+                continue;
+            }
+            if (!empty($entry['directory'])) {
+                if ($entry['handler'] !== 'internal') {
+                    $result['skipped'][] = ['relative_path' => $relative_path, 'reason' => 'invalid_directory_handler', 'message' => __('Directories must use the internal handler.', 'windpress')];
+                    continue;
+                }
+                try {
+                    $safe_directory_path = static::sanitize_relative_path($entry['relative_path'], $data_dir);
+                    if (!empty($entry['hidden'])) {
+                        if (is_dir($safe_directory_path) && !rmdir($safe_directory_path)) {
+                            throw new \RuntimeException(__('Directory is not empty.', 'windpress'));
+                        }
+                        $result['deleted'][] = ['relative_path' => $relative_path];
+                    } else {
+                        if (file_exists($safe_directory_path) && !is_dir($safe_directory_path)) {
+                            throw new \RuntimeException(__('A file already exists at the directory path.', 'windpress'));
+                        }
+                        if (!is_dir($safe_directory_path) && !wp_mkdir_p($safe_directory_path)) {
+                            throw new \RuntimeException(__('The directory could not be created.', 'windpress'));
+                        }
+                        $result['saved'][] = ['relative_path' => $relative_path];
+                    }
+                } catch (\InvalidArgumentException $th) {
+                    $result['skipped'][] = ['relative_path' => $relative_path, 'reason' => 'invalid_path', 'message' => __('Directory path is invalid.', 'windpress')];
+                } catch (\Throwable $th) {
+                    if (\WP_DEBUG_LOG) {
+                        error_log($th->__toString());
+                    }
+                    $result['errors'][] = ['relative_path' => $relative_path, 'code' => 'filesystem_error', 'message' => $th->getMessage()];
+                }
                 continue;
             }
             if ($entry['handler'] !== 'internal') {

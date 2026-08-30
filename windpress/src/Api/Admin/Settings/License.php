@@ -14,7 +14,9 @@ namespace WindPress\WindPress\Api\Admin\Settings;
 use WIND_PRESS;
 use WindPress\WindPress\Api\AbstractApi;
 use WindPress\WindPress\Api\ApiInterface;
+use WindPress\WindPress\Licensing\Manager as LicenseManager;
 use WindPress\WindPress\Plugin;
+use WP_Error;
 use WP_REST_Request;
 use WP_REST_Response;
 use WP_REST_Server;
@@ -40,40 +42,52 @@ class License extends AbstractApi implements ApiInterface
     public function activate(WP_REST_Request $wprestRequest): WP_REST_Response
     {
         $payload = $wprestRequest->get_json_params();
-        $new_license_key = sanitize_text_field($payload['license']);
+        $new_license_key = sanitize_text_field((string) ($payload['license'] ?? ''));
         if ($new_license_key === '') {
             return new WP_REST_Response(['message' => __('License key is empty', 'windpress')], 400);
         }
         $plugin_updater = Plugin::get_instance()->plugin_updater;
+        if (!$plugin_updater instanceof LicenseManager) {
+            return new WP_REST_Response(['message' => __('License management is unavailable in this edition.', 'windpress'), 'license' => $this->get_license()], 404);
+        }
         $response = $plugin_updater->activate($new_license_key);
-        if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
-            return new WP_REST_Response(['message' => is_wp_error($response) ? $response->get_error_message() : __('An error occurred, please try again.', 'windpress')], 500);
+        if (is_wp_error($response)) {
+            return $this->error_response($response);
         }
-        $license_data = json_decode(wp_remote_retrieve_body($response), null, 512, \JSON_THROW_ON_ERROR);
-        if ($license_data->license !== 'valid') {
-            return new WP_REST_Response(['message' => $plugin_updater->error_message($license_data->error)], 400);
-        }
-        update_option(WIND_PRESS::WP_OPTION . '_license', ['key' => $new_license_key, 'opt_in_pre_release' => \false]);
-        $plugin_updater->drop_update_cache();
-        return new WP_REST_Response(['message' => __('Plugin license key activated successfully', 'windpress'), 'license' => $this->get_license()]);
+        update_option(WIND_PRESS::WP_OPTION . '_license', ['key' => $plugin_updater->get_license_key(), 'opt_in_pre_release' => (bool) $this->get_license()['opt_in_pre_release']]);
+        return new WP_REST_Response(['message' => __('Plugin license key activated successfully.', 'windpress'), 'license' => $this->get_license()]);
     }
     public function deactivate(WP_REST_Request $wprestRequest): WP_REST_Response
     {
         $plugin_updater = Plugin::get_instance()->plugin_updater;
-        $plugin_updater->deactivate();
-        $plugin_updater->drop_update_cache();
+        if (!$plugin_updater instanceof LicenseManager) {
+            return new WP_REST_Response(['message' => __('License management is unavailable in this edition.', 'windpress'), 'license' => $this->get_license()], 404);
+        }
+        $response = $plugin_updater->deactivate();
+        if (is_wp_error($response)) {
+            return $this->error_response($response);
+        }
         update_option(WIND_PRESS::WP_OPTION . '_license', ['key' => '', 'opt_in_pre_release' => \false]);
-        return new WP_REST_Response(['message' => __('Plugin license key de-activated successfully', 'windpress'), 'license' => $this->get_license()]);
+        return new WP_REST_Response(['message' => __('Plugin license key deactivated successfully.', 'windpress'), 'license' => $this->get_license()]);
     }
     private function get_license(): array
     {
         $license = get_option(WIND_PRESS::WP_OPTION . '_license', ['key' => '', 'opt_in_pre_release' => \false]);
+        $license = wp_parse_args(is_array($license) ? $license : [], ['key' => '', 'opt_in_pre_release' => \false]);
+        $plugin_updater = Plugin::get_instance()->plugin_updater;
+        if ($plugin_updater instanceof LicenseManager) {
+            $license['key'] = $plugin_updater->get_license_key();
+        }
         try {
-            $license['is_activated'] = Plugin::get_instance()->plugin_updater->is_activated();
+            $license['is_activated'] = $plugin_updater instanceof LicenseManager && $plugin_updater->is_activated();
         } catch (\Throwable $throwable) {
-            //throw $th;
             $license['is_activated'] = \false;
         }
         return $license;
+    }
+    private function error_response(WP_Error $error): WP_REST_Response
+    {
+        $status = $error->get_error_code() === 'license_server_unavailable' ? 502 : 422;
+        return new WP_REST_Response(['message' => $error->get_error_message(), 'license' => $this->get_license()], $status);
     }
 }

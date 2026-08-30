@@ -44,20 +44,20 @@ class Editor
         Runtime::get_instance()->enqueue_play_cdn();
         if (strpos($_SERVER['REQUEST_URI'], 'site-editor.php') !== \false) {
             // handle the canvas
-            Vite::assets()->enqueue('assets/integration/gutenberg/site-editor.js', ['handle' => WIND_PRESS::WP_OPTION . ':integration-gutenberg-site-editor', 'in_footer' => \true]);
+            Vite::assets()->enqueue('resources/integration/gutenberg/site-editor.js', ['handle' => WIND_PRESS::WP_OPTION . ':integration-gutenberg-site-editor', 'in_footer' => \true]);
         } else {
             // handle the canvas
-            Vite::assets()->enqueue('assets/integration/gutenberg/post-editor.js', ['handle' => WIND_PRESS::WP_OPTION . ':integration-gutenberg-post-editor', 'in_footer' => \true]);
+            Vite::assets()->enqueue('resources/integration/gutenberg/post-editor.js', ['handle' => WIND_PRESS::WP_OPTION . ':integration-gutenberg-post-editor', 'in_footer' => \true]);
         }
         $handle = WIND_PRESS::WP_OPTION . ':integration-gutenberg-block-editor';
-        Vite::assets()->enqueue('assets/integration/gutenberg/block-editor.jsx', ['handle' => $handle, 'in_footer' => \true, 'dependencies' => ['wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-hooks', 'wp-i18n', 'react', 'react-dom']]);
+        Vite::assets()->enqueue('resources/integration/gutenberg/block-editor.jsx', ['handle' => $handle, 'in_footer' => \true, 'dependencies' => ['wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-hooks', 'wp-i18n', 'react', 'react-dom', 'react-jsx-runtime']]);
         // Enqueue Common Block if enabled
         if (Config::get('integration.gutenberg.settings.common_block', \true)) {
-            Vite::assets()->enqueue('assets/integration/gutenberg/common-block/index.jsx', ['handle' => WIND_PRESS::WP_OPTION . ':integration-gutenberg-common-block', 'in_footer' => \true, 'dependencies' => ['wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-block-editor', 'wp-hooks', 'wp-i18n', 'wp-plugins', 'wp-data', 'react', 'react-dom', $handle]]);
+            Vite::assets()->enqueue('resources/integration/gutenberg/common-block/index.jsx', ['handle' => WIND_PRESS::WP_OPTION . ':integration-gutenberg-common-block', 'in_footer' => \true, 'dependencies' => ['wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-block-editor', 'wp-hooks', 'wp-i18n', 'wp-plugins', 'wp-data', 'react', 'react-dom', 'react-jsx-runtime', $handle]]);
         }
         // Enqueue Generate Cache module if enabled
         if (Config::get('integration.gutenberg.modules.generate_cache', \true)) {
-            Vite::assets()->enqueue('assets/integration/gutenberg/modules/generate-cache/main.ts', ['handle' => WIND_PRESS::WP_OPTION . ':integration-gutenberg-generate-cache', 'in_footer' => \true, 'dependencies' => ['wp-data', 'wp-preferences', 'wp-components', 'wp-i18n', 'wp-plugins', 'wp-editor', 'wp-element', 'react', 'react-dom', $handle]]);
+            Vite::assets()->enqueue('resources/integration/gutenberg/modules/generate-cache/main.ts', ['handle' => WIND_PRESS::WP_OPTION . ':integration-gutenberg-generate-cache', 'in_footer' => \true, 'dependencies' => ['wp-data', 'wp-preferences', 'wp-components', 'wp-i18n', 'wp-plugins', 'wp-editor', 'wp-element', 'react', 'react-dom', 'react-jsx-runtime', $handle]]);
         }
         wp_add_inline_script($handle, <<<JS
     // add __windpress__disable_playObserver to window if not exists

@@ -11,9 +11,9 @@
 declare (strict_types=1);
 namespace WindPress\WindPress\Utils;
 
-use WindPressDeps\EDD_SL\PluginUpdater;
 use Exception;
 use WIND_PRESS;
+use WindPress\WindPress\Plugin;
 /**
  * Common utility functions for the plugin.
  *
@@ -69,7 +69,7 @@ class Common
     }
     public static function is_updater_library_available(): bool
     {
-        return class_exists(PluginUpdater::class);
+        return Plugin::is_pro_edition();
     }
     public static function random_slug(int $length = 21): string
     {

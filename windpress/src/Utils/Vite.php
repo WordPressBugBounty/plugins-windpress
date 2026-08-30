@@ -33,7 +33,7 @@ final class Vite
     }
     public static function manifest_dir(): string
     {
-        return dirname(WIND_PRESS::FILE) . '/build';
+        return dirname(WIND_PRESS::FILE) . '/assets/dist';
     }
     public static function base_url(string $asset = ''): string
     {
