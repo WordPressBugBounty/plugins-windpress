@@ -1,4 +1,0 @@
-import { n as e } from "./constant-Bodr-Y8K.js";
-export {
-  e as bdeIframe
-};

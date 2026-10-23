@@ -1,4 +1,0 @@
-var e = `4.2.2`;
-export {
-  e as t
-};
